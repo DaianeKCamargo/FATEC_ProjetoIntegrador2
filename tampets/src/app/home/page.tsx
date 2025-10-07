@@ -1,9 +1,9 @@
-import { Navegation } from "@/Components/Navegation";
+import NavBar from "@/Components/navBar";
 
 export default function Home(){
     return(
         <>
-        <Navegation></Navegation>  
+         <NavBar />
         </>
     );
 }
