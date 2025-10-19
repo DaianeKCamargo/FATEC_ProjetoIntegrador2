@@ -1,11 +1,11 @@
 import { Navbar } from "react-bootstrap";
-/*import {Roboto} from 'next/font/google';*/
+import { Noto_Sans_JP } from 'next/font/google';
+import NavegationBar from "@/Components/NavegationBar";
 
-/*  const roboto = Roboto({
-  weight: ['100','300','400','500','700','900'],
+const notoSansJp = Noto_Sans_JP({
   subsets: ['latin'],
-  variable: '--font-roboto',
-}); */
+  weight: ['400', '500', '600', '700'],
+});
 
  
 export default function RootLayout({
@@ -15,7 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
+      <body className={notoSansJp.className}>
+        <NavegationBar />
         {children}
       </body>
     </html>

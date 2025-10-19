@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <>
-        <NavegationBar />
         <h1>Página: Home</h1>
+        <p>qplLIi - 10</p>
         </>
     )
 }
