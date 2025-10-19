@@ -17,3 +17,5 @@ export default function Home() {
         </>
     )
 }
+
+// https://www.youtube.com/watch?v=e6FigV2fLC8&t=77s video para finalizar o site com nextjs
