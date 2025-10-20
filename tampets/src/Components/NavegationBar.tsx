@@ -6,9 +6,8 @@ export function NavegationBar() {
         <header>
             <nav className="navbar">
                 <Link href="/">
-                    <Image src="/logoHome.png" alt="Logo Tampets" width={500} height={200}/>
+                    <Image src="/logoHome.png" alt="Logo Tampets" width={350} height={150}/>
                 </Link>
-                 n
             </nav>
         </header>
     );
