@@ -2,6 +2,7 @@ import { NavegationBar } from "@/Components/NavegationBar"
 import { Metadata } from "next"
 
 
+
 //  Metadata da página inicial ela é exibida na aba do navegador e em mecanismos de busca.
 // Para mudar o icone da aba, bastou eu colocar o arquivo inserir a imagem que eu quero e mudar o nome para "favicon.ico" na pasta "app".
 export const metadata: Metadata = {

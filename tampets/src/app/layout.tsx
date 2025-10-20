@@ -1,6 +1,7 @@
-import { Navbar } from "react-bootstrap";
 import { Noto_Sans_JP } from 'next/font/google';
 import NavegationBar from "@/Components/NavegationBar";
+// @ts-ignore: allow side-effect import for global CSS without type declarations
+import './globals.css';
 
 const notoSansJp = Noto_Sans_JP({
   subsets: ['latin'],
