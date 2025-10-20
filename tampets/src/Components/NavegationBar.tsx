@@ -32,63 +32,81 @@ export function NavegationBar() {
         <header>
             <nav className="navbar">
                 <Link href="/">
-                    <Image src="/logoHome.png" alt="Logo Tampets" width={350} height={150}/>
+                    <Image className="logo" src="/logoTampetsOriginal.png" alt="Logo Tampets" width={250} height={200}/>
                 </Link>
-                 <ul className="nav-items">
-                    {items.map((items, index) => (
-                        <NavItem 
-                            key={index} 
-                            url={items.url} 
-                            label={items.label} 
-                        />
-                    ))}
-                 </ul>
+                <ul className="nav-items">
+                {items.map((items, index) => (
+                    <NavItem 
+                        key={index} 
+                        url={items.url} 
+                        label={items.label} 
+                    />
+                ))}
+                </ul>
 
-                 <button className="auth-button"> Login | Cadastro </button>
+                <button className="loginCadastro">  
+                    Login | Cadastro 
+                </button>
             </nav>
 
-            {/* Using styled-jsx so TypeScript does not require a .css declaration file */}
-            <style jsx>{`
-                .navbar {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: 12px 24px;
-                    background: #fff;
-                    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-                }
-
-                .nav-items {
-                    list-style: none;
-                    display: flex;
-                    gap: 16px;
-                    margin: 0;
-                    padding: 0;
-                    align-items: center;
-                }
-
-                .nav-items :global(a) {
-                    color: #111;
-                    text-decoration: none;
-                    font-weight: 500;
-                }
-
-                .auth-button {
-                    background: transparent;
-                    border: 1px solid #ccc;
-                    padding: 6px 12px;
-                    border-radius: 4px;
-                    cursor: pointer;
-                }
-
-                @media (max-width: 640px) {
+            {/* Usando styled-jsx para que o TypeScript não exija um arquivo de declaração .css */}
+            <style jsx>
+                {`
                     .navbar {
-                        flex-direction: column;
-                        gap: 12px;
+                        display: flex;
                         align-items: flex-start;
+                        justify-content: space-around;
+                        background: #fff;
+                        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                        padding: 0;
                     }
-                }
-            `}</style>
+
+                    .nav-items {
+                        list-style: none;
+                        display: flex;
+                        gap: 30px;
+                        margin: 0;
+                        padding: 0;
+                        align-items: center;
+                        font-size: 18px;
+                        margin-top: 10px;
+                    }
+
+                    .nav-items :global(a) {
+                        color: #111;
+                        text-decoration: none;
+                        font-weight: 500;
+                    }
+
+                    .loginCadastro {                     
+                        margin-top: 40px;
+                        background: #FBBC04;
+                        border: 1px solid #ccc;
+                        padding: 6px 12px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        
+
+                    @media (max-width: 640px) {
+                        .navbar {
+                            flex-direction: column;
+                            gap: 10px;
+                            align-items: flex-start;
+                        }
+
+                        .nav-items {
+                        list-style: none;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        margin: 0;
+                        padding: 0;
+                        align-items: flex-end;
+                        font-size: 18px;
+                    }
+
+                `}
+            </style>
         </header>
     );
 }
