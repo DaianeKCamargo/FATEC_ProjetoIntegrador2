@@ -27,9 +27,10 @@ export function NavegationBar() {
             url: "/parceiros",
             label: "Parceiros"
         },
-    ];
+    ]
 
     const pathname = usePathname();
+    console.log(pathname);
 
     return (
         <header>
@@ -90,8 +91,6 @@ export function NavegationBar() {
                                 border-right: 2px solid #333;
                             }
                         }   
-
-
                     }
 
                     @media (max-width: 640px) {
