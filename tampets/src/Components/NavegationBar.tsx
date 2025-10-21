@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavItem, { NavItemInterface } from "./NavItem";
+import { usePathname } from "next/navigation";
 
 export function NavegationBar() {
     const items: NavItemInterface[] = [ 
@@ -28,20 +29,24 @@ export function NavegationBar() {
         },
     ];
 
+    const pathname = usePathname();
+
     return (
         <header>
             <nav className="navbar">
                 <Link href="/">
-                    <Image className="logo" src="/logoTampetsOriginal.png" alt="Logo Tampets" width={250} height={200}/>
+                    <Image className="logo" src="/logoTampetsOriginal.png" alt="Logo Tampets" width={250} height={500}/>
                 </Link>
+
                 <ul className="nav-items">
-                {items.map((items, index) => (
-                    <NavItem 
-                        key={index} 
-                        url={items.url} 
-                        label={items.label} 
-                    />
-                ))}
+                    {items.map((item, index) => (
+                        <NavItem 
+                            key={index} 
+                            url={item.url} 
+                            label={item.label} 
+                            isActive={pathname === item.url}
+                        />
+                    ))}
                 </ul>
 
                 <button className="loginCadastro">  
@@ -59,33 +64,35 @@ export function NavegationBar() {
                         background: #fff;
                         box-shadow: 0 1px 3px rgba(0,0,0,0.08);
                         padding: 0;
-                    }
 
-                    .nav-items {
-                        list-style: none;
-                        display: flex;
-                        gap: 30px;
-                        margin: 0;
-                        padding: 0;
-                        align-items: center;
-                        font-size: 18px;
-                        margin-top: 10px;
-                    }
+                        .nav-items {
+                            list-style: none;
+                            display: flex;
+                            gap: 20px;
+                            margin: 0;
+                            align-items: center;
+                            font-size: 18px;
+                            margin-top: 10px; 
+                        }   
 
-                    .nav-items :global(a) {
-                        color: #111;
-                        text-decoration: none;
-                        font-weight: 500;
-                    }
+                        .loginCadastro {                     
+                            margin-top: 40px;
+                            background: #FBBC04;
+                            border: 1px solid #ccc;
+                            padding: 6px 12px;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            font-family: inherit;
 
-                    .loginCadastro {                     
-                        margin-top: 40px;
-                        background: #FBBC04;
-                        border: 1px solid #ccc;
-                        padding: 6px 12px;
-                        border-radius: 4px;
-                        cursor: pointer;
-                        
+                            &:hover {
+                                background: #f0a8;
+                                border-top: 2px solid #333;
+                                border-right: 2px solid #333;
+                            }
+                        }   
+
+
+                    }
 
                     @media (max-width: 640px) {
                         .navbar {
@@ -93,16 +100,6 @@ export function NavegationBar() {
                             gap: 10px;
                             align-items: flex-start;
                         }
-
-                        .nav-items {
-                        list-style: none;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 10px;
-                        margin: 0;
-                        padding: 0;
-                        align-items: flex-end;
-                        font-size: 18px;
                     }
 
                 `}
