@@ -1,11 +1,12 @@
 .card-desenhado {
-  width: 200px;
+  width: 300px;
+  height: 300px;
   padding: 12px;
   background: white;
   position: relative;
-  margin: 20px auto;
+  margin: 25px auto ;
   border: 2px solid black;
-  border-radius: 4px;
+  border-radius: 7px;
   
   /* Efeito "desenhado à mão" */
   box-shadow: 2px 2px 0 black, -2px -2px 0 black, 1px -1px 0 black, -1px 1px 0 black;
@@ -41,7 +42,7 @@
   border: 2px solid black;
   border-radius: 2px;
   overflow: hidden;
-  height: 120px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
