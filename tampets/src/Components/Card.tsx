@@ -1,15 +1,15 @@
 import Image from "next/image";
-import "./CardDesenhado.css";
+import "./Card.css";
 
-type CardDesenhadoProps = {
+type CardProps = {
   imagem: string;       // caminho da imagem (ex: "/foto.png" ou import)
   titulo: string;       // título que aparece no card
   descricao: string;    // texto/descrição abaixo
 };
 
-export default function CardDesenhado({ imagem, titulo, descricao }: CardDesenhadoProps) {
+export default function Card({ imagem, titulo, descricao }: CardProps) {
   return (
-    <div className="card-desenhado">
+    <div className="card">
       <div className="imagem">
         <Image
           src={imagem}
@@ -25,4 +25,6 @@ export default function CardDesenhado({ imagem, titulo, descricao }: CardDesenha
       </div>
     </div>
   );
+
+  
 }
