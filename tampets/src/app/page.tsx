@@ -15,6 +15,8 @@ export default function Home() {
         <>
         <h1>Página: Home</h1>
         <p>qplLIi - 10</p>
+        <h2>aaaaaaaa</h2>
+        <h3>bbbbbb</h3>
         </>
 
     )
