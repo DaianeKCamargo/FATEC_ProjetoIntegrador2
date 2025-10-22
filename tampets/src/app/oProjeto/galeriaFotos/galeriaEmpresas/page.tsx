@@ -1,4 +1,9 @@
-export default function GaleriaEmpresas() {
+import CardDesenhado from "@/Components/CardDesenhado";
+
+
+export default function GaleriaEmpresas()
+
+{
     return (
       <section>
         <h1 style={{ textAlign: "center", marginBottom: "20px", marginTop: "20px" }}>
