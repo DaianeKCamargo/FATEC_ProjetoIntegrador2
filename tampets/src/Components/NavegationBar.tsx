@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import NavItem, { NavItemInterface } from "./NavItem";
 import { usePathname } from "next/navigation";
+import { FaBarsStaggered } from "react-icons/fa6";
+
 
 export function NavegationBar() {
     const items: NavItemInterface[] = [ 
@@ -21,7 +23,7 @@ export function NavegationBar() {
         },
         {
             url: "/doacoes",
-            label: "Doações"
+            label: "Como Doar"
         },
         {
             url: "/parceiros",
@@ -30,7 +32,6 @@ export function NavegationBar() {
     ]
 
     const pathname = usePathname();
-    console.log(pathname);
 
     return (
         <header>
@@ -49,6 +50,10 @@ export function NavegationBar() {
                         />
                     ))}
                 </ul>
+
+                <button className="menuButton">
+                    <FaBarsStaggered />
+                </button>
 
                 <button className="loginCadastro">  
                     Login | Cadastro 
@@ -74,33 +79,60 @@ export function NavegationBar() {
                             align-items: center;
                             font-size: 18px;
                             margin-top: 10px; 
-                        }   
+                        } 
+                        
+                    }   
 
-                        .loginCadastro {                     
-                            margin-top: 40px;
-                            background: #FBBC04;
-                            border: 1px solid #ccc;
-                            padding: 6px 12px;
-                            border-radius: 4px;
-                            cursor: pointer;
-                            font-family: inherit;
+                    .menuButton {
+                        display: none;
+                        background: transparent;
+                        font-size: 24px;
+                        margin-top: 20px;
+                        cursor: pointer;
 
-                            &:hover {
-                                background: #f0a8;
-                                border-top: 2px solid #333;
-                                border-right: 2px solid #333;
-                            }
-                        }   
                     }
 
-                    @media (max-width: 640px) {
-                        .navbar {
-                            flex-direction: column;
-                            gap: 10px;
-                            align-items: flex-start;
+                    .loginCadastro {                     
+                        margin-top: 40px;
+                        background: #FBBC04;
+                        border: 1px solid #ccc;
+                        padding: 6px 12px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-family: inherit;
+
+                        &:hover {
+                            background: #f0a8;
+                            border-top: 2px solid #333;
+                            border-right: 2px solid #333;
                         }
                     }
+                
 
+                    @media screen and (max-width: 768px) {
+                        .navbar { 
+                            flex-direction: column;
+                            gap: 10px;
+                            align-items: center;
+                        }
+                        
+                        .nav-items {
+                            display: none;
+
+                            &.open {
+                                display: block;
+                            }
+                        }
+
+                        .menuButton {
+                            display: block;
+                            
+                        }
+
+                        .loginCadastro {
+                                Display: none;
+                            }
+                    }
                 `}
             </style>
         </header>
