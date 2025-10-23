@@ -8,10 +8,29 @@ import { cadSchema } from "@/schemas/cadSchema";
 
 export default function Cadastro(){
 
-    interface FormValues {
-        username: string;
+    interface values {
+        username?: string;
         cpf: string;
+        email: string;
+        phone: string;
+        password: string;
+        confirmPassword: string;
     }
+    const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik<values>({
+        initialValues: {
+            username: "",
+            cpf: "",
+            email: "",
+            phone: "",
+            password: "",
+            confirmPassword: "",
+        },
+        validationSchema: cadSchema,
+        onSubmit: (values) => {
+            console.log(values);
+        },
+    });
+
     return(
         <>
         
@@ -59,18 +78,19 @@ export default function Cadastro(){
                             flexDirection: "column", gap: "15px",
                             marginBottom: "20px"
                             }}>
-                            <InputText label="Nome Completo" id="inputName"
-                            placeholder="Digite seu nome completo" />
-                            <InputText label="CPF" id="inputCPF"
-                            placeholder="Digite seu CPF" />
-                            <InputText label="Email" id="inputEmail" type="email"
-                            placeholder="Digite seu email" />
-                            <InputText label="Telefone" id="inputPhone" type="tel"
-                            placeholder="Digite seu telefone" />
-                            <InputText label="Senha" id="inputPassword" type="password"
-                            placeholder="Digite sua senha" />
-                            <InputText label="Confirme a Senha" id="inputConfirmPassword" type="password"
-                            placeholder="Confirme sua senha" />
+                            <InputText label="Nome Completo" id="inputName" name="username" error={errors.username}
+                            placeholder="Digite seu nome completo" value={values.username} onChange={handleChange}/>
+                            <InputText label="CPF" id="inputCPF" name="cpf" error={errors.cpf}
+                            placeholder="Digite seu CPF" value={values.cpf} onChange={handleChange}/>
+                            <InputText label="Email" id="inputEmail" type="email" name="email" error={errors.email}
+                            placeholder="Digite seu email" value={values.email} onChange={handleChange}/>
+                            <InputText label="Telefone" id="inputPhone" type="tel" name="phone" error={errors.phone}
+                            placeholder="Digite seu telefone" value={values.phone} onChange={handleChange}/>
+                            <InputText label="Senha" id="inputPassword" type="password" name="password" error={errors.password}
+                            placeholder="Digite sua senha" value={values.password} onChange={handleChange}/>
+                            <InputText label="Confirme a Senha" id="inputConfirmPassword" type="password" 
+                                name="confirmPassword" error={errors.confirmPassword}
+                            placeholder="Confirme sua senha" value={values.confirmPassword} onChange={handleChange}/>
                         </div>
                         <DivButton text="Cadastrar" onClick={() => {
                             alert("Cadastro realizado com sucesso!");
