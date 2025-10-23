@@ -23,7 +23,7 @@ export function NavegationBar() {
             label: "Ponto de Coleta"
         },
         {
-            url: "/doacoes",
+            url: "/comoDoar",
             label: "Como Doar"
         },
         {
