@@ -1,4 +1,4 @@
-
+import './DivCenter.css';
 import React from 'react';
 export interface DivButtonProps {
     text: string;
@@ -9,16 +9,16 @@ export default function DivButton({ text, onClick }: DivButtonProps) {
     return (
         <div
             onClick={onClick}
+            className='centerdiv'
             style={{
+                
                 backgroundColor: "#D9D9D9",
                 borderRadius: "8px",
                 width: "200px",
                 height: "40px",
                 marginBottom: "10px",
-                marginRight: "30px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                padding: "10px",
+                
                 cursor: "pointer"
             }}
         >
