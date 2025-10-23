@@ -1,0 +1,53 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 700px; /* ← aumente aqui (ex: 600px, 700px, 800px) */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 8px 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+
+.searchBar:focus-within {
+  box-shadow: 0 0 0 2px #0070f3;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 8px 10px;
+  border-radius: 25px;
+  color: #333;
+  background: transparent;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.button {
+  background: #0070f3;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .searchBar {
+    max-width: 90%; /* ocupa quase toda a tela no celular */
+  }
+}
