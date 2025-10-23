@@ -6,8 +6,8 @@ export interface NavItemInterface {
     isActive?: boolean;
 }
 
-export default function NavItem(props: NavItemInterface) { 
-     return (
+export default function NavItem(props: NavItemInterface) {
+    return (
         <>
             <li className="nav-item">
                 <Link href={props.url} className={`nav-link ${props.isActive ? 'active' : ''}`}>
@@ -26,6 +26,8 @@ export default function NavItem(props: NavItemInterface) {
                         border-bottom: 3px solid #fbbc04;
                         }
                     }
+                   
+
                 `}
             </style>
         </>

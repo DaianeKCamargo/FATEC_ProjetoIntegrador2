@@ -129,32 +129,34 @@ export function NavegationBar() {
                     
 
                         @media screen and (max-width: 768px) {
-                            .navbar { 
-                                flex-direction: column;
-                                gap: 10px;
-                                align-items: center;
-                            }
-
-                            .logo {
-                                width: 80%;
-                                height: auto;
-                            }
-                            
-                            .nav-items {
-                                display: none;
-
-                                &.open {
-                                    display: flex;
+                        header {
+                                .navbar { 
+                                    flex-direction: column;
+                                    gap: 10px;
+                                    align-items: center;
                                 }
-                            }
 
-                            .menuButton {
-                                display: block;
+                                .logo {
+                                    width: 80%;
+                                    height: auto;
+                                }
                                 
-                            }
+                                .nav-items {
+                                    display: none;
 
-                            .loginCadastro {
-                                Display: none;
+                                    &.open {
+                                        display: flex;
+                                    }
+                                }
+
+                                .menuButton {
+                                    display: block;
+                                    
+                                }
+
+                                .loginCadastro {
+                                    Display: none;
+                                }
                             }
                         }
                     }
