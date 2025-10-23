@@ -11,9 +11,9 @@ export default function GaleriaEmpresas()
 
         <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center" }}>
           <Card
-            imagem={"/coleta.PNG"}
-            titulo="Pontos de Coleta"
-            descricao="Pontos de Coleta do Projeto!"
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
             className="card"
           />
           <Card
@@ -24,16 +24,42 @@ export default function GaleriaEmpresas()
           /> 
 
           <Card
-            imagem={"/evento.PNG"}
-            titulo="Eventos"
-            descricao="Eventos do Projeto!"
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
             className="card"
           />
 
           <Card
-            imagem={"/tampets112023.webp"}
-            titulo="Escolas"
-            descricao="Escolas que Participam!"
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
+          />
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
+          />
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
+          /> 
+
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
+          />
+
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
             className="card"
           />
         </div>
