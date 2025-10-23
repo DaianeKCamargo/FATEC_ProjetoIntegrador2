@@ -20,16 +20,11 @@ export default function NavItem(props: NavItemInterface) {
                     .nav-item {
                         padding: 4px 0px;
                         transition: color 0.3s ease;
-                    }
 
-                    .nav-item.active {
+                        &.active, &:hover {
                         font-weight: 600;
                         border-bottom: 3px solid #fbbc04;
-                    }
-
-                    .nav-item:hover {
-                        font-weight: 600;
-                        border-bottom: 3px solid #fbbc04;
+                        }
                     }
                 `}
             </style>
