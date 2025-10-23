@@ -28,5 +28,6 @@ export default function Card({ imagem, titulo, descricao, width, className }: Ca
     </div>
   );
 
-  
+
+
 }
