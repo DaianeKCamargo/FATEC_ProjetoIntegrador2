@@ -46,14 +46,19 @@ export default function Cadastro(){
                         borderRadius: "8px",
                         flexDirection: "column",
                     }}>
-                        <InputText label="Nome Completo" id="inputName"
-                        placeholder="Digite seu nome completo" />
-                        <InputText label="Email" id="inputEmail" type="email"
-                        placeholder="Digite seu email" />
-                        <InputText label="Senha" id="inputPassword" type="password"
-                        placeholder="Digite sua senha" />
-                        <InputText label="Confirme a Senha" id="inputConfirmPassword" type="password"
-                        placeholder="Confirme sua senha" />
+                        <div style={{display: "flex", 
+                            flexDirection: "column", gap: "15px",
+                            marginBottom: "20px"
+                            }}>
+                            <InputText label="Nome Completo" id="inputName"
+                            placeholder="Digite seu nome completo" />
+                            <InputText label="Email" id="inputEmail" type="email"
+                            placeholder="Digite seu email" />
+                            <InputText label="Senha" id="inputPassword" type="password"
+                            placeholder="Digite sua senha" />
+                            <InputText label="Confirme a Senha" id="inputConfirmPassword" type="password"
+                            placeholder="Confirme sua senha" />
+                        </div>
                         <DivButton text="Cadastrar" onClick={() => {
                             alert("Cadastro realizado com sucesso!");
                         }} />
