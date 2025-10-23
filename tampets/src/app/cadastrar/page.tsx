@@ -4,38 +4,14 @@ import DivButton from "@/Components/DivButtom";
 import InputText from "@/Components/InputText";
 import { Form } from "react-bootstrap";
 import { useFormik } from "formik";
+import { cadSchema } from "@/schemas/cadSchema";
 
 export default function Cadastro(){
 
-     interface FormValues{
-  username?: string;
-  password?: string;
- }
- const formik = useFormik<FormValues>({
- 
-  initialValues: {
-    username:"",
-    password:"",
-  },
-  //validationSchema: cadSchema, // tem que criar o esquema de validação
-  //função que será executada quando o formulário for enviado
-  onSubmit: (values) => {
-    console.log(values);
-    if(values.username === "admin" &&  values.password === "admin123") {
-    
+    interface FormValues {
+        username: string;
+        cpf: string;
     }
-  }
- });
-
- const { handleSubmit,
-          values,
-          handleChange,
-          errors } = formik; // == formik.handleSubmit
-
-
-    errors.password
-    errors.username
-
     return(
         <>
         
@@ -50,6 +26,7 @@ export default function Cadastro(){
                 window.location.href = "/login";
             }} />
         </div>
+
             <section style={{display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -77,14 +54,19 @@ export default function Cadastro(){
                         borderRadius: "8px",
                         flexDirection: "column",
                     }}>
+
                         <div style={{display: "flex", 
                             flexDirection: "column", gap: "15px",
                             marginBottom: "20px"
                             }}>
                             <InputText label="Nome Completo" id="inputName"
                             placeholder="Digite seu nome completo" />
+                            <InputText label="CPF" id="inputCPF"
+                            placeholder="Digite seu CPF" />
                             <InputText label="Email" id="inputEmail" type="email"
                             placeholder="Digite seu email" />
+                            <InputText label="Telefone" id="inputPhone" type="tel"
+                            placeholder="Digite seu telefone" />
                             <InputText label="Senha" id="inputPassword" type="password"
                             placeholder="Digite sua senha" />
                             <InputText label="Confirme a Senha" id="inputConfirmPassword" type="password"

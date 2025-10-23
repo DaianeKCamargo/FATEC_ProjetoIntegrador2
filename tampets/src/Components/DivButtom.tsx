@@ -1,4 +1,4 @@
-import './DivCenter.css';
+
 import React from 'react';
 export interface DivButtonProps {
     text: string;
@@ -18,7 +18,9 @@ export default function DivButton({ text, onClick }: DivButtonProps) {
                 height: "40px",
                 marginBottom: "10px",
                 padding: "10px",
-                
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 cursor: "pointer"
             }}
         >
