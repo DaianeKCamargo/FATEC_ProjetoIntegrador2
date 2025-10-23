@@ -1,0 +1,28 @@
+import './DivCenter.css';
+import React from 'react';
+export interface DivButtonProps {
+    text: string;
+    onClick: () => String | void;
+}
+
+export default function DivButton({ text, onClick }: DivButtonProps) {
+    return (
+        <div
+            onClick={onClick}
+            className='centerdiv'
+            style={{
+                
+                backgroundColor: "#D9D9D9",
+                borderRadius: "8px",
+                width: "200px",
+                height: "40px",
+                marginBottom: "10px",
+                padding: "10px",
+                
+                cursor: "pointer"
+            }}
+        >
+            <h2 style={{ color: "black" }}>{text}</h2>
+        </div>
+    );
+}

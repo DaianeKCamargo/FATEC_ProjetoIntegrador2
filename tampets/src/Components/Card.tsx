@@ -1,15 +1,17 @@
 import Image from "next/image";
-import "./CardDesenhado.css";
+import "./Card.css";
 
-type CardDesenhadoProps = {
+type CardProps = {
   imagem: string;       // caminho da imagem (ex: "/foto.png" ou import)
   titulo: string;       // título que aparece no card
   descricao: string;    // texto/descrição abaixo
+  width?: number;     // largura opcional
+  className: string;  // classe CSS opcional
 };
 
-export default function CardDesenhado({ imagem, titulo, descricao }: CardDesenhadoProps) {
+export default function Card({ imagem, titulo, descricao, width, className }: CardProps) {
   return (
-    <div className="card-desenhado">
+    <div className={` ${className}`} style={{ width:  `${width}px` || '260px' }}>
       <div className="imagem">
         <Image
           src={imagem}
@@ -25,4 +27,6 @@ export default function CardDesenhado({ imagem, titulo, descricao }: CardDesenha
       </div>
     </div>
   );
+
+  
 }
