@@ -5,11 +5,13 @@ type CardProps = {
   imagem: string;       // caminho da imagem (ex: "/foto.png" ou import)
   titulo: string;       // título que aparece no card
   descricao: string;    // texto/descrição abaixo
+  width?: number;     // largura opcional
+  className: string;  // classe CSS opcional
 };
 
-export default function Card({ imagem, titulo, descricao }: CardProps) {
+export default function Card({ imagem, titulo, descricao, width, className }: CardProps) {
   return (
-    <div className="card">
+    <div className={` ${className}`} style={{ width:  `${width}px` || '260px' }}>
       <div className="imagem">
         <Image
           src={imagem}

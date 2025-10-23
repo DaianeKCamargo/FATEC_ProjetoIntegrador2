@@ -1,4 +1,4 @@
-import CardDesenhado from "@/Components/CardDesenhado";
+import Card from "@/Components/Card";
 
 
 export default function GaleriaEmpresas()
@@ -10,27 +10,57 @@ export default function GaleriaEmpresas()
             TamPets nas Empresas 📸</h1>
 
         <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center" }}>
-          <CardDesenhado
-            imagem={"/coleta.PNG"}
-            titulo="Pontos de Coleta"
-            descricao="Pontos de Coleta do Projeto!"
-          />
-          <CardDesenhado
+          <Card
             imagem={"/tampetszf.jpg"}
             titulo="Empresas"
             descricao="TamPets nas Empresas!"
+            className="card"
+          />
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
           /> 
 
-          <CardDesenhado
-            imagem={"/evento.PNG"}
-            titulo="Eventos"
-            descricao="Eventos do Projeto!"
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
           />
 
-          <CardDesenhado
-            imagem={"/tampets112023.webp"}
-            titulo="Escolas"
-            descricao="Escolas que Participam!"
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
+          />
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
+          />
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
+          /> 
+
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
+          />
+
+          <Card
+            imagem={"/tampetszf.jpg"}
+            titulo="Empresas"
+            descricao="TamPets nas Empresas!"
+            className="card"
           />
         </div>
       </section>
