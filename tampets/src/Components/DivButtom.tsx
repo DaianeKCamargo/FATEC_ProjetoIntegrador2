@@ -2,12 +2,14 @@
 import React from 'react';
 export interface DivButtonProps {
     text: string;
-    onClick: () => String | void;
+    onSubmit?: () => String | void;
+    onClick?: () => void;
 }
 
-export default function DivButton({ text, onClick }: DivButtonProps) {
+export default function DivButton({ text, onSubmit, onClick }: DivButtonProps) {
     return (
         <div
+            onSubmit={onSubmit}
             onClick={onClick}
             className='centerdiv'
             style={{
