@@ -34,6 +34,16 @@ export default function pontoColeta() {
             <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
                  <SearchBar placeholder="Buscar ponto de coleta..." onSearch={handleSearch} />
             </div>
+            <div>
+                {locaisColeta.map((local, index) => (
+                    <div key={index} style={{ border: "1px solid #ccc", padding: "10px", margin: "10px 0" }}>
+                        <h3>{local.nome_estabelecimento}</h3>
+                        <p>{local.endereco}</p>
+                        <p>{local.telefone}</p>
+                        <p>{local.horario_funcionamento}</p>
+                    </div>
+                ))}
+            </div>
          </section>
     )
 }
