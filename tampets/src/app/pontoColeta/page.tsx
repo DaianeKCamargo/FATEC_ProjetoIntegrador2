@@ -1,10 +1,24 @@
 'use client';
 import SearchBar from "@/Components/SearchBar";
+import { useState } from "react";
 
 
 export default function pontoColeta() {
     const handleSearch = (query: string) => {
     console.log("Busca:", query);
+
+    const [locaisColeta, setLocaisColeta] = useState<any[]>([]);
+    fetch("http://localhost:3000/api/locaisPontoColeta",{
+            method: "GET"
+        }).then (async (response) => { // depende da ação anterior 
+            // response -> resposta da chamada à API
+            const resposta = await response.json(); // promisse -> asyncrona
+            setLocaisColeta(resposta);
+            console.log(resposta);
+        }
+        // a lógica que tiver aqui fora, não depende da reposta
+    },[]);
+
   };
     return (
          <section  style={{
