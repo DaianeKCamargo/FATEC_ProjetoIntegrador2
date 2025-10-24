@@ -61,7 +61,9 @@ export function NavegationBar() {
                     {openMenu ? <FaXmark /> : <FaBarsStaggered />}
                 </button>
 
-                <button className="loginCadastro">
+                <button className="loginCadastro" onClick={() => {
+                window.location.href = "/cadastrar";
+            }}>
                     Login | Cadastro
                 </button>
             </nav>
