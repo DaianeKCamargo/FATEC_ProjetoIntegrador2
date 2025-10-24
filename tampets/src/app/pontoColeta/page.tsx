@@ -1,14 +1,16 @@
 'use client';
 import SearchBar from "@/Components/SearchBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function pontoColeta() {
     const handleSearch = (query: string) => {
     console.log("Busca:", query);
     };
-
+    
     const [locaisColeta, setLocaisColeta] = useState<any[]>([]);
+
+    useEffect(() => {
     fetch("http://localhost:3000/api/locaisPontoColeta",{
             method: "GET"
         }).then (async (response) => { // depende da ação anterior 
@@ -17,6 +19,7 @@ export default function pontoColeta() {
             setLocaisColeta(resposta);
             console.log(resposta);
         })
+    }, []); // Adicionando dependências vazias para executar apenas uma vez na montagem
 
   
     return (
