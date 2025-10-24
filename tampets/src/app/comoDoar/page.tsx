@@ -1,5 +1,5 @@
-export default function doacoes() {
+export default function comoDoar() {
     return (
-        <h1>Página: Doações</h1>
+        <h1>Página: Como Doar</h1>
     )
 }
