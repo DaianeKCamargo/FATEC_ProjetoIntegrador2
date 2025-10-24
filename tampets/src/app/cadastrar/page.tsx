@@ -2,7 +2,7 @@
 
 import DivButton from "@/Components/DivButtom";
 import InputText from "@/Components/InputText";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import { cadSchema } from "@/schemas/cadSchema";
 
@@ -27,8 +27,8 @@ export default function Cadastro(){
         },
         validationSchema: cadSchema,
         onSubmit: (values) => {
-            console.log(values);
-        },
+            alert("Formulário enviado com sucesso: " + JSON.stringify(values));
+        }
     });
 
     return(
@@ -65,7 +65,7 @@ export default function Cadastro(){
                     
                 }}>
                     <h1>Cadastre-se</h1>
-                    <Form style={{width: "400px", marginTop: "20px",
+                    <Form  onSubmit={handleSubmit} style={{width: "400px", marginTop: "20px",
                         backgroundColor: "#ffffff", 
                         boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
                         display: "flex",
@@ -75,26 +75,29 @@ export default function Cadastro(){
                     }}>
 
                         <div style={{display: "flex", 
-                            flexDirection: "column", gap: "15px",
-                            marginBottom: "20px"
+                            flexDirection: "column", gap: "15px"
                             }}>
                             <InputText label="Nome Completo" id="inputName" name="username" error={errors.username}
-                            placeholder="Digite seu nome completo" value={values.username} onChange={handleChange}/>
+                                placeholder="Digite seu nome completo" value={values.username} onChange={handleChange}/>
                             <InputText label="CPF" id="inputCPF" name="cpf" error={errors.cpf}
-                            placeholder="Digite seu CPF" value={values.cpf} onChange={handleChange}/>
+                                placeholder="Digite seu CPF" value={values.cpf} onChange={handleChange}/>
                             <InputText label="Email" id="inputEmail" type="email" name="email" error={errors.email}
-                            placeholder="Digite seu email" value={values.email} onChange={handleChange}/>
+                                placeholder="Digite seu email" value={values.email} onChange={handleChange}/>
                             <InputText label="Telefone" id="inputPhone" type="tel" name="phone" error={errors.phone}
-                            placeholder="Digite seu telefone" value={values.phone} onChange={handleChange}/>
-                            <InputText label="Senha" id="inputPassword" type="password" name="password" error={errors.password}
-                            placeholder="Digite sua senha" value={values.password} onChange={handleChange}/>
+                                placeholder="Digite seu telefone" value={values.phone} onChange={handleChange}/>
+                            <InputText label="Senha" id="inputPassword" type="password" 
+                                name="password" error={errors.password}
+                                placeholder="Digite sua senha" value={values.password} onChange={handleChange}/>
                             <InputText label="Confirme a Senha" id="inputConfirmPassword" type="password" 
                                 name="confirmPassword" error={errors.confirmPassword}
-                            placeholder="Confirme sua senha" value={values.confirmPassword} onChange={handleChange}/>
+                                placeholder="Confirme sua senha" value={values.confirmPassword} onChange={handleChange}/>
                         </div>
-                        <DivButton text="Cadastrar" onClick={() => {
-                            alert("Cadastro realizado com sucesso!");
-                        }} />
+                        <div style={{display: "flex",
+                            flexDirection: "row", marginTop: "10px",
+                            justifyContent: "space-evenly",
+                        }}>
+                            <Button type="submit">Cadastrar</Button>
+                        </div>
                     </Form>
                 </div>
             </section>
