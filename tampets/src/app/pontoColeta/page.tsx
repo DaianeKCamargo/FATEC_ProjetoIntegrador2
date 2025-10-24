@@ -36,7 +36,7 @@ export default function pontoColeta() {
             </div>
             <div>
                 {locaisColeta.map((local, index) => (
-                    <div key={index} style={{ border: "1px solid #ccc", padding: "10px", margin: "10px 0" }}>
+                    <div key={index} style={{ border: "1px solid #ccc", padding: "10px", margin: "10px 0", background: "#fff"}}>
                         <h3>{local.nome_estabelecimento}</h3>
                         <p>{local.endereco}</p>
                         <p>{local.telefone}</p>
