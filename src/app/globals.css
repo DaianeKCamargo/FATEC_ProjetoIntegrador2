@@ -11,7 +11,31 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
 }
+
+@media (max-width: 768px) {
+    /* tira a configuração padrão da imagem-logo */
+  img {
+    max-width: 50%;
+    height: auto;
+  }
+
+  svg {
+    vertical-align: 0;
+  }
+}
+.news-container {
+  display: flex;            /* deixa os cards em linha */
+  flex-wrap: wrap;          /* permite que quebrem a linha se não couberem */
+  gap: 20px;                /* espaço entre os cards */
+  justify-content: center;  /* centraliza os cards na página */
+  padding: 20px;
+}
+

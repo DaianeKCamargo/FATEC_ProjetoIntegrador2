@@ -1,5 +1,9 @@
+import TamPetsSection from "@/Components/TampetsSection";
+
 export default function oProjeto() {
     return (
-        <h1>Página: O Projeto</h1>
+        <section>
+            <TamPetsSection monthlyWeight={4.3}></TamPetsSection>
+        </section>
     )
 }
