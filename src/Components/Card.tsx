@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./Card.css";
+import "../style/Card.css";
 
 type CardProps = {
   imagem: string;       // caminho da imagem (ex: "/foto.png" ou import)
