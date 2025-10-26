@@ -31,3 +31,11 @@ body {
     vertical-align: 0;
   }
 }
+.news-container {
+  display: flex;            /* deixa os cards em linha */
+  flex-wrap: wrap;          /* permite que quebrem a linha se não couberem */
+  gap: 20px;                /* espaço entre os cards */
+  justify-content: center;  /* centraliza os cards na página */
+  padding: 20px;
+}
+

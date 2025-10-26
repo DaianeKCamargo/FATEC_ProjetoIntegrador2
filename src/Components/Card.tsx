@@ -18,7 +18,7 @@ export default function Card({ imagem, titulo, descricao, width, className }: Ca
           alt={titulo}
           width={200}     // tamanho base
           height={200}
-          className="foto"
+          className=""
         />
       </div>
       <div className="texto">
