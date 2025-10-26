@@ -40,13 +40,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ``` Formik
 npm install formik --save
 
-``` React Icons
+``` React Icons (https://react-icons.github.io/react-icons/)
 npm install react-icons --save
 
 ``` API google
 npm i -S @react-google-maps/api
 
+``` yup
+npm install yup
 
 
+``` Pages GitHub
+npm install gh-pages --save-dev
 
 
