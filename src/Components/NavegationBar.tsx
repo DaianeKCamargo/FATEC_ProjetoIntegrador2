@@ -45,37 +45,44 @@ export function NavegationBar() {
     return (
         <header>
             <nav className="navbar">
+                <div className="imgLogo">
+                    <Link href="/">
+                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={300} height={300} />
+                    </Link>
+                </div>
 
-                <Link href="/">
-                    <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={300} height={300} />
-                </Link>
+                <div className="navPages">
+                    <ul className={`nav-items ${openMenu ? 'open' : ''}`}>
+                        {items.map((item, index) => (
+                            <NavItem
+                                key={index}
+                                url={item.url}
+                                label={item.label}
+                                isActive={pathname === item.url}
+                            />
+                        ))}
+                    </ul>
+                </div>
 
-                <ul className={`nav-items ${openMenu ? 'open' : ''}`}>
-                    {items.map((item, index) => (
-                        <NavItem
-                            key={index}
-                            url={item.url}
-                            label={item.label}
-                            isActive={pathname === item.url}
-                        />
-                    ))}
-                </ul>
-
+                {/* Icone Hamburger da Barra de Navegação Mobile */}
                 <button className="menuButton" onClick={() => setOpenMenu(!openMenu)}>
                     {openMenu ? <FaXmark /> : <FaBarsStaggered />}
                 </button>
 
-                 <button className="loginButton" onClick={() => {router.push('/login');}}>
-                            <BsPersonHeart />
+                {/* Icone de Login da Barra de Navegação Mobile */}
+                <button className="loginButton" onClick={() => { router.push('/login'); }}>
+                    <BsPersonHeart />
                 </button>
 
-                <button className="loginCadastro" onClick={() => {router.push('/login');}}>
+
+                {/* Botão de Login/Cadastro para Desktop */}
+                <button className="loginCadastro" onClick={() => { router.push('/login'); }}>
                     Login | Cadastro
                 </button>
-            
 
 
-            {/* Usando styled-jsx para que o TypeScript não exija um arquivo de declaração .css */}
+
+                {/* Usando styled-jsx para que o TypeScript não exija um arquivo de declaração .css */}
                 <style jsx>
                     {` 
                         .navbar {
@@ -83,37 +90,37 @@ export function NavegationBar() {
                             align-items: flex-start;
                             justify-content: space-around;
                             background: #fff;
-                            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-                            padding: 10px 20px;
+                            box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.08);
+                            padding: 1rem 2rem;
                         } 
 
                         .nav-items {
                             list-style: none;
                             display: flex;
-                            gap: 20px;
+                            gap: 2rem;
                             margin: 0;
                             align-items: center;
-                            font-size: 18px;
-                            margin-top: 10px; 
+                            font-size: 1.8rem;
+                            margin-top: 1rem; 
                         }
 
                         .nav-items.open {
                             flex-direction: column;
                             position: absolute;
-                            top: 90px;
-                            left: 360px;
+                            top: 9rem;
+                            left: 36rem;
                             widht: 100%;
                             background-color: #fff;
-                            padding: 10px; 
-                            border: 1px solid #ccc;
-                            box-shadow: 0 4px 8px rgba(0,0,0,0.1);                          
+                            padding: 1rem; 
+                            border: 0.1rem solid #ccc;
+                            box-shadow: 0 0.4rem 0.8rem rgba(0,0,0,0.1);                          
                         }
 
                         .menuButton {
                             display: none;
                             background: transparent;
-                            font-size: 24px;
-                            margin-top: 20px;
+                            font-size: 2.4rem;
+                            margin-top: 2rem;
                             cursor: pointer;
 
                         }
@@ -123,34 +130,31 @@ export function NavegationBar() {
                         }
 
                         .loginCadastro {                     
-                            margin-top: 40px;
+                            margin-top: 4rem;
                             background: #FBBC04;
-                            border: 1px solid #ccc;
-                            padding: 6px 12px;
-                            border-radius: 4px;
+                            border: 0.1rem solid #ccc;
+                            padding: 0.6rem 1.2rem;
+                            border-radius: 0.4rem;
                             cursor: pointer;
                             font-family: inherit;
+                            font-size: 1.6rem;
+                            font-weight: 500;
+                            transition: background 0.3s ease, border-top 0.3s ease, border-right 0.3s ease;
                         }
 
-                        loginCadastro:hover {
+                        .loginCadastro:hover {
                             background: #f0a8;
-                            border-top: 2px solid #333;
-                            border-right: 2px solid #333;
+                            border-top: 0.1rem solid #333;
+                            border-right: 0.1rem solid #333;
                         }
                         
 
                         @media screen and (max-width: 768px) {
                         
                             .navbar { 
-                                justify-content: space-between;
+                                justify-content: space-around;
                                 align-items: center;
                                 flex-direction: row;
-                                gap: 10px;
-                            }
-
-                            .logo {
-                                width: 80%;
-                                height: auto;
                             }
                                 
                             .nav-items {
@@ -164,15 +168,22 @@ export function NavegationBar() {
 
                             .menuButton {
                                 display: block;
-                                
+                                background: transparent;
+                                font-size: 2.4rem;
+                                margin-top: 0.2rem;
+                                cursor: pointer;
+                                padding-right: 3rem;
                             }
                             
                             .loginButton {
                                 display: block;
                                 background: transparent;
-                                font-size: 24px;
-                                margin-top: 20px;
+                                font-size: 2.4rem;
+                                margin-top: 0.2rem;
                                 cursor: pointer;
+                                border-left: 0.3rem solid #333;
+                                padding-left: 4rem;
+
                             }
 
                             .loginCadastro {

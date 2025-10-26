@@ -11,7 +11,23 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+@media (max-width: 768px) {
+    /* tira a configuração padrão da imagem-logo */
+  img {
+    max-width: 50%;
+    height: auto;
+  }
+
+  svg {
+    vertical-align: 0;
+  }
 }
