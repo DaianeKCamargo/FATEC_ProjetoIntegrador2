@@ -11,7 +11,7 @@ type CardProps = {
 
 export default function Card({ imagem, titulo, descricao, width, className }: CardProps) {
   return (
-    <div className={` ${className}`} style={{ width:  `${width}px` || '260px' }}>
+    <div className={` ${className}`} style={{ width: width ? `${width}px` : '260px' }}>
       <div className="imagem">
         <Image
           src={imagem}
