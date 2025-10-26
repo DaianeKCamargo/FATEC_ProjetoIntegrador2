@@ -47,7 +47,7 @@ export function NavegationBar() {
             <nav className="navbar">
                 <div className="imgLogo">
                     <Link href="/">
-                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={300} height={300} />
+                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={200} height={300} />
                     </Link>
                 </div>
 
@@ -107,7 +107,7 @@ export function NavegationBar() {
                         .nav-items.open {
                             flex-direction: column;
                             position: absolute;
-                            top: 9rem;
+                            top: 6rem;
                             left: 36rem;
                             widht: 100%;
                             background-color: #fff;
