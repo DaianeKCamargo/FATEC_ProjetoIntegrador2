@@ -10,9 +10,7 @@ export default function NavItem(props: NavItemInterface) {
     return (
         <>
             <li className={`nav-item ${props.isActive ? 'active' : ''}`}>
-                <Link href={props.url} className="nav-link">
-                    {props.label}
-                </Link>
+                <Link href={props.url} className="nav-link"> {props.label} </Link>
             </li>
 
             <style jsx>
