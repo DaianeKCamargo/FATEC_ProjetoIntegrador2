@@ -2,23 +2,25 @@ import Image from "next/image";
 import "../style/Card.css";
 
 type CardProps = {
-  imagem: string;       // caminho da imagem (ex: "/foto.png" ou import)
-  titulo: string;       // título que aparece no card
-  descricao: string;    // texto/descrição abaixo
-  width?: number;     // largura opcional
-  className: string;  // classe CSS opcional
+  imagem: string;
+  titulo: string;
+  descricao: string;
+  width?: number;
+  className?: string;
 };
 
 export default function Card({ imagem, titulo, descricao, width, className }: CardProps) {
   return (
-    <div className={` ${className}`} style={{ width: width ? `${width}px` : '260px' }}>
+    <div
+      className={`card ${className ? className : ""}`}
+      style={{ width: width ? `${width}px` : "260px" }}
+    >
       <div className="imagem">
         <Image
           src={imagem}
           alt={titulo}
-          width={200}     // tamanho base
-          height={200}
-          className=""
+          fill                   // faz a imagem ocupar 100% do contêiner
+          className="foto"       // importante! aplica o estilo CSS de object-fit e hover
         />
       </div>
       <div className="texto">
@@ -27,7 +29,4 @@ export default function Card({ imagem, titulo, descricao, width, className }: Ca
       </div>
     </div>
   );
-
-
-
 }
