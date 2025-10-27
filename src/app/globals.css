@@ -14,7 +14,8 @@
 }
 
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
+  /* 1rem = 10px */
 }
 
 body {
@@ -23,7 +24,11 @@ body {
 }
 
 
- /* NAVBAR */
+/* NAVBAR */
+.nav-link{
+  font-size: 1.8rem; /* padronização da fonte na navbar em 'sobre nós' */
+}
+
 .dropdown-item {
   font-size: 1.4rem;
   font-family: inherit;
@@ -35,19 +40,23 @@ body {
   border-bottom: 3px solid #fbbc04;
 }
 
- /* TAMPETS NA MÍDIA */
+/* TAMPETS NA MÍDIA */
 .news-container {
-  display: flex;            /* deixa os cards em linha */
-  flex-wrap: wrap;          /* permite que quebrem a linha se não couberem */
-  gap: 2rem;                /* espaço entre os cards */
-  justify-content: center;  /* centraliza os cards na página */
+  display: flex;
+  /* deixa os cards em linha */
+  flex-wrap: wrap;
+  /* permite que quebrem a linha se não couberem */
+  gap: 2rem;
+  /* espaço entre os cards */
+  justify-content: center;
+  /* centraliza os cards na página */
   padding: 2rem;
 }
 
 /*  ESTILO PARA MOBILE */
 @media (max-width: 768px) {
-  
-    /* tira a configuração padrão da imagem-logo */
+
+  /* tira a configuração padrão da imagem-logo */
   img {
     max-width: 50%;
     height: auto;
@@ -57,6 +66,3 @@ body {
     vertical-align: 0;
   }
 }
-
-
-
