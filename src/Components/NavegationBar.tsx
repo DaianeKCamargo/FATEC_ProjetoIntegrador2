@@ -56,9 +56,9 @@ export function NavegationBar() {
                     <ul className={`nav-items ${openMenu ? 'open' : ''}`}>
                         <li className="dropdown">
                             <NavDropdown title="O Projeto" className="nav-dropdown">
-                                <NavDropdown.Item className="drop-item" href="/oProjeto">Sobre Nós</NavDropdown.Item>
-                                <NavDropdown.Item className="drop-item" href="/oProjeto/naMidia">Tampets na Mídia</NavDropdown.Item>
-                                <NavDropdown.Item className="drop-item" href="/oProjeto/galeriaFotos">Galeria de Fotos</NavDropdown.Item>
+                                <NavDropdown.Item href="/oProjeto">Sobre Nós</NavDropdown.Item>
+                                <NavDropdown.Item href="/oProjeto/naMidia">Tampets na Mídia</NavDropdown.Item>
+                                <NavDropdown.Item href="/oProjeto/galeriaFotos">Galeria de Fotos</NavDropdown.Item>
                             </NavDropdown>
                         </li>
                         {items.map((item, index) => (
@@ -117,11 +117,6 @@ export function NavegationBar() {
                         .dropdown:hover {
                             font-weight: 600;
                             border-bottom: 3px solid #fbbc04;
-                        }
-
-                        .drop-item {
-                            font-size: 1.6rem;
-                            font-family: inherit;
                         }
 
 

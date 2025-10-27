@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+/* GERAL */
 :root {
   --background: #f0f0f0;
   --foreground: #333333;
@@ -20,6 +22,20 @@ body {
   color: var(--foreground);
 }
 
+
+ /* NAVBAR */
+.dropdown-item {
+  font-size: 1.4rem;
+  font-family: inherit;
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
+  font-weight: 600;
+  border-bottom: 3px solid #fbbc04;
+}
+
+ /* TAMPETS NA MÍDIA */
 .news-container {
   display: flex;            /* deixa os cards em linha */
   flex-wrap: wrap;          /* permite que quebrem a linha se não couberem */
