@@ -46,7 +46,7 @@ export function NavegationBar() {
     return (
         <header>
             <nav className="navbar">
-                <div className="imgLogo">
+                <div>
                     <Link href="/">
                         <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={200} height={300} priority />
                     </Link>
@@ -54,11 +54,11 @@ export function NavegationBar() {
 
                 <div className="navPage">
                     <ul className={`nav-items ${openMenu ? 'open' : ''}`}>
-                        <li>
+                        <li className="dropdown">
                             <NavDropdown title="O Projeto" className="nav-dropdown">
-                                <NavDropdown.Item href="/oProjeto">Sobre Nós</NavDropdown.Item>
-                                <NavDropdown.Item href="/oProjeto/naMidia">Tampets na Mídia</NavDropdown.Item>
-                                <NavDropdown.Item href="/oProjeto/galeriaFotos">Galeria de Fotos</NavDropdown.Item>
+                                <NavDropdown.Item className="drop-item" href="/oProjeto">Sobre Nós</NavDropdown.Item>
+                                <NavDropdown.Item className="drop-item" href="/oProjeto/naMidia">Tampets na Mídia</NavDropdown.Item>
+                                <NavDropdown.Item className="drop-item" href="/oProjeto/galeriaFotos">Galeria de Fotos</NavDropdown.Item>
                             </NavDropdown>
                         </li>
                         {items.map((item, index) => (
@@ -100,22 +100,30 @@ export function NavegationBar() {
                             background: #fff;
                             box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.08);
                             padding: 1rem 2rem;
+                            font-size: 1.8rem;
                         } 
 
-                        .nav-dropdown {
+                        .dropdown {
                             padding: 4px 0px;
                             transition: color 0.3s ease;
+                            font-family: inherit;
                         }
 
-                        .nav-dropdown.active {
+                        .dropdown.active {
                             font-weight: 600;
                             border-bottom: 3px solid #fbbc04;
                         } 
                         
-                        .nav-dropdown:hover {
+                        .dropdown:hover {
                             font-weight: 600;
                             border-bottom: 3px solid #fbbc04;
                         }
+
+                        .drop-item {
+                            font-size: 1.6rem;
+                            font-family: inherit;
+                        }
+
 
                         .nav-items {
                             list-style: none;
@@ -123,7 +131,6 @@ export function NavegationBar() {
                             gap: 2rem;
                             margin: 0;
                             align-items: center;
-                            font-size: 1.8rem;
                             margin-top: 1rem; 
                         }
 
@@ -142,7 +149,6 @@ export function NavegationBar() {
                         .menuButton {
                             display: none;
                             background: transparent;
-                            font-size: 2.4rem;
                             margin-top: 2rem;
                             cursor: pointer;
 
@@ -160,7 +166,6 @@ export function NavegationBar() {
                             border-radius: 0.4rem;
                             cursor: pointer;
                             font-family: inherit;
-                            font-size: 1.6rem;
                             font-weight: 500;
                             transition: background 0.3s ease, border-top 0.3s ease, border-right 0.3s ease;
                         }
@@ -191,7 +196,6 @@ export function NavegationBar() {
                             .menuButton {
                                 display: block;
                                 background: transparent;
-                                font-size: 2.4rem;
                                 margin-top: 0.2rem;
                                 cursor: pointer;
                                 padding-right: 3rem;
@@ -200,7 +204,6 @@ export function NavegationBar() {
                             .loginButton {
                                 display: block;
                                 background: transparent;
-                                font-size: 2.4rem;
                                 margin-top: 0.2rem;
                                 cursor: pointer;
                                 border-left: 0.3rem solid #333;
