@@ -2,6 +2,7 @@
 import Card from "@/Components/Card";
 
 
+
 export default function galeriaColetas() {
     return (
         <section>
@@ -15,12 +16,14 @@ export default function galeriaColetas() {
             </div>
             <div style={{marginBottom:"10px", marginTop:"10px",
                  display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center"    }}>
-                <Card
+                
+                <Card 
                             imagem={"/coleta.PNG"}
                             titulo="Coleta TamPets"
                             descricao="Coleta das tampinhas no centro tal"
                             className="card"
                 />
+                
                 <Card
                            imagem={"/coleta.PNG"}
                             titulo="Coleta TamPets"
