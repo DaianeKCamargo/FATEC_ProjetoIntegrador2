@@ -46,31 +46,28 @@ export function NavegationBar() {
     return (
         <header>
             <nav className="navbar">
-                <div>
-                    <Link href="/">
-                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={200} height={300} priority />
-                    </Link>
-                </div>
+                <Link href="/">
+                    <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={200} height={300} priority />
+                </Link>
 
-                <div className="navPage">
-                    <ul className={`nav-items ${openMenu ? 'open' : ''}`}>
-                        <li className="dropdown">
-                            <NavDropdown title="O Projeto" className="nav-dropdown">
-                                <NavDropdown.Item href="/oProjeto">Sobre Nós</NavDropdown.Item>
-                                <NavDropdown.Item href="/oProjeto/naMidia">Tampets na Mídia</NavDropdown.Item>
-                                <NavDropdown.Item href="/oProjeto/galeriaFotos">Galeria de Fotos</NavDropdown.Item>
-                            </NavDropdown>
-                        </li>
-                        {items.map((item, index) => (
-                            <NavItem
-                                key={index}
-                                url={item.url}
-                                label={item.label}
-                                isActive={pathname === item.url}
-                            />
-                        ))}
-                    </ul>
-                </div>
+
+                <ul className={`nav-items ${openMenu ? 'open' : ''}`}>
+                    <li className="dropdown">
+                        <NavDropdown title="O Projeto" className="nav-dropdown">
+                            <NavDropdown.Item href="/oProjeto">Sobre Nós</NavDropdown.Item>
+                            <NavDropdown.Item href="/oProjeto/naMidia">Tampets na Mídia</NavDropdown.Item>
+                            <NavDropdown.Item href="/oProjeto/galeriaFotos">Galeria de Fotos</NavDropdown.Item>
+                        </NavDropdown>
+                    </li>
+                    {items.map((item, index) => (
+                        <NavItem
+                            key={index}
+                            url={item.url}
+                            label={item.label}
+                            isActive={pathname === item.url}
+                        />
+                    ))}
+                </ul>
 
                 {/* Icone Hamburger da Barra de Navegação Mobile */}
                 <button className="menuButton" onClick={() => setOpenMenu(!openMenu)}>
