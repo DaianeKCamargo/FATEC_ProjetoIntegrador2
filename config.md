@@ -53,4 +53,5 @@ npm install yup
 ``` Pages GitHub
 npm install gh-pages --save-dev
 
-
+``Biblioteca lucide-react
+npm install lucide-react
