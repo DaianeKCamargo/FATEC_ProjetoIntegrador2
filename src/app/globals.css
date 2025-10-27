@@ -25,9 +25,6 @@ body {
 
 
 /* NAVBAR */
-.nav-link{
-  font-size: 1.8rem; /* padronização da fonte na navbar em 'sobre nós' */
-}
 
 .dropdown-item {
   font-size: 1.4rem;
