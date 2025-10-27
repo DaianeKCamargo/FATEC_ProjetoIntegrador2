@@ -20,7 +20,17 @@ body {
   color: var(--foreground);
 }
 
+.news-container {
+  display: flex;            /* deixa os cards em linha */
+  flex-wrap: wrap;          /* permite que quebrem a linha se não couberem */
+  gap: 2rem;                /* espaço entre os cards */
+  justify-content: center;  /* centraliza os cards na página */
+  padding: 2rem;
+}
+
+/*  ESTILO PARA MOBILE */
 @media (max-width: 768px) {
+  
     /* tira a configuração padrão da imagem-logo */
   img {
     max-width: 50%;
@@ -31,11 +41,6 @@ body {
     vertical-align: 0;
   }
 }
-.news-container {
-  display: flex;            /* deixa os cards em linha */
-  flex-wrap: wrap;          /* permite que quebrem a linha se não couberem */
-  gap: 20px;                /* espaço entre os cards */
-  justify-content: center;  /* centraliza os cards na página */
-  padding: 20px;
-}
+
+
 

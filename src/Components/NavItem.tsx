@@ -9,8 +9,8 @@ export interface NavItemInterface {
 export default function NavItem(props: NavItemInterface) {
     return (
         <>
-            <li className="nav-item">
-                <Link href={props.url} className={`nav-link ${props.isActive ? 'active' : ''}`}>
+            <li className={`nav-item ${props.isActive ? 'active' : ''}`}>
+                <Link href={props.url} className="nav-link">
                     {props.label}
                 </Link>
             </li>

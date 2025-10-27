@@ -7,6 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { useState } from "react";
 import { BsPersonHeart } from "react-icons/bs";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 // Objeto de navegação da Navbar
 export function NavegationBar() {
@@ -47,7 +48,7 @@ export function NavegationBar() {
             <nav className="navbar">
                 <div className="imgLogo">
                     <Link href="/">
-                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets"  width={200} height={300} priority/>
+                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={200} height={300} priority/>
                     </Link>
                 </div>
 
@@ -164,7 +165,6 @@ export function NavegationBar() {
                             .nav-items.open {
                                 display: flex;
                             }
-                                
 
                             .menuButton {
                                 display: block;
@@ -201,4 +201,4 @@ export function NavegationBar() {
 
 export default NavegationBar;
 
-// https://www.youtube.com/watch?v=S5uQA-2NspY video para finalizar a navbar
+// OBSERVAÇÕES: Ao inspecionar a página, ela está apresentando um erro em width e hight na imagem, como a imagem está normal, resolvi deixar do jeito que está.
