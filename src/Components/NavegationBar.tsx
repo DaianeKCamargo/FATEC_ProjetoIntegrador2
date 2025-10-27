@@ -47,7 +47,7 @@ export function NavegationBar() {
             <nav className="navbar">
                 <div className="imgLogo">
                     <Link href="/">
-                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={200} height={300} />
+                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets"  width={200} height={300} priority/>
                     </Link>
                 </div>
 
@@ -107,8 +107,8 @@ export function NavegationBar() {
                         .nav-items.open {
                             flex-direction: column;
                             position: absolute;
-                            top: 6rem;
-                            left: 36rem;
+                            top: 70%;
+                            left: 45%;
                             widht: 100%;
                             background-color: #fff;
                             padding: 1rem; 
@@ -130,7 +130,7 @@ export function NavegationBar() {
                         }
 
                         .loginCadastro {                     
-                            margin-top: 4rem;
+                            margin-top: 1rem;
                             background: #FBBC04;
                             border: 0.1rem solid #ccc;
                             padding: 0.6rem 1.2rem;
