@@ -7,15 +7,15 @@ import { usePathname, useRouter } from "next/navigation";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { useState } from "react";
 import { BsPersonHeart } from "react-icons/bs";
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavDropdown } from "react-bootstrap";
 
 // Objeto de navegação da Navbar
 export function NavegationBar() {
     const items: NavItemInterface[] = [
-        {
-            url: "/oProjeto",
-            label: "O Projeto"
-        },
+        // {
+        //     url: "/oProjeto",
+        //     label: "O Projeto"
+        // },
         {
             url: "/relatorio",
             label: "Relatório"
@@ -48,12 +48,19 @@ export function NavegationBar() {
             <nav className="navbar">
                 <div className="imgLogo">
                     <Link href="/">
-                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={200} height={300} priority/>
+                        <Image className="logo" src="/logoTampets2.png" alt="Logo Tampets" width={200} height={300} priority />
                     </Link>
                 </div>
 
-                <div className="navPages">
+                <div className="navPage">
                     <ul className={`nav-items ${openMenu ? 'open' : ''}`}>
+                        <li>
+                            <NavDropdown title="O Projeto" className="nav-dropdown">
+                                <NavDropdown.Item href="/oProjeto">Sobre Nós</NavDropdown.Item>
+                                <NavDropdown.Item href="/oProjeto/naMidia">Tampets na Mídia</NavDropdown.Item>
+                                <NavDropdown.Item href="/oProjeto/galeriaFotos">Galeria de Fotos</NavDropdown.Item>
+                            </NavDropdown>
+                        </li>
                         {items.map((item, index) => (
                             <NavItem
                                 key={index}
@@ -94,6 +101,21 @@ export function NavegationBar() {
                             box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.08);
                             padding: 1rem 2rem;
                         } 
+
+                        .nav-dropdown {
+                            padding: 4px 0px;
+                            transition: color 0.3s ease;
+                        }
+
+                        .nav-dropdown.active {
+                            font-weight: 600;
+                            border-bottom: 3px solid #fbbc04;
+                        } 
+                        
+                        .nav-dropdown:hover {
+                            font-weight: 600;
+                            border-bottom: 3px solid #fbbc04;
+                        }
 
                         .nav-items {
                             list-style: none;
