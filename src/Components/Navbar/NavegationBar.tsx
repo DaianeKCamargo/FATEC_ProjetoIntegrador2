@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import NavItem, { NavItemInterface } from "./NavItem";
+import NavItem, { NavItemInterface } from "../Navbar/NavItem";
 import { usePathname, useRouter } from "next/navigation";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { useState } from "react";

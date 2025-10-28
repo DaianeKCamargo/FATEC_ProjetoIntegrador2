@@ -1,5 +1,5 @@
 import { Noto_Sans_JP } from 'next/font/google';
-import NavegationBar from "@/Components/NavegationBar";
+import NavegationBar from "@/Components/Navbar/NavegationBar";
 // @ts-ignore: allow side-effect import for global CSS without type declarations
 import './globals.css';
 import Footer from '@/Components/footer';
