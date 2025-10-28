@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent, ChangeEvent } from "react";
-import styles from "../style/SearchBar.module.css"; // 👈 Caminho ajustado
+import styles from "../PontoColeta/SearchBar.module.css"; // 👈 Caminho ajustado
 
 interface SearchBarProps {
   placeholder?: string;
