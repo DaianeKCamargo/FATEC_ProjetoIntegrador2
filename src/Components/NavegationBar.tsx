@@ -98,6 +98,7 @@ export function NavegationBar() {
                             box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.08);
                             padding: 1rem 2rem;
                             font-size: 1.8rem;
+                            z-index: 1000;
                         } 
 
                         .dropdown {

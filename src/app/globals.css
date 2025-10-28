@@ -50,6 +50,11 @@ body {
   padding: 2rem;
 }
 
+/* FOOTER */
+.footer {
+  display: flex;
+}
+
 
 /*  ESTILO PARA MOBILE */
 @media (max-width: 768px) {
