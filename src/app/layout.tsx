@@ -3,6 +3,7 @@ import NavegationBar from "@/Components/NavegationBar";
 // @ts-ignore: allow side-effect import for global CSS without type declarations
 import './globals.css';
 import Footer from '@/Components/footer';
+import Copyright from '@/Components/copyright';
 
 // Configuração da fonte
 const notoSansJp = Noto_Sans_JP({
@@ -24,6 +25,7 @@ export default function RootLayout({
         <NavegationBar />
         {children}
         <Footer />
+        <Copyright />
       </body>
     </html>
   );

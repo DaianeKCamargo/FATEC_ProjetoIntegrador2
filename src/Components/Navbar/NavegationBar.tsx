@@ -8,6 +8,7 @@ import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { useState } from "react";
 import { BsPersonHeart } from "react-icons/bs";
 import { NavDropdown } from "react-bootstrap";
+import { RiLoginCircleLine } from "react-icons/ri";
 
 // Objeto de navegação da Navbar
 export function NavegationBar() {
@@ -82,7 +83,7 @@ export function NavegationBar() {
 
                 {/* Botão de Login/Cadastro para Desktop */}
                 <button className="loginCadastro" onClick={() => { router.push('/login'); }}>
-                    Login | Cadastro
+                   Login | Cadastro
                 </button>
 
 
@@ -151,7 +152,9 @@ export function NavegationBar() {
                             display: none;
                         }
 
-                        .loginCadastro {                     
+                        .loginCadastro {  
+                            display: flex;
+                            justifity-direction: row;            
                             margin-top: 1rem;
                             background: #FBBC04;
                             border: 0.1rem solid #ccc;
@@ -170,7 +173,7 @@ export function NavegationBar() {
                         }
                         
 
-                        @media screen and (max-width: 768px) {
+                        @media (max-width: 768px) {
                         
                             .navbar { 
                                 justify-content: space-around;
