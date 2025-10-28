@@ -4,9 +4,10 @@ import Link from "next/link";
 export default function GaleriaFotos() {
     return (
       <section>
-        <h1 style={{ textAlign: "center", marginBottom: "20px", marginTop: "20px" }}>Galeria TamPets 📸</h1>
+        <h1 style={{ textAlign: "center", marginBottom: "20px", marginTop: "30px" }}>Galeria TamPets 📸</h1>
+        <h2 style={{ textAlign: "center", marginBottom: "20px", marginTop: "30px" }}>Melhores momentos registrados do projeto Tampets!</h2>
 
-        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center" }}>
+        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center", marginBottom: "15%", marginTop:"7%"}}>
           <Link href="./galeriaFotos/galeriaColeta">
           <Card
             imagem={"/coleta.PNG"}
