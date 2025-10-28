@@ -1,6 +1,7 @@
 import DivButton from "@/Components/DivButtom";
-import InputText from "@/Components/InputText";
+import {InputText} from "@/Components/InputText";
 import { Bold } from "lucide-react";
+import { Button, Form } from "react-bootstrap";
 
 
 export default function meuPerfil(){
@@ -8,7 +9,13 @@ export default function meuPerfil(){
     return(
         <>
         <div>
+            <div style={{display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                marginTop: "50px"
+            }}>
             <h1>Meu Perfil</h1>
+            </div>
             <div style={{display: "flex",
             flexDirection: "row",
             justifyContent: "end",
@@ -32,16 +39,17 @@ export default function meuPerfil(){
                 alignItems: "center",
                 justifyContent: "center",
                 cursor: "pointer"}}>
-                    <label style={{}}>Nome: </label>
+                    <label style={{fontSize: '1.5rem'}}>Nome: </label>
                     <input style={{
                         backgroundColor: "#fff",
                         borderRadius: "8px",
                         justifyContent: "end",
                         width: "300px",
                         height: "20px",
-                        marginLeft: "10px",
-                        
-                        }} disabled/>
+                        marginLeft: "5px",
+                        fontSize: '1.5rem',
+                        paddingLeft: "5px"
+                        }} value={"Admin test"} disabled/>
                 </div>
                 <div style={{
                     backgroundColor: "#D9D9D9",
@@ -53,17 +61,19 @@ export default function meuPerfil(){
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    paddingLeft: "5px",
                     cursor: "pointer"}}>
-                        <label style={{}}>Email: </label>
+                        <label style={{fontSize: '1.5rem' }}>Email: </label>
                         <input style={{
                             backgroundColor: "#fff",
                             borderRadius: "8px",
                             justifyContent: "end",
                             width: "300px",
                             height: "20px",
-                            marginLeft: "10px",
-                            
-                            }} disabled/>
+                            marginLeft: "5px",
+                            fontSize: '1.5rem',
+                            paddingLeft: "5px",
+                            }}value={"AdminTest123@email.com"} disabled/>
                 </div>
             </div>
             <div style={{display: "flex",
@@ -82,16 +92,17 @@ export default function meuPerfil(){
                 alignItems: "center",
                 justifyContent: "center",
                 cursor: "pointer"}}>
-                    <label style={{ }}>Telefone: </label>
+                    <label style={{fontSize: '1.5rem' }}>Telefone: </label>
                     <input style={{
                         backgroundColor: "#fff",
                         borderRadius: "8px",
                         justifyContent: "end",
                         width: "300px",
                         height: "20px",
-                        marginLeft: "10px",
-                        
-                        }} disabled/>
+                        marginLeft: "5px",
+                        fontSize: '1.5rem',
+                        paddingLeft: "5px",
+                        }} value={"(15) 91234-5678"} disabled/>
                 </div>
                 <div style={{
                     backgroundColor: "#D9D9D9",
@@ -104,20 +115,51 @@ export default function meuPerfil(){
                     alignItems: "center",
                     justifyContent: "center",
                     cursor: "pointer"}}>
-                        <label style={{}}>CPF: </label>
+                        <label style={{fontSize: '1.5rem'}}>CPF: </label>
                         <input style={{
                             backgroundColor: "#fff",
                             borderRadius: "8px",
                             justifyContent: "end",
                             width: "300px",
                             height: "20px",
-                            marginLeft: "10px",
-                            
-                            }} disabled/>
+                            marginLeft: "5px",
+                            fontSize: '1.5rem',
+                            paddingLeft: "5px",
+                            }} value={"123.456.789-01"} disabled/>
                 </div>
             </div>
+            <div style={{}}>
+                <Form style={{width: "400px", marginTop: "20px",
+                        backgroundColor: "#ffffff", 
+                        boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
+                        display: "flex",
+                        padding: "20px",
+                        borderRadius: "8px",
+                        flexDirection: "column",
+                    }}>
+                        
+                    <div style={{display: "flex", 
+                            flexDirection: "column", gap: "15px",
+                            marginBottom: "20px"
+                            }}>
+                            <InputText label="Senha Atual" id="a" type="password" name="currentPassword"
+                            placeholder="Digite sua senha atual" />
+                            <InputText label="Nova Senha" id="inputNewPassword" type="password" name="newPassword"
+                            placeholder="Digite sua nova senha" />
+                            <InputText label="Confirme a Nova Senha" id="inputConfirmNewPassword" type="password" name="confirmNewPassword"
+                            placeholder="Confirme sua nova senha" />
+                        </div>
+                        <div style={{display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-evenly",
+                        marginTop: "10px"
+                        }}>
+                        <Button type="submit">Entrar</Button>
+                        
+                    </div>
+                </Form>
+            </div>
         </div>
-
     </>
 
     

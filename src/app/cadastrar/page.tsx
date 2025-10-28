@@ -1,7 +1,7 @@
 'use client';
 
 import DivButton from "@/Components/DivButtom";
-import InputText from "@/Components/InputText";
+import {InputText} from "@/Components/InputText";
 import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import { cadSchema } from "@/schemas/cadSchema";
