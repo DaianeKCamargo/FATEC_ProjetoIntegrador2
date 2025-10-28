@@ -2,6 +2,7 @@
 import SearchBar from "@/Components/pontoColeta/SearchBar";
 import TampleteTitulo from "@/Components/tampleteTitulo";
 import { useEffect, useState } from "react";
+import { PiPawPrintDuotone } from "react-icons/pi";
 
 
 export default function pontoColeta() {
@@ -25,11 +26,25 @@ export default function pontoColeta() {
   
     return (
         <>
-            <TampleteTitulo 
-                titulo="Pontos de Coleta" 
-                descricao="Encontre aqui, o local mais próximo de você para a entrega das suas tampinhas." 
-                color="rgba(126, 247, 78, 1)"
-            />
+            <div className="titulo">
+                <TampleteTitulo
+                    titulo="Pontos de Coleta"
+                    descricao="Encontre aqui, o local mais próximo de você para a entrega das suas tampinhas."
+                    color="#f5f0e6ff"
+                /> 
+            </div>
+            <div className="body">
+
+            </div>
+
+            <style jsx>
+                {`
+                    .body {
+                                            
+                    }
+                `}
+                
+            </style>
         </>
     );
 }
