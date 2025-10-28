@@ -1,0 +1,42 @@
+.card {
+  background: #f8f9f9;
+  border: 1px solid #dfe3e2;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.09);
+}
+
+.card h2, .card h3 {
+  margin: 0;
+  color: #234d38;
+  font-weight: 600;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 0;
+  list-style: none;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2d3842;
+}
+
+.icon-small {
+  width: 20px;
+  height: 20px;
+  color: #3c805e;
+}
+
+/*Carrossel*/
+
+
