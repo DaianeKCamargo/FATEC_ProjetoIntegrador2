@@ -1,12 +1,15 @@
+import { url } from "inspector";
+
 interface TampleteTituloInetrface {
     titulo: string;
     descricao: string;
     color: string;
+    imagem?: string;
 }
 
 export default function TampleteTitulo(props: TampleteTituloInetrface) {
     return (
-        <div className="titulo" style={{backgroundColor: props.color}}>
+        <div className="titulo" style={{ backgroundColor: props.color }}>
             <h1>{props.titulo}</h1>
             <p>{props.descricao}</p>
 
@@ -17,7 +20,7 @@ export default function TampleteTitulo(props: TampleteTituloInetrface) {
                         justify-content: center;
                         align-items: center;
                         flex-direction: column;
-                        padding: 10rem;
+                        padding: 6rem 2rem;
                         color: #333;
                     }
 
@@ -31,16 +34,15 @@ export default function TampleteTitulo(props: TampleteTituloInetrface) {
 
                     @media (max-width: 768px) {
                         .titulo {
-                            padding: 5rem;
                             text-align: center;
                         }
 
                          h1 {
-                            font-size: 2.5rem;
+                            font-size: 3rem;
                         }
 
                         p {
-                            font-size: 1.4rem;
+                            font-size: 1.5rem;
                         }
                     }
                 `}

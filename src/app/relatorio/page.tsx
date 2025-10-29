@@ -50,24 +50,26 @@ export default function relatorio() {
       </div>
 
       <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
-        <div className="bg-white rounded-2xl shadow p-6 text-center">
-          <p className="text-lg font-semibold">Gatos</p>
-          <p className="text-4xl font-bold mt-2">{dados.gatos}</p>
-          <img src="/images/cat.png" alt="Gato" className="mx-auto mt-4 w-16" />
+        <div className="bg-white rounded-2xl shadow flex flex-col text-center overflow-hidden">
+        <div>
+        <p className="text-lg font-semibold pt-6">Gatos</p>
+        <p className="text-4xl font-bold mt-2 mb-6">{dados.gatos}</p>
+        </div>
+        <img src="/gatoRel.png" alt="Gato" className="w-55 mx-auto mt-auto translate-y-[15px]" />
         </div>
 
-        <div className="bg-white rounded-2xl shadow p-6 text-center">
-          <p className="text-lg font-semibold">Cachorros</p>
-          <p className="text-4xl font-bold mt-2">{dados.cachorros}</p>
-          <img src="/images/dog.png" alt="Cachorro" className="mx-auto mt-4 w-16" />
+        <div className="bg-white rounded-2xl shadow flex flex-col text-center overflow-hidden">
+        <p className="text-lg font-semibold pt-6">Cachorros</p>
+        <p className="text-4xl font-bold mt-2 mb-6">{dados.cachorros}</p>
+        <img src="/cachorroRel.png" alt="Cachorro" className="w-40 mx-auto mt-auto" />
         </div>
 
-        <div className="bg-white rounded-2xl shadow p-6 text-center">
-          <p className="text-lg font-semibold">Tampinhas</p>
-          <p className="text-4xl font-bold mt-2">
-            {dados.tampinhas.toLocaleString("pt-BR")}
-          </p>
-          <img src="/images/tampinhas.png" alt="Tampinhas" className="mx-auto mt-4 w-16" />
+        <div className="bg-white rounded-2xl shadow flex flex-col text-center overflow-hidden">
+        <p className="text-lg font-semibold pt-6">Tampinhas</p>
+        <p className="text-4xl font-bold mt-2 mb-6">
+        {dados.tampinhas.toLocaleString("pt-BR")}
+        </p>
+        <img src="/tampinhasRel.png" alt="Tampinhas" className="w-60 mx-auto mt-auto" />
         </div>
       </section>
 

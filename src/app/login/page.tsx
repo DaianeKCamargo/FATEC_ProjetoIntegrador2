@@ -4,21 +4,27 @@ import {InputText} from "@/Components/InputText";
 import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import { LogSchema } from "@/schemas/LogSchema";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Login(){
+    const router = useRouter();
+    //Definição dos valores do formulário
     interface values {
         email: string;
         password: string;
     }
+    //Configuração do formik
     const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik<values>({
         initialValues: {
             email: "",
             password: "",
         },
-        validationSchema: LogSchema,
-        onSubmit: (values) => {
-            console.log(values);
-        },
+    validationSchema: LogSchema,
+        //Quando o formulário for enviado
+    onSubmit: (values) => {
+        router.push('/meuPerfil');
+    },
     });
 
     return(
@@ -28,12 +34,8 @@ export default function Login(){
             justifyContent: "space-evenly",
             marginTop: "50px"
         }}>
-            <DivButton text="Cadastrar" onClick={() => {
-                window.location.href = "/cadastrar";
-            }} />
-            <DivButton text="Login" onClick={() => {
-                window.location.href = "/login";
-            }} />
+            <Link href="/cadastrar" className="nav-link"><DivButton text="Cadastrar"/></Link>
+            <DivButton text="Login"/>
         </div>
         <section style={{display: "flex",
                 flexDirection: "column",
@@ -54,7 +56,7 @@ export default function Login(){
                 boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"    
             }}>
 
-                <h1>Login</h1>
+                <h1 >Login</h1>
                 <Form style={{width: "400px", marginTop: "20px",
                     backgroundColor: "#ffffff", 
                     boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
@@ -62,7 +64,8 @@ export default function Login(){
                     padding: "20px",
                     borderRadius: "8px",
                     flexDirection: "column",
-                }}>
+                    
+                }} onSubmit={handleSubmit}>
                     
                 <div style={{display: "flex", 
                         flexDirection: "column", gap: "15px",

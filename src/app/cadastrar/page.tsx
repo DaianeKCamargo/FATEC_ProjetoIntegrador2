@@ -5,9 +5,14 @@ import {InputText} from "@/Components/InputText";
 import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import { cadSchema } from "@/schemas/cadSchema";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Cadastro(){
 
+    //Declaração do roteador
+    const router = useRouter();
+    //Definição dos valores do formulário
     interface values {
         username?: string;
         cpf: string;
@@ -16,6 +21,7 @@ export default function Cadastro(){
         password: string;
         confirmPassword: string;
     }
+    //Configuração do formik
     const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik<values>({
         initialValues: {
             username: "",
@@ -26,32 +32,33 @@ export default function Cadastro(){
             confirmPassword: "",
         },
         validationSchema: cadSchema,
+        //Quando o formulário for enviado
         onSubmit: (values) => {
-            alert("Formulário enviado com sucesso: " + JSON.stringify(values));
+            router.push('/meuPerfil');
         }
     });
 
     return(
         <>
-        
+        {// Botões de navegação entre Login e Cadastro*
+        }
         <div style={{display: "flex",
             flexDirection: "row", marginTop: "50px",
             justifyContent: "space-evenly",
         }}>
-            <DivButton text="Cadastro" onClick={() => {
-                window.location.href = "/cadastrar";
-            }} />
-            <DivButton text="Login" onClick={() => {
-                window.location.href = "/login";
-            }} />
+            <DivButton text="Cadastro" />
+            <Link href="/login" className="nav-link"><DivButton text="Login" /></Link>
         </div>
 
+        {// Formulário de Cadastro
+        }
             <section style={{display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyItems: "center",
                 justifyContent: "center",
             }}>
+                
                 <div className="" style={{
                     display: "flex", flexDirection: "column",
                     marginTop: "20px",
@@ -64,6 +71,7 @@ export default function Cadastro(){
                     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"
                     
                 }}>
+                    
                     <h1>Cadastre-se</h1>
                     <Form  onSubmit={handleSubmit} style={{width: "400px", marginTop: "20px",
                         backgroundColor: "#ffffff", 
@@ -74,6 +82,8 @@ export default function Cadastro(){
                         flexDirection: "column",
                     }}>
 
+                        {// Campos do formulário
+                        }
                         <div style={{display: "flex", 
                             flexDirection: "column", gap: "15px"
                             }}>
@@ -92,6 +102,8 @@ export default function Cadastro(){
                                 name="confirmPassword" error={errors.confirmPassword}
                                 placeholder="Confirme sua senha" value={values.confirmPassword} onChange={handleChange}/>
                         </div>
+                        {// Botão de envio do formulário
+                        }
                         <div style={{display: "flex",
                             flexDirection: "row", marginTop: "10px",
                             justifyContent: "space-evenly",

@@ -6,7 +6,6 @@ import {
 import "../../style/comoDoar.css";
 import Card from "@/Components/Card";
 
-
 export default function comoDoar() {
     return (
         <>

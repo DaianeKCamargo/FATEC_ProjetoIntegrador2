@@ -55,6 +55,14 @@ body {
   display: flex;
 }
 
+/*ESTILO PARA A IMAGEM NA HOME*/
+.container-imagem {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  margin-bottom: 20px;
+}
+
 
 /*  ESTILO PARA MOBILE */
 @media (max-width: 768px) {
