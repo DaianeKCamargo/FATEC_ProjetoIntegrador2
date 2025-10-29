@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Login(){
+    const router = useRouter();
     interface values {
         email: string;
         password: string;
@@ -21,6 +22,7 @@ export default function Login(){
         validationSchema: LogSchema,
         onSubmit: (values) => {
             console.log(values);
+            router.push('/meuPerfil');
         },
     });
 
