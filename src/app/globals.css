@@ -26,7 +26,7 @@ body {
 .body {
   background-color: #fff;
   padding: 2rem 10rem;
-  height: 50vh;
+  height: 100vh;
 }
 
 /* PÁGINAS */
@@ -36,12 +36,11 @@ body {
 /* imagem home */
 .container-imagem {
   display: flex;
-  justify-content: center; 
   align-items: center; 
 }
 
 .imagem {
-  width:100%;
+  max-width: 100%;
   height: auto;
 }
 
