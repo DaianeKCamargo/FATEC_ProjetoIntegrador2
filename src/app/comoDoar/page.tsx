@@ -3,22 +3,51 @@ import {
   CheckCircle2,
   CircleXIcon,
 } from "lucide-react";
-import "../style/comoDoar.css";
+import "../../style/comoDoar.css";
+import Card from "@/Components/Card";
 
 
 export default function comoDoar() {
     return (
         <>
-        <section>
-        <h1>Como contribuir com o projeto</h1>
-            <div>
-               <h2>Como faço para doar?</h2> 
+        <section className="doar-container">
+            <div className="hero">
+            <h1>Como contribuir com o projeto</h1>
+            </div>
+
+            <div className="cards">
+                <header>
+               <h2>Como faço para doar?</h2>
+               </header> 
+               <p>
+                Procure o ponto de coleta mais próximo de você e leve suas tampinhas.
+               </p>
+               <p>
+                Onde eu procuro um ponto de coleta?
+                Procure nossa aba de ponto de coleta e procure por um ponto próximo a você.
+                </p>
+                <p>
+                O que posso doar?
+                Logo abaixo temos algumas informações dos tipos de tampinhas que aceitamos.
+                </p>
+
+                <header>
+                Atenção! O que eu NÃO posso doar?
+                </header>
+                <ul id="Naodoar">
+                    <li>• Objetos não recicláveis</li>
+                    <li>• lacres</li>
+                    <li>• Cartela e embalagem de remédios</li>
+                    <li>• Qualquer outro tipo de plastico</li>
+                    <li>• Garrafa pet</li>
+                    <li>• Pregos e vidros</li>
+                </ul>
             </div>
 
             <div>
-                <article className="card">
+                <article className="cards">
                 <header>
-                <h3>O que fazemos:</h3>
+                <h3>O que fazemos</h3>
                 </header>
                 <ul>
                     <li><CheckCircle2 className="icon-small" />Divulgamos feirinhas de adoção</li>
@@ -29,12 +58,12 @@ export default function comoDoar() {
                 </ul>
                 </article>
 
-                <article className="card">
+                <article className="cards">
                 <header>
                 <h3>O que não fazemos</h3>
                 </header>
                 <ul>
-                    <li><CircleXIcon className="icon-small" />Não indicamos clinicas veterinarias</li>
+                    <li><CircleXIcon className="icon-small" />Não indicamos clínicas veterinárias</li>
                     <li><CircleXIcon className="icon-small" />Não temos abrigo</li>
                     <li><CircleXIcon className="icon-small" />Não fazemos rifas</li>
                     <li><CircleXIcon className="icon-small" />Não divulgamos pedidos de pix ou transferência de valores</li>
@@ -46,6 +75,38 @@ export default function comoDoar() {
                     <li><CircleXIcon className="icon-small" />Não divulgamos nas redes sociais animais para adoção</li>
                 </ul>
                 </article>
+
+                <div className="cards">
+                <article>
+                    <header>
+                        <h3>Que tampinhas aceitamos</h3>
+                    </header>
+                    <div style={{marginBottom:"10px", marginTop:"10px",
+                 display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center"    }}>
+
+                    <Card 
+                    imagem={"/Tampinhasplasticas.jpg"} 
+                    titulo={"Tampas de alimentos"}
+                    descricao="Tampas de refrigerantes, sucos, margarina, 
+                    maionese, molhos, requeijão, óleo de cozinha, etc."
+                    className="cards"/>
+
+                    <Card 
+                    imagem={"/ProdLimpeza.jpeg"} 
+                    titulo={"Produtos de limpeza"}
+                    descricao="Tampas de amaciantes, cloro, cândida, desinfetante, desengordurante, etc."
+                    className="cards"/>
+
+                    <Card 
+                    imagem={"/ProdHigiene.jpg"} 
+                    titulo={"Produtos de higiene"}
+                    descricao="Tampas de shampoo, condicionador, cremes, 
+                    pasta de dente, sabonete líquido, hidratante, etc."
+                    className="cards"/>
+
+                    </div>
+                </article>
+                </div>
 
            
             </div>

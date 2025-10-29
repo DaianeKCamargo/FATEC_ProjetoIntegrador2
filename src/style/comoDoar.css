@@ -1,4 +1,27 @@
-.card {
+/*Section*/
+.doar-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: sans-serif;
+  font-size: 150%;
+  color: #222;
+}
+
+.hero {
+  background: #e6f5ec;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #234d38;
+}
+
+/*cards*/
+.cards {
   background: #f8f9f9;
   border: 1px solid #dfe3e2;
   border-radius: 16px;
@@ -7,12 +30,12 @@
   transition: 0.25s;
 }
 
-.card:hover {
+.cards:hover {
   transform: translateY(-4px);
   box-shadow: 0px 8px 16px rgba(0,0,0,0.09);
 }
 
-.card h2, .card h3 {
+.cards h2, .cards h3 {
   margin: 0;
   color: #234d38;
   font-weight: 600;
@@ -37,6 +60,14 @@ ul li {
   color: #3c805e;
 }
 
-/*Carrossel*/
+/*List*/
+#Naodoar ul li {
+  margin-top: 10px;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2d3842;
+}
 
 
