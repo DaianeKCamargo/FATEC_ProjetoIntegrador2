@@ -1,14 +1,15 @@
 import DivButton from "@/Components/DivButtom";
 import {InputText} from "@/Components/InputText";
 import { Bold } from "lucide-react";
-import { Button, Form } from "react-bootstrap";
+import { Form, Button, FormGroup } from "react-bootstrap";
+import { useFormik } from "formik";
+
 
 
 export default function meuPerfil(){
-
     return(
         <>
-        <div>
+        <div style={{marginBottom:"2rem"}}>
             <div style={{display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -128,6 +129,7 @@ export default function meuPerfil(){
                             }} value={"123.456.789-01"} disabled/>
                 </div>
             </div>
+            
             <div style={{display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -139,20 +141,32 @@ export default function meuPerfil(){
                         padding: "20px",
                         borderRadius: "8px",
                         flexDirection: "column",
+                        minWidth: "60rem"
                     }}>
-                        
-                    <div style={{display: "flex", 
-                            flexDirection: "column", gap: "15px",
-                            marginBottom: "20px"
-                            }}>
-                            
+                    <div  style={{display: "flex", flexDirection: "row",
+                        marginTop: "20px",
+                        alignItems: "center",
+                    }}>
+                        <div style={{maxWidth: "30%"}}><img src="/logofatec.png" alt="" style={{}}/></div>      
+                        <div style={{display: "flex", 
+                                flexDirection: "column", gap: "15px",
+                                marginBottom: "20px"
+                                }}>
+                                
+                                <Form.Label style={{fontSize: '1.5rem'}}>Link da Rede Social: </Form.Label>
+                                <Form.Control  type="text"
+                                    name="link" 
+                                    placeholder="Insira o link"></Form.Control>
+                                <Form.Label htmlFor="" style={{fontSize: '1.5rem'}}>Insira a imagem</Form.Label>
+                                <Form.Control type="file" name="imageUpload" />
+                        </div>
                     </div>
                     <div style={{display: "flex",
                         flexDirection: "row",
                         justifyContent: "space-evenly",
                         marginTop: "10px"
                         }}>
-                        <Button type="submit">Entrar</Button>
+                        <Button type="submit">Enviar</Button>
                     </div>
                 </Form>
 
@@ -163,26 +177,54 @@ export default function meuPerfil(){
                         padding: "20px",
                         borderRadius: "8px",
                         flexDirection: "column",
+                        minWidth: "60rem",
                     }}>
                         
-                    <div style={{display: "flex", 
-                            flexDirection: "column", gap: "15px",
-                            marginBottom: "20px"
-                            }}>
-                            
+                    <div  style={{display: "flex", flexDirection: "row",
+                        marginTop: "20px",
+                        alignItems: "center",
+                    }}>
+                        <div style={{maxWidth: "30%"}}><img src="/logofatec.png" alt="" style={{}}/></div>      
+                        <div style={{display: "flex", 
+                                flexDirection: "column", gap: "15px",
+                                marginBottom: "20px"
+                                }}>
+                                <h1>Torne-se Ponto de coleta</h1>
+                                <Form.Label style={{fontSize: '1.5rem'}}>Nome do Local: </Form.Label>
+                                <Form.Control  type="text"
+                                    name="nomeLocal" 
+                                    placeholder="Insira o nome do local"></Form.Control>
+                                <Form.Label style={{fontSize: '1.5rem'}}>Horário: </Form.Label>
+                                <Form.Control  type="text"
+                                    name="nomeLocal" 
+                                    placeholder="Insira o horario de funcionamento"></Form.Control>
+                                <Form.Label style={{fontSize: '1.5rem'}}>CNPJ: </Form.Label>
+                                <Form.Control  type="text"
+                                    name="CNPJ" 
+                                    placeholder="Insira o nome do local"></Form.Control>
+                                <div style={{display: "flex", flexDirection: "row",
+                                    alignItems: "center",}}>
+                                    <div>
+                                    <Form.Label htmlFor="" style={{fontSize: '1.5rem'}}>Insira uma foto do local</Form.Label>
+                                    <Form.Control type="file" name="imageUpload" />
+                                    </div>
+                                    <div style={{marginLeft: "20px"}}>
+                                    <Form.Label htmlFor="" style={{fontSize: '1.5rem'}}>Insira o endereço</Form.Label>
+                                    <Form.Control type="text" name="endereço" />
+                                    </div>
+                                </div>
+                        </div>
                     </div>
                     <div style={{display: "flex",
                         flexDirection: "row",
                         justifyContent: "space-evenly",
                         marginTop: "10px"
                         }}>
-                        <Button type="submit">Enc</Button>
+                        <Button type="submit">Enviar</Button>
                     </div>
                 </Form>
             </div>
         </div>
     </>
-
-    
     );
 }
