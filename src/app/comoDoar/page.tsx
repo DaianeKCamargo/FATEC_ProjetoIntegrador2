@@ -1,10 +1,7 @@
-'use client'
-import {
-  CheckCircle2,
-  CircleXIcon,
-} from "lucide-react";
-import "../style/comoDoar.css";
+'use client';
 
+import {CheckCircle2,CircleXIcon,} from "lucide-react";
+import "@/style/comoDoar.css";
 
 export default function comoDoar() {
     return (
