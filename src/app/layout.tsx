@@ -1,5 +1,6 @@
+'use client';
 import { Noto_Sans_JP } from 'next/font/google';
-import NavegationBar from "@/Components/navbar/NavegationBar";
+import NavegationBar from "@/Components/Navbar/NavegationBar";
 // @ts-ignore: allow side-effect import for global CSS without type declarations
 import './globals.css';
 import Footer from '@/Components/footer';
@@ -18,15 +19,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
+  //Apenas na pagina meuPerfil que nao vai ter a navegation bar e o footer
+  
 
-  return (
-    <html lang="en">
-      <body className={notoSansJp.className}>
-        <NavegationBar />
-        {children}
-        <Footer />
-        <Copyright />
-      </body>
-    </html>
-  );
+
+
+    return (
+      <html lang="en">
+        <body className={notoSansJp.className}>
+          <NavegationBar />
+          {children}
+          <Footer />
+          <Copyright />
+        </body>
+      </html>
+    
+    );
+    
 }
