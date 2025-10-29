@@ -41,7 +41,7 @@ export default function Footer() {
                     flex-direction: row;
                     justify-content: space-between;
                     align-items: center;
-                    background: linear-gradient(to right, #35964f9c, #a8eebaff);
+                    background: linear-gradient(to right, #dbfdd69a);
                     height: 25vh;
                     box-shadow: 0 0 0.2rem 0.4rem rgba(0,0,0,0.08);
                     padding: 2rem;
