@@ -5,6 +5,8 @@ import {InputText} from "@/Components/InputText";
 import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import { cadSchema } from "@/schemas/cadSchema";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Cadastro(){
 
@@ -27,7 +29,8 @@ export default function Cadastro(){
         },
         validationSchema: cadSchema,
         onSubmit: (values) => {
-            alert("Formulário enviado com sucesso: " + JSON.stringify(values));
+            console.log(values);
+            
         }
     });
 
@@ -38,12 +41,8 @@ export default function Cadastro(){
             flexDirection: "row", marginTop: "50px",
             justifyContent: "space-evenly",
         }}>
-            <DivButton text="Cadastro" onClick={() => {
-                window.location.href = "/cadastrar";
-            }} />
-            <DivButton text="Login" onClick={() => {
-                window.location.href = "/login";
-            }} />
+            <DivButton text="Cadastro" />
+            <Link href="/login" className="nav-link"><DivButton text="Login" /></Link>
         </div>
 
             <section style={{display: "flex",

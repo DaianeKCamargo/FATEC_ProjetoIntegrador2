@@ -128,7 +128,10 @@ export default function meuPerfil(){
                             }} value={"123.456.789-01"} disabled/>
                 </div>
             </div>
-            <div style={{}}>
+            <div style={{display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                marginTop: "50px"}}>
                 <Form style={{width: "400px", marginTop: "20px",
                         backgroundColor: "#ffffff", 
                         boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
@@ -142,20 +145,38 @@ export default function meuPerfil(){
                             flexDirection: "column", gap: "15px",
                             marginBottom: "20px"
                             }}>
-                            <InputText label="Senha Atual" id="a" type="password" name="currentPassword"
-                            placeholder="Digite sua senha atual" />
-                            <InputText label="Nova Senha" id="inputNewPassword" type="password" name="newPassword"
-                            placeholder="Digite sua nova senha" />
-                            <InputText label="Confirme a Nova Senha" id="inputConfirmNewPassword" type="password" name="confirmNewPassword"
-                            placeholder="Confirme sua nova senha" />
-                        </div>
-                        <div style={{display: "flex",
+                            
+                    </div>
+                    <div style={{display: "flex",
                         flexDirection: "row",
                         justifyContent: "space-evenly",
                         marginTop: "10px"
                         }}>
                         <Button type="submit">Entrar</Button>
+                    </div>
+                </Form>
+
+                <Form style={{width: "400px", marginTop: "20px",
+                        backgroundColor: "#ffffff", 
+                        boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
+                        display: "flex",
+                        padding: "20px",
+                        borderRadius: "8px",
+                        flexDirection: "column",
+                    }}>
                         
+                    <div style={{display: "flex", 
+                            flexDirection: "column", gap: "15px",
+                            marginBottom: "20px"
+                            }}>
+                            
+                    </div>
+                    <div style={{display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-evenly",
+                        marginTop: "10px"
+                        }}>
+                        <Button type="submit">Enc</Button>
                     </div>
                 </Form>
             </div>
