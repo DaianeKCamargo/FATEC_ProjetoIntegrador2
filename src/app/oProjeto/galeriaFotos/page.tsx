@@ -1,13 +1,15 @@
 import Card from "@/Components/Card";
+import TampleteTitulo from "@/Components/tampleteTitulo";
 import Link from "next/link";
 
 export default function GaleriaFotos() {
     return (
       <section>
-        <h1 style={{ textAlign: "center", marginBottom: "20px", marginTop: "30px" }}>Galeria TamPets 📸</h1>
-        <h2 style={{ textAlign: "center", marginBottom: "20px", marginTop: "30px" }}>Melhores momentos registrados do projeto Tampets!</h2>
+        <div className="titulo">
+            <TampleteTitulo titulo="Galeria de Fotos" descricao="Veja um pouco dos eventos, parcerias que possuímos dentro do projeto." color="#ddd2f3ff" />
+        </div>
 
-        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center", marginBottom: "15%", marginTop:"7%"}}>
+        <div className="body" style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center", paddingTop: "40px"}}>
           <Link href="./galeriaFotos/galeriaColeta">
           <Card
             imagem={"/coleta.PNG"}

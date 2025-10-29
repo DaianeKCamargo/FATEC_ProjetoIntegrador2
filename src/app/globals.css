@@ -23,13 +23,28 @@ body {
   color: var(--foreground);
 }
 
-
-/* NAVBAR */
-
-.dropdown-item {
-  font-size: 1.4rem;
-  font-family: inherit;
+.body {
+  background-color: #fff;
+  padding: 2rem 10rem;
+  height: 50vh;
 }
+
+/* PÁGINAS */
+
+/*HOME*/
+
+/* imagem home */
+.container-imagem {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.imagem {
+  width:100%;
+  height: auto;
+}
+
 
 .dropdown-item:hover {
   background-color: transparent;
@@ -47,7 +62,26 @@ body {
   /* espaço entre os cards */
   justify-content: center;
   /* centraliza os cards na página */
-  padding: 2rem;
+  padding: 10rem 0;
+}
+
+/* RELATÓRIOS */
+.grafico-tampinhas {
+  background-image: url(/graficoTampinhas.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 35vw;
+  height: 30vh;
+
+}
+
+/* COMPONENTES */
+
+/* NAVBAR */
+.dropdown-item {
+  font-size: 1.4rem;
+  font-family: inherit;
 }
 
 /* FOOTER */
@@ -55,24 +89,16 @@ body {
   display: flex;
 }
 
-/*ESTILO PARA A IMAGEM NA HOME*/
-.container-imagem {
-  display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  margin-bottom: 20px;
-}
-
 
 /*  ESTILO PARA MOBILE */
 @media (max-width: 768px) {
-
+  
   /* tira a configuração padrão da imagem-logo */
   img {
     max-width: 50%;
     height: auto;
   }
-
+  
   svg {
     vertical-align: 0;
   }

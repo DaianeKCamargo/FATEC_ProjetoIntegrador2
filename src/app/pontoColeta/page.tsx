@@ -1,27 +1,26 @@
 'use client';
-import SearchBar from "@/Components/pontoColeta/SearchBar";
+
+
 import TampleteTitulo from "@/Components/tampleteTitulo";
 import { useEffect, useState } from "react";
-import { PiPawPrintDuotone } from "react-icons/pi";
+
 
 
 export default function pontoColeta() {
-  
     
     const [locaisColeta, setLocaisColeta] = useState<any[]>([]);
 
 
-    // API onde está os dados do ponto de coleta
-    useEffect(() => {
+    // ligação a page route, onde está a API que armazena os dados do ponto de coleta.
+    useEffect(() => {                                   // atualiza manualmente as informações sempre que for alterarda
     fetch("http://localhost:3000/api/locaisPontoColeta",{
             method: "GET"
-        }).then (async (response) => { // depende da ação anterior 
-            // response -> resposta da chamada à API
-            const resposta = await response.json(); // promisse -> asyncrona
+        }).then (async (response) => { // then -> depende da ação anterior 
+            const resposta = await response.json();  // response -> resposta da chamada à API
             setLocaisColeta(resposta);
             console.log(resposta);
         })
-    }, []); // Adicionando dependências vazias para executar apenas uma vez na montagem
+    }, []); // Adicionando dependências vazias para executar apenas uma vez na montagem,
 
   
     return (
@@ -34,17 +33,9 @@ export default function pontoColeta() {
                 /> 
             </div>
             <div className="body">
-
+                
             </div>
 
-            <style jsx>
-                {`
-                    .body {
-                                            
-                    }
-                `}
-                
-            </style>
         </>
     );
 }

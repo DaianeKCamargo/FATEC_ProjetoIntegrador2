@@ -1,4 +1,4 @@
-import { url } from "inspector";
+'use client';
 
 interface TampleteTituloInetrface {
     titulo: string;
@@ -29,7 +29,9 @@ export default function TampleteTitulo(props: TampleteTituloInetrface) {
                     }
 
                     p {
+                        text-align: center;
                         font-size: 1.8rem;
+                        text-wrap: balance;
                     }
 
                     @media (max-width: 768px) {

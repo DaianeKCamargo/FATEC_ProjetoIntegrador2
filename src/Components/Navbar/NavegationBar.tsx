@@ -55,9 +55,9 @@ export function NavegationBar() {
                 <ul className={`nav-items ${openMenu ? 'open' : ''}`}>
                     <li className="dropdown">
                         <NavDropdown title="O Projeto" className="nav-dropdown">
-                            <NavDropdown.Item href="/oProjeto">Sobre Nós</NavDropdown.Item>
-                            <NavDropdown.Item href="/oProjeto/naMidia">Tampets na Mídia</NavDropdown.Item>
-                            <NavDropdown.Item href="/oProjeto/galeriaFotos">Galeria de Fotos</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => { router.push('/oProjeto');}}>Sobre Nós</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => { router.push('/oProjeto/naMidia');}}>Tampets na Mídia</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => { router.push('/oProjeto/galeriaFotos');}}>Galeria de Fotos</NavDropdown.Item>
                         </NavDropdown>
                     </li>
                     {items.map((item, index) => (

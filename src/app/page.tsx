@@ -14,17 +14,13 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <section>
-            <h1 style={{ textAlign: "center", marginBottom: "20px", marginTop: "30px" }}>Projeto Beneficente TamPets</h1>
-            <h2 style={{ textAlign: "center",  marginBottom: "20px", marginTop: "30px" }}>Uma tampinha sozinha não tem preço, mas, unida a outras, tem um grande valor.</h2>
-
             <div className="container-imagem">
-                <Image
-                    src="/imgHome.png"
-                    alt="ImgHome"
-                    width={1000}
-                    height={1000}
-                />
+                <Image className="imagem" src="/tampinha-msg.png" alt="Cachorro e Gato com Tampinhas" width={800} height={1000} />
             </div>
+            <div className="body">
+
+            </div>
+
 
         </section>
         
