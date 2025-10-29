@@ -34,7 +34,6 @@ export default function Cadastro(){
         validationSchema: cadSchema,
         //Quando o formulário for enviado
         onSubmit: (values) => {
-            console.log(values);
             router.push('/meuPerfil');
         }
     });
