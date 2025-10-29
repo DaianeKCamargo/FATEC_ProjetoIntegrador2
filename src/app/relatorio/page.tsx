@@ -55,20 +55,20 @@ export default function relatorio() {
         <div className="bg-white rounded-2xl shadow flex flex-col text-center overflow-hidden">
         <div>
         <p className="text-lg font-semibold pt-6">Gatos</p>
-        <p className="text-4xl font-bold mt-2 mb-6">{dados.gatos}</p>
+        <p className="text-7xl font-bold mt-2 mb-6">{dados.gatos}</p>
         </div>
         <img src="/gatoRel.png" alt="Gato" className="w-55 mx-auto mt-auto translate-y-[15px]" />
         </div>
 
         <div className="bg-white rounded-2xl shadow flex flex-col text-center overflow-hidden">
         <p className="text-lg font-semibold pt-6">Cachorros</p>
-        <p className="text-4xl font-bold mt-2 mb-6">{dados.cachorros}</p>
+        <p className="text-7xl font-bold mt-2 mb-6">{dados.cachorros}</p>
         <img src="/cachorroRel.png" alt="Cachorro" className="w-40 mx-auto mt-auto" />
         </div>
 
         <div className="bg-white rounded-2xl shadow flex flex-col text-center overflow-hidden">
         <p className="text-lg font-semibold pt-6">Tampinhas</p>
-        <p className="text-4xl font-bold mt-2 mb-6">
+        <p className="text-6xl font-bold mt-2 mb-6">
         {dados.tampinhas.toLocaleString("pt-BR")}
         </p>
         <img src="/tampinhasRel.png" alt="Tampinhas" className="w-60 mx-auto mt-auto" />
@@ -76,37 +76,52 @@ export default function relatorio() {
       </section>
 
       <section className="max-w-6xl mx-auto py-10 pb-20">
-        <h2 className="text-2xl font-semibold mb-4">
-          Quantidade de Tampinhas arrecadas durante o ano
-        </h2>
+        <div className="flex gap-lg-5 align-items-center justify-content-center">
+          <h2 className="text-2xl font-semibold mb-4">
+            Quantidade de Tampinhas arrecadas durante o ano
+          </h2>
+           <select
+            className="border rounded-xl px-3 py-2 bg-white shadow"
+            value={ano}
+            onChange={(e) => setAno(Number(e.target.value))}
+          >
+            <option>2025</option>
+          </select>
+        </div>
 
         <div className="bg-white rounded-2xl shadow p-6">
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-around mb-4">
             <p className="text-lg font-semibold">{dados.gas} Kg</p>
             <span className="text-green-600 font-semibold">+4.6%</span>
           </div>
 
-          <div className="grafico-tampinhas">
-            
-          </div>
+          <div className="grafico-tampinhas" />
+          
         </div>
       </section>
 
-      {/* Gráfico fake */}
-      <section className="max-w-6xl mx-auto py-10 pb-40">
-        <h2 className="text-2xl font-semibold mb-4">
-          Quantidade de Gás Carbônico reduzido durante o ano
-        </h2>
+      <section className="max-w-6xl mx-auto py-10 pb-20">
+        <div className="flex gap-lg-5 align-items-center justify-content-center">
+          <h2 className="text-2xl font-semibold mb-4">
+            Quantidade de Gás Carbônico reduzidos durante o ano
+          </h2>
+           <select
+            className="border rounded-xl px-3 py-2 bg-white shadow"
+            value={ano}
+            onChange={(e) => setAno(Number(e.target.value))}
+          >
+            <option>2025</option>
+          </select>
+        </div>
 
         <div className="bg-white rounded-2xl shadow p-6">
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-around mb-4">
             <p className="text-lg font-semibold">{dados.gas} Kg</p>
             <span className="text-green-600 font-semibold">+4.6%</span>
           </div>
 
-          <div className="h-48 bg-gradient-to-r from-blue-200 via-purple-200 to-blue-300 rounded-xl flex items-center justify-center text-gray-600 font-semibold">
-            
-          </div>
+          <div className="grafico-co2" />
+          
         </div>
       </section>
     </>

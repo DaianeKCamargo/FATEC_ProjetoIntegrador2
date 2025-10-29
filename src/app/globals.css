@@ -70,10 +70,16 @@ body {
   background-image: url(/graficoTampinhas.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
-  width: 35vw;
+  width: 45vw;
   height: 30vh;
+}
 
+.grafico-co2 {
+  background-image: url(/graficoCo2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 45vw;
+  height: 30vh;
 }
 
 /* COMPONENTES */
