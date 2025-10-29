@@ -19,7 +19,7 @@ export function InputText({ label, id, type, placeholder, value, onChange, error
         <Form.Group controlId={id}>
             <Form.Label style={{fontSize: "1.6rem",}}>{label}</Form.Label>
             <Form.Control type={type} 
-            name={name}
+            name={name} 
             placeholder={placeholder} value={value}
             onChange={onChange} isInvalid={!!error} 
             style={{fontSize: "1.6rem",}}
