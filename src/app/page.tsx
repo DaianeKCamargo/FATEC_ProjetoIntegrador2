@@ -1,4 +1,3 @@
-import { NavegationBar } from "@/Components/NavegationBar"
 import { Metadata } from "next"
 
 
