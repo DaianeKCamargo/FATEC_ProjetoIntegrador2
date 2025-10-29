@@ -1,4 +1,4 @@
-import TamPetsSection from "@/Components/TampetsSection";
+
 import {Recycle,PawPrint,CheckCircle2,Info,BarChart3, Mail,} from "lucide-react";
 import "@/style/SobreNos.css";
 import TampleteTitulo from "@/Components/tampleteTitulo";
