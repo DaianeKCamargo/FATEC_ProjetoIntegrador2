@@ -1,4 +1,6 @@
+
 import { Metadata } from "next"
+import Image from "next/image"; 
 
 
 
@@ -11,12 +13,24 @@ export const metadata: Metadata = {
 
 export default function Home() {
     return (
-        <>
-        <h1>Página: Home</h1>
-        <p>qplLIi - 10</p>
-        </>
+        <section>
+            <h1 style={{ textAlign: "center", marginBottom: "20px", marginTop: "30px" }}>Projeto Beneficente TamPets</h1>
+            <h2 style={{ textAlign: "center",  marginBottom: "20px", marginTop: "30px" }}>Uma tampinha sozinha não tem preço, mas, unida a outras, tem um grande valor.</h2>
 
-    )
+            <div className="container-imagem">
+                <Image
+                    src="/imgHome.png"
+                    alt="ImgHome"
+                    width={1000}
+                    height={1000}
+                />
+            </div>
+
+        </section>
+        
+        
+
+    );
 }
 
 // https://www.youtube.com/watch?v=e6FigV2fLC8&t=77s video para finalizar o site com nextjs
