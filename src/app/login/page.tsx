@@ -42,6 +42,7 @@ export default function Login(){
                 alignItems: "center",
                 justifyItems: "center",
                 justifyContent: "center",
+                marginBottom: "5rem",
             }}>
 
             <div className="" style={{
@@ -77,11 +78,20 @@ export default function Login(){
                         placeholder="Digite sua senha" value={values.password} onChange={handleChange}/>
                     </div>
                     <div style={{display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-evenly",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    justifyItems: "center",
+                    alignItems: "center",
                     marginTop: "10px"
                     }}>
-                    <Button type="submit">Entrar</Button>
+                    
+                    <Link href="/cadastrar">Cadastrar</Link>
+                    <Button type="submit" style={{width: "12rem",
+                        height:"4rem",
+                        fontSize: "2rem",
+                        marginBottom: "1rem"
+                        }}>
+                        Entrar</Button>
                     </div>
                 </Form>
             </div>
