@@ -1,18 +1,18 @@
 
-import {Recycle,PawPrint,CheckCircle2,Info,BarChart3, Mail,} from "lucide-react";
+import { Recycle, PawPrint, CheckCircle2, Info, BarChart3, Mail, } from "lucide-react";
 import "@/style/SobreNos.css";
-import TampleteTitulo from "@/Components/tampleteTitulo";
+import TampleteTitulo from "@/components/tampleteTitulo";
 
 type TamPetsSectionProps = {
   monthlyWeight?: number;
 };
- 
+
 
 export default function SobreNos({ monthlyWeight = 4.3 }: TamPetsSectionProps) {
   return (
     <section className="tampets-container">
       <div className="hero">
-        <TampleteTitulo titulo="Sobre Nós " descricao="Conheça um pouco quem somos e o que o projeto faz." color="#aefab860"/>
+        <TampleteTitulo titulo="Sobre Nós " descricao="Conheça um pouco quem somos e o que o projeto faz." color="#aefab860" />
       </div>
 
       <div className="content-grid">

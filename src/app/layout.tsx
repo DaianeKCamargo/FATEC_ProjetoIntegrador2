@@ -1,10 +1,10 @@
 'use client';
 import { Noto_Sans_JP } from 'next/font/google';
-import NavegationBar from "@/Components/Navbar/NavegationBar";
+import NavegationBar from "@/components/navbar/NavegationBar";
 // @ts-ignore: allow side-effect import for global CSS without type declarations
 import './globals.css';
-import Footer from '@/Components/footer';
-import Copyright from '@/Components/copyright';
+import Footer from '@/components/footer';
+import Copyright from '@/components/copyright';
 
 // Configuração da fonte
 const notoSansJp = Noto_Sans_JP({
@@ -20,20 +20,20 @@ export default function RootLayout({
 }>) {
 
   //Apenas na pagina meuPerfil que nao vai ter a navegation bar e o footer
-  
 
 
 
-    return (
-      <html lang="en">
-        <body className={notoSansJp.className}>
-          <NavegationBar />
-          {children}
-          <Footer />
-          <Copyright />
-        </body>
-      </html>
-    
-    );
-    
+
+  return (
+    <html lang="en">
+      <body className={notoSansJp.className}>
+        <NavegationBar />
+        {children}
+        <Footer />
+        <Copyright />
+      </body>
+    </html>
+
+  );
+
 }
