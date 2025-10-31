@@ -1,0 +1,145 @@
+.tampets-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #222;
+  font-size: 1.5rem;
+}
+/* Grid */
+.content-grid {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Cards */
+.card, .aside-card, .contact-card {
+  background: #f8f9f9;
+  border: 0.1rem solid #dfe3e2;
+  border-radius: 1.6rem;
+  padding: 2.2rem;
+  box-shadow: 0rem 0.4rem 0.8rem rgba(0,0,0,0.05);
+  transition: 0.25s;
+}
+
+.card:hover,
+.aside-card:hover,
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.09);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card h2, .card h3 {
+  margin: 0;
+  color: #234d38;
+  font-weight: 600;
+}
+
+ul {
+  margin-top: 1rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2d3842;
+}
+
+.text-list {
+  font-size: 1.5rem;
+  color: #2d3842;
+}
+
+/* Icons */
+.icon {
+  width: 24px;
+  height: 24px;
+  color: #3c805e;
+}
+
+.icon-small {
+  width: 20px;
+  height: 20px;
+  color: #3c805e;
+}
+
+/* Aside */
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.aside-card {
+  text-align: center;
+}
+
+.icon-large {
+  width: 42px;
+  height: 42px;
+  color: #3c805e;
+  margin-bottom: 10px;
+}
+
+.monthly {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2f6a4e;
+}
+
+/* Contact CTA */
+.contact-card {
+  background: #2f6a4e;
+  color: white;
+  text-align: center;
+}
+
+.contact-card button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-card button:hover {
+  background: #f4f4f4;
+  color: #2f6a4e;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 0.9rem;
+  color: #6c7873;
+}
+
+/* Responsividade */
+@media (max-width: 850px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -53,4 +53,8 @@ npm install yup
 ``` Pages GitHub
 npm install gh-pages --save-dev
 
+``` Biblioteca lucide-react
+npm install lucide-react
 
+``` Npm react Icons (https://www.npmjs.com/package/react-social-icons)
+npm install react-social-icons

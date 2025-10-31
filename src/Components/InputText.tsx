@@ -1,5 +1,6 @@
 import { Form } from "react-bootstrap";
 
+
 export interface InputTextProps {
     label: string;
     id: string;
@@ -13,15 +14,15 @@ export interface InputTextProps {
 }
 
 
-export default function InputText({ label, id, type, placeholder, value, onChange, error, name }: InputTextProps) {
+export function InputText({ label, id, type, placeholder, value, onChange, error, name }: InputTextProps) {
     return (
         <Form.Group controlId={id}>
-            <Form.Label >{label}</Form.Label>
-            <Form.Control id={id} type={type} 
-            name={name}
+            <Form.Label style={{fontSize: "1.6rem",}}>{label}</Form.Label>
+            <Form.Control type={type} 
+            name={name} 
             placeholder={placeholder} value={value}
             onChange={onChange} isInvalid={!!error} 
-            
+            style={{fontSize: "1.6rem",}}
             />
             <Form.Control.Feedback type='invalid'>
             {error}

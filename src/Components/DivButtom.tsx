@@ -4,14 +4,15 @@ export interface DivButtonProps {
     text: string;
     onSubmit?: () => String | void;
     onClick?: () => void;
+    className?: string;
 }
 
-export default function DivButton({ text, onSubmit, onClick }: DivButtonProps) {
+export default function DivButton({ text, onSubmit, onClick, className }: DivButtonProps) {
     return (
         <div
             onSubmit={onSubmit}
             onClick={onClick}
-            className='centerdiv'
+            className={className}
             style={{
                 
                 backgroundColor: "#D9D9D9",
@@ -23,7 +24,8 @@ export default function DivButton({ text, onSubmit, onClick }: DivButtonProps) {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                cursor: "pointer"
+                cursor: "pointer",
+                
             }}
         >
             <h2 style={{ color: "black" }}>{text}</h2>

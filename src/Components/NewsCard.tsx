@@ -5,8 +5,8 @@ import "../style/NewsCard.css";
 type NewsCardProps = {
   imagem: string;   // caminho relativo dentro da pasta public, ex: "/noticia.jpg"
   titulo: string;
-  data: string;
-  url: string;
+  data?: string;
+  url?: string;
 };
 
 const NewsCard: React.FC<NewsCardProps> = ({ imagem, titulo, data, url }) => {

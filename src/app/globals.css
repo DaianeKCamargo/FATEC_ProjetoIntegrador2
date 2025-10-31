@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+/* GERAL */
 :root {
   --background: #f0f0f0;
   --foreground: #333333;
@@ -12,7 +14,8 @@
 }
 
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
+  /* 1rem = 10px */
 }
 
 body {
@@ -20,22 +23,91 @@ body {
   color: var(--foreground);
 }
 
+.body {
+  background-color: #fff;
+  padding: 2rem 10rem;
+  height: 150vh;
+}
+
+/* PÁGINAS */
+
+/*HOME*/
+
+/* imagem home */
+.container-imagem {
+  display: flex;
+  align-items: center; 
+}
+
+.imagem {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.dropdown-item:hover {
+  background-color: transparent;
+  font-weight: 600;
+  border-bottom: 3px solid #fbbc04;
+}
+
+/* TAMPETS NA MÍDIA */
+.news-container {
+  display: flex;
+  /* deixa os cards em linha */
+  flex-wrap: wrap;
+  /* permite que quebrem a linha se não couberem */
+  gap: 2rem;
+  /* espaço entre os cards */
+  justify-content: center;
+  /* centraliza os cards na página */
+  padding: 10rem 0;
+}
+
+/* RELATÓRIOS */
+.grafico-tampinhas {
+  background-image: url(/graficoTampinhas.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 45vw;
+  height: 30vh;
+}
+
+.grafico-co2 {
+  background-image: url(/graficoCo2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 45vw;
+  height: 30vh;
+}
+
+/* PONTO DE COLETA */
+
+
+/* COMPONENTES */
+
+/* NAVBAR */
+.dropdown-item {
+  font-size: 1.4rem;
+  font-family: inherit;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+}
+
+
+/*  ESTILO PARA MOBILE */
 @media (max-width: 768px) {
-    /* tira a configuração padrão da imagem-logo */
+  
+  /* tira a configuração padrão da imagem-logo */
   img {
     max-width: 50%;
     height: auto;
   }
-
+  
   svg {
     vertical-align: 0;
   }
 }
-.news-container {
-  display: flex;            /* deixa os cards em linha */
-  flex-wrap: wrap;          /* permite que quebrem a linha se não couberem */
-  gap: 20px;                /* espaço entre os cards */
-  justify-content: center;  /* centraliza os cards na página */
-  padding: 20px;
-}
-
