@@ -1,0 +1,102 @@
+.faixa {
+    border-bottom: 1px solid #e5e7eb;
+    height: 1vh;
+    background-image: linear-gradient(to right, #17991B, #5F81B7, #D65552, #9D43C2, #D7C216);
+}
+
+.navbar {
+    display: flex;
+    justify-content: start;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    /* equivalente a border-gray-200 */
+    height: 80px;
+}
+
+.logotampets {
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 25rem;
+    height: 10rem;
+}
+
+.navitems {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.item {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.6rem;
+
+    &:hover {
+        color: #5F81B7;
+        font-weight: 700;
+        border-bottom: solid 0.3rem #5F81B7;
+    }
+}
+
+.navhamburguer {
+    display: none;
+}
+
+.btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 5rem;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: solid 0.1rem #D65552;
+    border-radius: 5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: #D65552;
+
+    &:hover {
+        background-color: #D65552;
+        color: #333;
+        box-shadow: 0 0 0.1rem 0.1rem #333;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .logotampets {
+        justify-content: flex-start;
+    }
+
+    .navitems {
+        display: none;
+    }
+
+    .navhamburguer {
+        display: flex;
+        justify-content: end;
+        justify-items: center;
+        margin-right: 5rem;
+    }
+
+    .btn {
+        display: none;
+    }
+}

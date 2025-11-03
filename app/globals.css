@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* GERAL */
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgba(252, 236, 213, 0.774);
+}
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+}
+
+/* PÁGINAS */
+
+
+
+/* COMPONENTES */
+
