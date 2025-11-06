@@ -25,7 +25,7 @@ export default function NavbarLogout() {
 
             <nav className={styles.navbar} >
                 <div className={styles.logotampets}>
-                    <Image src={myLocalImage} width={50} height={50}/>
+                    {/* <Image src={myLocalImage} width={50} height={50}/> */}
                 </div>
                 {/* ITENS DESKTOP */}
                 <div className={styles.navitems}>
