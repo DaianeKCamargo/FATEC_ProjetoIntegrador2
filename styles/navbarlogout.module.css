@@ -89,13 +89,34 @@
         display: none;
     }
 
+    .titulomenu {
+        font-size: 1.6rem;
+        margin: 1rem;
+    }
+
+    .navlateral {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .navitemslateral {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        font-size: 1.6rem;
+        color: #333;
+    }
+
     .navhamburguer {
         display: flex;
-        justify-content: end;
-        justify-items: center;
+        align-items: center;
         margin-right: 5rem;
     }
 
+    .navitems,
     .btn {
         display: none;
     }
