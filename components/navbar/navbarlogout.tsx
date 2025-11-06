@@ -23,7 +23,7 @@ export default function NavbarLogout() {
 
             <nav className={styles.navbar} >
                 <div className={styles.logotampets}>
-                    <a href="/"><img className={styles.logo} src="/public/logo_tampets.png" alt="Logo Tampets" width={200} height={100} /></a>
+                    <a href="/"><img className={styles.logo} src="/logo_tampets.png" alt="Logo Tampets" width={200} height={100} /></a>
                 </div>
                 {/* ITENS DESKTOP */}
                 <div className={styles.navitems}>
