@@ -4,8 +4,10 @@ import { Button, Container, Form, Nav, NavDropdown, Offcanvas } from 'react-boot
 import { RiLoginCircleLine } from "react-icons/ri";
 import styles from '@/styles/navbarlogout.module.css';
 import Link from 'next/link';
-import { FaBarsStaggered, FaXmark } from 'react-icons/fa6';
+import { FaBarsStaggered } from 'react-icons/fa6';
 import { useState } from 'react';
+import Image from 'next/image';
+import myLocalImage from '@/public/logo_tampets.png';
 
 
 export default function NavbarLogout() {
@@ -23,7 +25,7 @@ export default function NavbarLogout() {
 
             <nav className={styles.navbar} >
                 <div className={styles.logotampets}>
-                    <a href="/"><img className={styles.logo} src="/logo_tampets.png" alt="Logo Tampets" width={200} height={100} /></a>
+                    <Image src={myLocalImage} width={50} height={50}/>
                 </div>
                 {/* ITENS DESKTOP */}
                 <div className={styles.navitems}>
