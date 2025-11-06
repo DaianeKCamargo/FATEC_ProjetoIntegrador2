@@ -1,0 +1,10 @@
+.section{
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
