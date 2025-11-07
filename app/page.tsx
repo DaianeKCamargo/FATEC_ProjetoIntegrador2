@@ -2,7 +2,7 @@
 import styles from '@/styles/home.module.css';
 
 export default function Home() {
-  return(
+  return (
     <div>
       <div className={styles.hero}>
         <img className={styles.folder} src="/folder_home.png" alt="folder home" />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@/app/globals.css";
+import './globals.css';
 import NavbarLogout from "@/components/navbar/navbarlogout";
 import 'bootstrap/dist/css/bootstrap.min.css';
 

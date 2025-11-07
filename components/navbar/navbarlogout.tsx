@@ -1,13 +1,11 @@
 'use client';
 
-import { Button, Container, Form, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
+import { Form, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
 import { RiLoginCircleLine } from "react-icons/ri";
 import styles from '@/styles/navbarlogout.module.css';
 import Link from 'next/link';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { useState } from 'react';
-import Image from 'next/image';
-import myLocalImage from '@/public/logo_tampets.png';
 
 
 export default function NavbarLogout() {
