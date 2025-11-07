@@ -25,7 +25,7 @@ export default function NavbarLogout() {
 
             <nav className={styles.navbar} >
                 <div className={styles.logotampets}>
-                    {/* <Image src={myLocalImage} width={50} height={50}/> */}
+                    <a href="/"><img className={styles.logo} src="/logo_tampets.png" alt="Logo Tampets" width={200} height={100} /></a>
                 </div>
                 {/* ITENS DESKTOP */}
                 <div className={styles.navitems}>
