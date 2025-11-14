@@ -6,11 +6,12 @@ import styles from '@/styles/navbarlogout.module.css';
 import Link from 'next/link';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { useState } from 'react';
+import { BsPersonCircle } from 'react-icons/bs';
 import { useRouter } from 'next/navigation';
+import { link } from 'fs';
 
 
-
-export default function NavbarLogout() {
+export default function NavbarLogin() {
 
     const [openMenu, setOpenMenu] = useState<boolean>(false);
 
@@ -36,26 +37,25 @@ export default function NavbarLogout() {
                         <NavDropdown.Item className={styles.item} as={Link} href='/sobre-nos'> Sobre Nós </NavDropdown.Item>
                         <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/tampets-na-midia"> Tampets na Mídia </NavDropdown.Item>
                         <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/galeria-tampets"> Galeria de Fotos </NavDropdown.Item>
-                    </NavDropdown>
-                    <Link className={styles.item} href="/relatorio"> Relatório </Link>
-                    <Link className={styles.item} href="/ponto-coleta"> Ponto de Coleta </Link>
-                    <Link className={styles.item} href="/como-doar"> Como Doar </Link>
-                </div>
-                <div className={styles.btn}>
-                    <button className={styles.button} onClick={() => { router.push("/login") }}>
-                        <RiLoginCircleLine size={20} /> Login
-                    </button>
-                </div>
+                </NavDropdown>
+                <Link className={styles.item} href="/relatorio"> Relatório </Link>
+                <Link className={styles.item} href="/ponto-coleta"> Ponto de Coleta </Link>
+                <Link className={styles.item} href="/como-doar"> Como Doar </Link>
+            </div>
+            <div className={styles.btn}>
+                <button className={styles.button} onClick={() => { router.push("/meu-perfil") }}>
+                    <BsPersonCircle size={20} /> Meu Perfil
+                </button>
+            </div>
 
+            {/* ITEM MOBILE */}
+            <div className={styles.navhamburguer}>
+                <FaBarsStaggered size={20} onClick={handleAberto} style={{ cursor: 'pointer' }} />
+            </div>
+        </nav >
 
-                {/* ITEM MOBILE */}
-                <div className={styles.navhamburguer}>
-                    <FaBarsStaggered size={20} onClick={handleAberto} style={{ cursor: 'pointer' }} />
-                </div>
-            </nav>
-
-            {/* Offcanvas (menu lateral) */}
-            <Offcanvas className={styles.meuoffcanvas} show={openMenu} onHide={handleFechado} placement="top">
+            {/* Offcanvas (menu lateral) */ }
+            < Offcanvas className = { styles.meuoffcanvas } show = { openMenu } onHide = { handleFechado } placement = "top" >
                 <Offcanvas.Body className={styles.bodylateral}>
                     <Nav className={styles.navlateral}>
                         <div className={styles.navitemslateral}>
@@ -69,8 +69,8 @@ export default function NavbarLogout() {
                             <Link className={styles.item} href="/como-doar"> Como Doar </Link>
 
                             <div className={styles.bttn}>
-                                <button className={styles.button} onClick={() => { router.push("/login") }}>
-                                    <RiLoginCircleLine size={20} /> Login
+                                <button className={styles.button} onClick={() => { router.push("/meu-perfil") }}>
+                                    <BsPersonCircle size={20} /> Meu Perfil
                                 </button>
                             </div>
                         </div>
@@ -78,7 +78,7 @@ export default function NavbarLogout() {
                     </Nav>
                 </Offcanvas.Body>
                 <Offcanvas.Header closeButton className={styles.titulomenu} />
-            </Offcanvas>
+            </Offcanvas >
 
         </>
     );

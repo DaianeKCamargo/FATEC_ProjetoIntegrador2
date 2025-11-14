@@ -33,7 +33,6 @@
     gap: 2rem;
     font-size: 1.6rem;
     color: #333;
-    text-decoration: none;
 }
 
 .item {
@@ -42,7 +41,7 @@
     font-size: 1.6rem;
 
     &:hover {
-        color: #5F81B7;
+        color: #5F81B7 !important;
         font-weight: 700;
         border-bottom: solid 0.3rem #5F81B7;
     }

@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from "next";
 import NavbarLogout from "../components/navbar/NavbarLogout";
+import NavbarLogin from '@/components/navbar/NavbarLogin';
 
 export const metadata: Metadata = {
   title: "Bem-Vindos ao Projeto Tampets",
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <NavbarLogout />
+        <NavbarLogin />
         {children}
       </body>
     </html>
