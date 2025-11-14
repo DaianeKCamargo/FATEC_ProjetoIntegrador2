@@ -32,7 +32,9 @@ export default function NavbarLogout() {
                         <NavDropdown.Item className={styles.item} href="#action4"> Tampets na Mídia </NavDropdown.Item>
                         <NavDropdown.Item className={styles.item} href="#action5"> Galeria de Fotos </NavDropdown.Item>
                     </NavDropdown>
-                    <Link className={styles.item} href={""}> Relatório </Link>
+                    <NavDropdown className={styles.item} title="Relatório">
+                        <NavDropdown.Item className={styles.item} href=''> Gás Carbônico - CO2 </NavDropdown.Item>
+                    </NavDropdown>
                     <Link className={styles.item} href={""}> Ponto de Coleta </Link>
                     <Link className={styles.item} href={""}> Como Doar </Link>
                 </div>
