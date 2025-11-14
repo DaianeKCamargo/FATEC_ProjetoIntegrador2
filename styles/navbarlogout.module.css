@@ -110,12 +110,13 @@
 
     .navitemslateral {
         display: flex;
-        align-items: end;
+        align-items: center;
         flex-direction: column;
         gap: 2rem;
         font-size: 1.6rem;
         color: #333;
         text-decoration: none !important;
+        margin-left: 5rem;
     }
 
     .navhamburguer {
