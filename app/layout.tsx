@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from "next";
-import NavbarLogout from "../components/navbar/NavbarLogout";
+import NavbarLogout from '@/components/navbar/NavbarLogout';
 import NavbarLogin from '@/components/navbar/NavbarLogin';
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <NavbarLogin />
+        <NavbarLogout />
         {children}
       </body>
     </html>
