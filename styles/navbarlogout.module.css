@@ -102,7 +102,6 @@
         text-decoration: none !important;
     }
 
-
     .navlateral {
         display: flex;
         justify-content: center;
@@ -111,14 +110,13 @@
 
     .navitemslateral {
         display: flex;
-        align-items: center;
+        align-items: end;
         flex-direction: column;
         gap: 2rem;
         font-size: 1.6rem;
         color: #333;
         text-decoration: none !important;
     }
-
 
     .navhamburguer {
         display: flex;
