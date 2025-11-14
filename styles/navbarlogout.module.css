@@ -33,11 +33,12 @@
     gap: 2rem;
     font-size: 1.6rem;
     color: #333;
+    text-decoration: none;
 }
 
 .item {
-    text-decoration: none;
-    color: #333;
+    text-decoration: none !important;
+    color: #333 !important;
     font-size: 1.6rem;
 
     &:hover {
@@ -85,10 +86,9 @@
         justify-content: flex-start;
     }
 
-    .navitems {
+    .navitems, .btn {
         display: none;
     }
-
 
     .titulomenu {
         font-size: 1.6rem;
@@ -99,7 +99,6 @@
     .meuoffcanvas {
         display: flex !important;
         flex-direction: row !important;
-        text-decoration: none !important;
     }
 
     .navlateral {
@@ -115,7 +114,6 @@
         gap: 2rem;
         font-size: 1.6rem;
         color: #333;
-        text-decoration: none !important;
         margin-left: 5rem;
     }
 
@@ -125,8 +123,7 @@
         margin-right: 5rem;
     }
 
-    .navitems,
-    .btn {
-        display: none;
+    .bttn {
+        margin-top: 1.5rem;
     }
 }

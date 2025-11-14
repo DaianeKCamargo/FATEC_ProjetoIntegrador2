@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import './globals.css';
-import NavbarLogout from "@/components/navbar/navbarlogout";
+import NavbarLogout from "@/components/Navbar/navbarlogout";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const metadata: Metadata = {

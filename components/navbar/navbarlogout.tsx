@@ -1,6 +1,6 @@
 'use client';
 
-import { Form, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
+import { Button, Form, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
 import { RiLoginCircleLine } from "react-icons/ri";
 import styles from '@/styles/navbarlogout.module.css';
 import Link from 'next/link';
@@ -25,7 +25,7 @@ export default function NavbarLogout() {
                 <div className={styles.logotampets}>
                     <a href="/"><img className={styles.logo} src="/logo_tampets.png" alt="Logo Tampets" width={200} height={100} /></a>
                 </div>
-                
+
                 {/* ITENS DESKTOP */}
                 <div className={styles.navitems}>
                     <NavDropdown className={styles.item} title="O Projeto">
@@ -51,19 +51,25 @@ export default function NavbarLogout() {
 
             {/* Offcanvas (menu lateral) */}
             <Offcanvas className={styles.meuoffcanvas} show={openMenu} onHide={handleFechado} placement="top">
-
                 <Offcanvas.Body className={styles.bodylateral}>
                     <Nav className={styles.navlateral}>
                         <div className={styles.navitemslateral}>
-                            <NavDropdown className={styles.item} title="O Projeto">
-                                <NavDropdown.Item className={styles.item} href="#action3"> Quem somos </NavDropdown.Item>
-                                <NavDropdown.Item className={styles.item} href="#action4"> Tampets na Mídia </NavDropdown.Item>
-                                <NavDropdown.Item className={styles.item} href="#action5"> Galeria de Fotos </NavDropdown.Item>
+                            <NavDropdown className={styles.item1} title="O Projeto">
+                                <NavDropdown.Item className={styles.item1} href="#action3"> Quem somos </NavDropdown.Item>
+                                <NavDropdown.Item className={styles.item1} href="#action4"> Tampets na Mídia </NavDropdown.Item>
+                                <NavDropdown.Item className={styles.item1} href="#action5"> Galeria de Fotos </NavDropdown.Item>
                             </NavDropdown>
                             <Link className={styles.item} href={""}> Relatório </Link>
                             <Link className={styles.item} href={""}> Ponto de Coleta </Link>
                             <Link className={styles.item} href={""}> Como Doar </Link>
+
+                            <Form className={styles.bttn}>
+                                <button className={styles.button}>
+                                    <RiLoginCircleLine size={20} /> Login
+                                </button>
+                            </Form>
                         </div>
+
                     </Nav>
                 </Offcanvas.Body>
                 <Offcanvas.Header closeButton className={styles.titulomenu} />
