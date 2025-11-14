@@ -1,5 +1,4 @@
 import './globals.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import type { Metadata } from "next";
 import NavbarLogout from "@/components/Navbar/navbarlogout";
 

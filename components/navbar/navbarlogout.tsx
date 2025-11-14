@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Form, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
+import { Form, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
 import { RiLoginCircleLine } from "react-icons/ri";
 import styles from '@/styles/navbarlogout.module.css';
 import Link from 'next/link';
