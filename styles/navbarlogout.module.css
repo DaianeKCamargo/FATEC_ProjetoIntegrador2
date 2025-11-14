@@ -89,6 +89,10 @@
         display: none;
     }
 
+    .bodylateral {
+        width: 50%;
+    }
+
     .titulomenu {
         font-size: 1.6rem;
         margin: 1rem;
@@ -98,7 +102,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     .navitemslateral {

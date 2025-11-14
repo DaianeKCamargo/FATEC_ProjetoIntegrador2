@@ -53,7 +53,7 @@ export default function NavbarLogout() {
             {/* Offcanvas (menu lateral) */}
             <Offcanvas show={openMenu} onHide={handleFechado} placement="end">
                 <Offcanvas.Header closeButton className={styles.titulomenu} />
-                <Offcanvas.Body>
+                <Offcanvas.Body className={styles.bodylateral}>
                     <Nav className={styles.navlateral}>
                         <div className={styles.navitemslateral}>
                             <NavDropdown className={styles.item} title="O Projeto">
