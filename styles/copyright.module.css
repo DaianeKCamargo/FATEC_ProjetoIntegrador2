@@ -1,0 +1,39 @@
+.direitosautorais {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to right,#17991b8c, #5f81b773, #d6545285, #9e43c27c, #d7c01683);
+    border-top: solid 0.1rem #b5b5b5;
+    padding: 1rem;
+    color: #8c8c8c;
+    font-size: 1.2rem;
+    height: 5vh;
+}
+
+.politicas {
+    margin-left: 10rem;
+    cursor: pointer;
+}
+
+.copyright {
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .direitosautorais {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 0.7rem;
+    }
+
+    .divisor {
+        display: none;
+    }
+
+
+    .copyright {
+        border-left: 0.1rem solid;
+        padding-left: 3.5rem;
+    }
+}

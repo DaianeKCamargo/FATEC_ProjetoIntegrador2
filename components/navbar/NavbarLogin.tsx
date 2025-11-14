@@ -1,7 +1,6 @@
 'use client';
 
-import { Form, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
-import { RiLoginCircleLine } from "react-icons/ri";
+import { Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
 import styles from '@/styles/navbarlogout.module.css';
 import Link from 'next/link';
 import { FaBarsStaggered } from 'react-icons/fa6';
