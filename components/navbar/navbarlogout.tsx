@@ -25,6 +25,7 @@ export default function NavbarLogout() {
                 <div className={styles.logotampets}>
                     <a href="/"><img className={styles.logo} src="/logo_tampets.png" alt="Logo Tampets" width={200} height={100} /></a>
                 </div>
+                
                 {/* ITENS DESKTOP */}
                 <div className={styles.navitems}>
                     <NavDropdown className={styles.item} title="O Projeto">
@@ -32,7 +33,6 @@ export default function NavbarLogout() {
                         <NavDropdown.Item className={styles.item} href="#action4"> Tampets na Mídia </NavDropdown.Item>
                         <NavDropdown.Item className={styles.item} href="#action5"> Galeria de Fotos </NavDropdown.Item>
                     </NavDropdown>
-                    
                     <Link className={styles.item} href={""}> Relatório </Link>
                     <Link className={styles.item} href={""}> Ponto de Coleta </Link>
                     <Link className={styles.item} href={""}> Como Doar </Link>
