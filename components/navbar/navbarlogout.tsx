@@ -51,7 +51,7 @@ export default function NavbarLogout() {
             </nav>
 
             {/* Offcanvas (menu lateral) */}
-            <Offcanvas show={openMenu} onHide={handleFechado} placement="end">
+            <Offcanvas show={openMenu} onHide={handleFechado} placement="top">
                 <Offcanvas.Header closeButton className={styles.titulomenu} />
                 <Offcanvas.Body className={styles.bodylateral}>
                     <Nav className={styles.navlateral}>
