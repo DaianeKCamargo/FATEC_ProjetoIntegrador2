@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from "next";
-import NavbarLogout from "../../components/navbar/NavbarLogout";
+import NavbarLogout from "../components/navbar/NavbarLogout";
 
 export const metadata: Metadata = {
   title: "Bem-Vindos ao Projeto Tampets",
