@@ -45,7 +45,7 @@ export default function NavbarLogout() {
 
                 {/* ITEM MOBILE */}
                 <div className={styles.navhamburguer}>
-                    <FaBarsStaggered size={30} onClick={handleAberto} style={{ cursor: 'pointer' }} />
+                    <FaBarsStaggered size={20} onClick={handleAberto} style={{ cursor: 'pointer' }} />
                 </div>
             </nav>
 
