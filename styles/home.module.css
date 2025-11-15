@@ -9,8 +9,19 @@
     height: auto;
 }
 
-/*  PARCEIROS  */
+/* COMO DOAR */
+.doar {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 5rem;
+}
 
-/* .parceiros {
-
-} */
+.doarimg {
+    width: 100%;
+    height: 40rem;
+    border-radius: 100%;
+    border: dotted 0.2rem #9D43C2;
+    transform: rotateX(180deg);
+    padding: 2rem;
+    
+}

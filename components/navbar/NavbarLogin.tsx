@@ -7,7 +7,6 @@ import { FaBarsStaggered } from 'react-icons/fa6';
 import { useState } from 'react';
 import { BsPersonCircle } from 'react-icons/bs';
 import { useRouter } from 'next/navigation';
-import { link } from 'fs';
 
 
 export default function NavbarLogin() {
