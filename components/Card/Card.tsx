@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "@/styles/card.module.css";
+import styles from "@/styles/card.module.css";
 
 type CardProps = {
   imagem: string;
@@ -12,18 +12,19 @@ type CardProps = {
 export default function Card({ imagem, titulo, descricao, width, className }: CardProps) {
   return (
     <div
-      className={`card ${className ? className : ""}`}
+      className={`${styles.card} ${className ? className : ""}`}
       style={{ width: width ? `${width}px` : "260px" }}
     >
-      <div className="imagem">
+      <div className={styles.imagem}>
         <Image
           src={imagem}
           alt={titulo}
-          fill                   // faz a imagem ocupar 100% do contêiner
-          className="foto"       // importante! aplica o estilo CSS de object-fit e hover
+          fill
+          className={styles.foto}
         />
       </div>
-      <div className="texto">
+
+      <div className={styles.texto}>
         <h3>{titulo}</h3>
         <p>{descricao}</p>
       </div>

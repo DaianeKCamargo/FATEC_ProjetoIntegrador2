@@ -1,5 +1,5 @@
 
-.newsContainer {
+.news-container {
   display: flex;
   /* deixa os cards em linha */
   flex-wrap: wrap;
@@ -10,3 +10,14 @@
   /* centraliza os cards na página */
   padding: 10rem 0;
 }
+
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+              
