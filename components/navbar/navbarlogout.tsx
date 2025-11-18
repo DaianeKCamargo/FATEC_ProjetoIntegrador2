@@ -33,13 +33,6 @@ export default function NavbarLogout() {
                 {/* ITENS DESKTOP */}
                 <div className={styles.navitems}>
                     <NavDropdown className={styles.item} title="O Projeto">
-                        <NavDropdown.Item className={styles.item} href="#action3"> Quem somos </NavDropdown.Item>
-                        <NavDropdown.Item className={styles.item} href="#action4"> Tampets na Mídia </NavDropdown.Item>
-                        <NavDropdown.Item className={styles.item} href="#action5"> Galeria de Fotos </NavDropdown.Item>
-                    </NavDropdown>
-                    <Link className={styles.item} href={""}> Relatório </Link>
-                    <Link className={styles.item} href={""}> Ponto de Coleta </Link>
-                    <Link className={styles.item} href={""}> Como Doar </Link>
                         <NavDropdown.Item className={styles.item} as={Link} href='/sobre-nos'> Sobre Nós </NavDropdown.Item>
                         <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/tampets-na-midia"> Tampets na Mídia </NavDropdown.Item>
                         <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/galeria-tampets"> Galeria de Fotos </NavDropdown.Item>

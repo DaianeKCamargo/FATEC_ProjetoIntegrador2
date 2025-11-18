@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from "next";
-import NavbarLogin from '@/components/navbar/NavbarLogin';
+import NavbarLogin from '@/components/navbar/navbarlogin';
 import Footer from '@/components/footer/footer';
 import Copiryght from '@/components/footer/copyright';
 import NavbarLogout from '@/components/navbar/navbarlogout';
