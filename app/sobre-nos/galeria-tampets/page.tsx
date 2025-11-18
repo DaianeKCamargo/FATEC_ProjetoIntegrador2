@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "@/styles/galeria.module.css";
-import Card from "@/components/card1/Card";
+import Card from "@/components/card/Card";
 
 export default function GaleriaTampets() {
     return (
