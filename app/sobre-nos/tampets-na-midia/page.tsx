@@ -1,7 +1,7 @@
 'use client';
 
 
-import NewsCard from "@/components/newscard1/NewsCard";
+import NewsCard from "@/components/newscard/NewsCard";
 import styles from "@/styles/namidia.module.css";
 
 
