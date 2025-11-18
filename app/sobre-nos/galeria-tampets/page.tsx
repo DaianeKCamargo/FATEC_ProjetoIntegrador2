@@ -1,13 +1,13 @@
 'use client';
 
-import Card from "@/components/card/Card";
 import Link from "next/link";
 import styles from "@/styles/galeria.module.css";
+import Card from "@/components/card/Card";
 
 export default function GaleriaTampets() {
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1>Galeria TamPets</h1>
                 <h2>Confira aqui os registros dos momentos TamPets!</h2>
             </div>
