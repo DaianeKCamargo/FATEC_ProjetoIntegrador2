@@ -1,11 +1,11 @@
 'use client'
 
-export default function MeuPerfilPontoColeta() {
+export default function AdministrativoHome() {
 
     return(
         <section>
            <div>
-                <h1> Meu perfil ponto de coleta </h1>
+                <h1> Home Administrativo </h1>
             </div>
         </section>
     );

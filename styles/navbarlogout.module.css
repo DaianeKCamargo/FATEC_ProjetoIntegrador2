@@ -36,12 +36,12 @@
 }
 
 .item {
-    text-decoration: none;
-    color: #333;
+    text-decoration: none !important;
+    color: #333 !important;
     font-size: 1.6rem;
 
     &:hover {
-        color: #5F81B7;
+        color: #5F81B7 !important;
         font-weight: 700;
         border-bottom: solid 0.3rem #5F81B7;
     }
@@ -85,18 +85,44 @@
         justify-content: flex-start;
     }
 
-    .navitems {
+    .navitems, .btn {
         display: none;
+    }
+
+    .titulomenu {
+        font-size: 1.6rem;
+        margin: 1rem;
+        align-items: flex-start !important;
+    }
+
+    .meuoffcanvas {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    .navlateral {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navitemslateral {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        font-size: 1.6rem;
+        color: #333;
+        margin-left: 5rem;
     }
 
     .navhamburguer {
         display: flex;
-        justify-content: end;
-        justify-items: center;
+        align-items: center;
         margin-right: 5rem;
     }
 
-    .btn {
-        display: none;
+    .bttn {
+        margin-top: 1.5rem;
     }
 }
