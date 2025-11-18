@@ -1,9 +1,9 @@
 import './globals.css';
 import type { Metadata } from "next";
-import NavbarLogin from '@/components/navbar/navbarlogin';
-import Footer from '@/components/footer/footer';
-import Copiryght from '@/components/footer/copyright';
-import NavbarLogout from '@/components/navbar/navbarlogout';
+import NavbarLogin from '@/components/navbar/NavbarLogin';
+import Footer from '@/components/footer/Footer';
+import Copiryght from '@/components/footer/Copyright';
+import NavbarLogout from '@/components/navbar/NavbarLogout';
 
 export const metadata: Metadata = {
   title: "Bem-Vindos ao Projeto Tampets",

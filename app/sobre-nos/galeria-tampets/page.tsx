@@ -1,6 +1,6 @@
 'use client';
 
-import Card from "@/components/card/card";
+import Card from "@/components/card/Card";
 import Link from "next/link";
 import styles from "@/styles/galeria.module.css";
 

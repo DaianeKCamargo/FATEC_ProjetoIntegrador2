@@ -13,7 +13,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ imagem, titulo, data, url }) => {
   return (
     <div className={styles["news-card"]}>
       <div className={styles["news-card-img-wrapper"]}>
-        <Image 
+        <Image
           src={imagem}
           alt={titulo}
           width={300}
