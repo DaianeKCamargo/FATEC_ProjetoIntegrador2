@@ -1,9 +1,9 @@
 'use client'
 
 export default function AdministrativoGaleria() {
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Administrativo Galeria </h1>
             </div>
         </section>

@@ -2,9 +2,9 @@
 
 export default function MeuPerfilPontoColeta() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Meu perfil ponto de coleta </h1>
             </div>
         </section>

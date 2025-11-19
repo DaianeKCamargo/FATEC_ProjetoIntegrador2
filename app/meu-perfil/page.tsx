@@ -2,9 +2,9 @@
 
 export default function MeuPerfil() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Meu Perfil </h1>
             </div>
         </section>

@@ -2,9 +2,9 @@
 
 export default function AdministrativoAnaliseAprovacao() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Administrativo Analise e Aprovação </h1>
             </div>
         </section>

@@ -2,9 +2,9 @@
 
 export default function MeuPerfilParceiro() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Meu perfil Parceiros </h1>
             </div>
         </section>

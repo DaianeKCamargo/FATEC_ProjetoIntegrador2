@@ -85,7 +85,8 @@
         justify-content: flex-start;
     }
 
-    .navitems, .btn {
+    .navitems,
+    .btn {
         display: none;
     }
 

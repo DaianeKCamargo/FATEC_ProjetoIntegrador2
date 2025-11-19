@@ -2,9 +2,9 @@
 
 export default function Parceiros() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Parceiros </h1>
             </div>
         </section>

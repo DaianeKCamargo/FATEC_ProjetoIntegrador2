@@ -2,9 +2,9 @@
 
 export default function Cadastrar() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Cadastrar </h1>
             </div>
         </section>

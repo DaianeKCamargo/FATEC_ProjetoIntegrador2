@@ -2,9 +2,9 @@
 
 export default function AlterarSenha() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Alterar senha </h1>
             </div>
         </section>

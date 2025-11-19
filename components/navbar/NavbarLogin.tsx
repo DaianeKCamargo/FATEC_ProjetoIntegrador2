@@ -18,7 +18,6 @@ export default function NavbarLogin() {
 
     const router = useRouter();
 
-
     return (
         <>
             {/* DESKTOP E MOBILE */}
@@ -35,25 +34,25 @@ export default function NavbarLogin() {
                         <NavDropdown.Item className={styles.item} as={Link} href='/sobre-nos'> Sobre Nós </NavDropdown.Item>
                         <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/tampets-na-midia"> Tampets na Mídia </NavDropdown.Item>
                         <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/galeria-tampets"> Galeria de Fotos </NavDropdown.Item>
-                </NavDropdown>
-                <Link className={styles.item} href="/relatorio"> Relatório </Link>
-                <Link className={styles.item} href="/ponto-coleta"> Ponto de Coleta </Link>
-                <Link className={styles.item} href="/como-doar"> Como Doar </Link>
-            </div>
-            <div className={styles.btn}>
-                <button className={styles.button} onClick={() => { router.push("/meu-perfil") }}>
-                    <BsPersonCircle size={20} /> Meu Perfil
-                </button>
-            </div>
+                    </NavDropdown>
+                    <Link className={styles.item} href="/relatorio"> Relatório </Link>
+                    <Link className={styles.item} href="/ponto-coleta"> Ponto de Coleta </Link>
+                    <Link className={styles.item} href="/como-doar"> Como Doar </Link>
+                </div>
+                <div className={styles.btn}>
+                    <button className={styles.button} onClick={() => { router.push("/meu-perfil") }}>
+                        <BsPersonCircle size={20} /> Meu Perfil
+                    </button>
+                </div>
 
-            {/* ITEM MOBILE */}
-            <div className={styles.navhamburguer}>
-                <FaBarsStaggered size={20} onClick={handleAberto} style={{ cursor: 'pointer' }} />
-            </div>
-        </nav >
+                {/* ITEM MOBILE */}
+                <div className={styles.navhamburguer}>
+                    <FaBarsStaggered size={20} onClick={handleAberto} style={{ cursor: 'pointer' }} />
+                </div>
+            </nav >
 
-            {/* Offcanvas (menu lateral) */ }
-            < Offcanvas className = { styles.meuoffcanvas } show = { openMenu } onHide = { handleFechado } placement = "top" >
+            {/* Offcanvas (menu lateral) */}
+            < Offcanvas className={styles.meuoffcanvas} show={openMenu} onHide={handleFechado} placement="top" >
                 <Offcanvas.Body className={styles.bodylateral}>
                     <Nav className={styles.navlateral}>
                         <div className={styles.navitemslateral}>

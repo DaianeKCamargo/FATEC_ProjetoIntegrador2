@@ -2,9 +2,9 @@
 
 export default function AdministrativoNaMidia() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Administrativo Tampets na Mídia</h1>
             </div>
         </section>

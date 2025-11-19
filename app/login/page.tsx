@@ -2,9 +2,9 @@
 
 export default function Login() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Login </h1>
             </div>
         </section>

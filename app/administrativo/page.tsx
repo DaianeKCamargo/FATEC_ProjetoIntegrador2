@@ -2,9 +2,9 @@
 
 export default function AdministrativoHome() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Home Administrativo </h1>
             </div>
         </section>

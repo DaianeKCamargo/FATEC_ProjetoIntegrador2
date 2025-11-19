@@ -2,9 +2,9 @@
 
 export default function Relatorio() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Relatório </h1>
             </div>
         </section>

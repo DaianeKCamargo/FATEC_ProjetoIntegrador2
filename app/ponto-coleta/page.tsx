@@ -2,9 +2,9 @@
 
 export default function PontoColeta() {
 
-    return(
+    return (
         <section>
-           <div>
+            <div>
                 <h1> Ponto de Coleta </h1>
             </div>
         </section>
