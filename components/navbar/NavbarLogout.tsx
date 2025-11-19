@@ -2,11 +2,12 @@
 
 import { Form, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
 import { RiLoginCircleLine } from "react-icons/ri";
-import styles from '@/styles/navbarlogout.module.css';
+import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import FaixaColorida from '../FaixaColorida';
 
 
 
@@ -23,7 +24,7 @@ export default function NavbarLogout() {
     return (
         <>
             {/* DESKTOP E MOBILE */}
-            <div className={styles.faixa} />
+            <FaixaColorida />
 
             <nav className={styles.navbar} >
                 <div className={styles.logotampets}>

@@ -1,9 +1,3 @@
-.faixa {
-    border-bottom: 1px solid #e5e7eb;
-    height: 1vh;
-    background-image: linear-gradient(to right, #17991B, #5F81B7, #D65552, #9D43C2, #D7C216);
-}
-
 .navbar {
     display: flex;
     justify-content: start;
@@ -41,8 +35,7 @@
     font-size: 1.6rem;
 
     &:hover {
-        color: #5F81B7 !important;
-        font-weight: 700;
+        font-weight: 600;
         border-bottom: solid 0.3rem #5F81B7;
     }
 }

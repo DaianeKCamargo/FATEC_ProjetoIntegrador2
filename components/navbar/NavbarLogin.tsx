@@ -1,12 +1,13 @@
 'use client';
 
 import { Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
-import styles from '@/styles/navbarlogout.module.css';
+import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { useState } from 'react';
 import { BsPersonCircle } from 'react-icons/bs';
 import { useRouter } from 'next/navigation';
+import FaixaColorida from '../FaixaColorida';
 
 
 export default function NavbarLogin() {
@@ -21,7 +22,7 @@ export default function NavbarLogin() {
     return (
         <>
             {/* DESKTOP E MOBILE */}
-            <div className={styles.faixa} />
+            <FaixaColorida />
 
             <nav className={styles.navbar} >
                 <div className={styles.logotampets}>
