@@ -132,7 +132,6 @@ export default function NavbarLogout() {
 
                         </div>
 
-                        <Offcanvas.Header closeButton className={styles.titulomenu} />
                     </Nav>
                 </Offcanvas.Body>
             </Offcanvas>
