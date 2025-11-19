@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #17991b8c, #5f81b773, #d6545285, #9e43c27c, #d7c01683);
+    background: whitesmoke;
     height: 15vh;
     box-shadow: 0 0 0.2rem 0.4rem rgba(0, 0, 0, 0.08);
     padding: 2rem;

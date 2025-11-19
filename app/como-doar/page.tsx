@@ -1,9 +1,21 @@
+'use client'
 import React from 'react';
+import styles from '@/styles/como-doar.module.css';
+
 
 export default function ComoDoarPage() {
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <section>
+      <div className={styles.titulo}>
+        <img className={styles.imgt} src="/img_titulo_amarelo.png" alt="Fundo Título" />
+
+        <h1 className={styles.escritat}> Como doar </h1>
+
+        <p className={styles.escritap}> Está com duvída de como você pode nos ajudar ? </p>
+      </div>
+
       <div className="max-w-4xl mx-auto">
+        {/* não utiliza esse formato de style no className, conforme conversamos utilizar o module, já estou deixando importado aqui */}
         <header>
           <h1>Como Doar?</h1>
           <p>Procure o ponto de coleta mais próximo de você!</p>
@@ -20,6 +32,6 @@ export default function ComoDoarPage() {
           </ul>
         </header>
       </div>
-    </div>
+    </section>
   );
 }

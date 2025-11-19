@@ -9,9 +9,12 @@ export default function TamPetsNaMidia() {
 
   return (
     <section>
-      <div className={styles["titulo"]}>
-        <h1>Tampets na Mídia</h1>
-        <h2>Confira aqui as notícias onde o projeto TamPets marcou presença!</h2>
+      <div className={styles.titulo}>
+        <img className={styles.imgt} src="/img_titulo_vermelho.png" alt="Fundo Título" />
+
+        <h1 className={styles.escritat}> TamPets na Mídia </h1>
+
+        <p className={styles.escritap}> Confira aqui as notícias onde o projeto TamPets marcou presença! </p>
       </div>
 
       <div className={styles["news-container"]}>

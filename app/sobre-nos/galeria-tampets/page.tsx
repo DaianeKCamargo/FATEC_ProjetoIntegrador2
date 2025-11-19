@@ -7,10 +7,14 @@ import Card from "@/components/card/Card";
 export default function GaleriaTampets() {
     return (
         <section>
-            <div>
-                <h1>Galeria TamPets</h1>
-                <h2>Confira aqui os registros dos momentos TamPets!</h2>
+            <div className={styles.titulo}>
+                <img className={styles.imgt} src="/img_titulo_amarelo.png" alt="Fundo Título" />
+
+                <h1 className={styles.escritat}> Galeria de Fotos </h1>
+
+                <p className={styles.escritap}> Veja um pouco do projeto TamPets </p>
             </div>
+
             <div className={styles["galeria-container"]}>
                 <Link href="./galeria-tampets/coletas">
                     <Card

@@ -1,3 +1,35 @@
+/*  TITULO */
+.titulo {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.imgt {
+    width: 100%;
+    display: block;
+}
+
+.escritat {
+    position: absolute;
+    top: 40%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 1px #555;
+}
+
+.escritap {
+    position: absolute;
+    top: 55%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+}
+
+/* CONTEÚDO */
 .news-container {
   display: flex;
   /* deixa os cards em linha */
@@ -8,13 +40,4 @@
   justify-content: center;
   /* centraliza os cards na página */
   padding: 10rem 0;
-}
-
-
-.titulo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 2%;
 }

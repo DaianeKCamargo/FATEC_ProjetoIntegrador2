@@ -17,7 +17,7 @@
     transform: translate(-50%, -50%);
     color: white;
     font-size: 3rem;
-    text-shadow: 2px 2px 1px #555; 
+    text-shadow: 2px 2px 1px #555;
 }
 
 .escritap {
@@ -27,14 +27,4 @@
     transform: translate(-50%, -50%);
     color: white;
     font-size: 2rem;
-}
-
-
-/* CONTEÚDO  */
-.galeria-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 40px;
 }
