@@ -1,7 +1,7 @@
 .galeria-container {
     display: flex;
     gap: 20px;
-    flexWrap: wrap;
-    justifyContent: center;
-    paddingTop: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 40px;
 }
