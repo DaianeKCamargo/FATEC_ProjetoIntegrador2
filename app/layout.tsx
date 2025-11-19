@@ -5,6 +5,9 @@ import Footer from '@/components/footer/Footer';
 import Copiryght from '@/components/footer/Copyright';
 import NavbarLogout from '@/components/navbar/NavbarLogout';
 import { Noto_Sans_JP } from 'next/font/google';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 export const metadata: Metadata = {
   title: "Bem-Vindos ao Projeto Tampets",

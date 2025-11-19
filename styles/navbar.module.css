@@ -109,6 +109,20 @@
         margin-left: 5rem;
     }
 
+    .item1 .dropdown-menu {
+        display: block !important;
+        position: relative !important;
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .item1 .dropdown-item {
+        font-size: 1.6rem !important;
+        padding: 1rem 0 !important;
+        color: #333 !important;
+    }
+
     .navhamburguer {
         display: flex;
         align-items: center;
