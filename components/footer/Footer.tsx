@@ -11,7 +11,6 @@ export default function Footer() {
             <div className={styles.footer}>
                 <div className={styles.redessociais}>
                     <Image src="/logo_tampets.png" alt="Logo Tampets" width={200} height={300} priority />
-
                 </div>
 
                 <div className={styles.redessociais}>
