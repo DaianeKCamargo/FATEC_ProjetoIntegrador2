@@ -82,11 +82,13 @@ export default function NavbarLogout() {
 
                 <Offcanvas.Body className={styles.bodylateral}>
                     <Nav className={styles.navlateral}>
-                        <div className={styles.navitemslateral}>
-                            <Link className={styles.item} href="/" onClick={handleFechado}>
+                        <div>
+                            <Link href="/" onClick={handleFechado}>
                                 <BiSolidHomeHeart size={30} color='#D7C216' />
                             </Link>
+                        </div>
 
+                        <div className={styles.items}>
                             <NavDropdown className={styles.item1} title="O Projeto">
                                 <NavDropdown.Item
                                     className={styles.item}
@@ -96,7 +98,6 @@ export default function NavbarLogout() {
                                 >
                                     Sobre Nós
                                 </NavDropdown.Item>
-
                                 <NavDropdown.Item
                                     className={styles.item}
                                     as={Link}
@@ -105,7 +106,6 @@ export default function NavbarLogout() {
                                 >
                                     Tampets na Mídia
                                 </NavDropdown.Item>
-
                                 <NavDropdown.Item
                                     className={styles.item}
                                     as={Link}
@@ -115,27 +115,22 @@ export default function NavbarLogout() {
                                     Galeria de Fotos
                                 </NavDropdown.Item>
                             </NavDropdown>
-
                             <Link className={styles.item} href="/relatorio" onClick={handleFechado}>
                                 Relatório
                             </Link>
-
                             <Link className={styles.item} href="/ponto-coleta" onClick={handleFechado}>
                                 Ponto de Coleta
                             </Link>
-
                             <Link className={styles.item} href="/como-doar" onClick={handleFechado}>
                                 Como Doar
                             </Link>
-
-                            <div className={styles.bttn}>
-                                <button className={styles.button} onClick={handleGoLogin}>
-                                    <RiLoginCircleLine size={20} /> Login
-                                </button>
-                            </div>
-
                         </div>
 
+                        <div className={styles.bttn}>
+                            <button className={styles.button} onClick={handleGoLogin}>
+                                <RiLoginCircleLine size={20} />
+                            </button>
+                        </div>
                     </Nav>
                 </Offcanvas.Body>
             </Offcanvas>
