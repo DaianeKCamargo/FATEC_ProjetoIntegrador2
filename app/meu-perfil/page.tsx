@@ -4,9 +4,9 @@ export default function MeuPerfil() {
 
     return (
         <section>
-            <div>
+            <section>
                 <h1> Meu Perfil </h1>
-            </div>
+            </section>
         </section>
     );
 }

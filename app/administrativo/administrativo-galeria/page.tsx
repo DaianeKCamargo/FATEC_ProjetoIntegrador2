@@ -3,9 +3,9 @@
 export default function AdministrativoGaleria() {
     return (
         <section>
-            <div>
+            <section>
                 <h1> Administrativo Galeria </h1>
-            </div>
+            </section>
         </section>
     );
 }

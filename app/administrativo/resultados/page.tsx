@@ -4,9 +4,9 @@ export default function AdminitrativoResultados() {
 
     return (
         <section>
-            <div>
+            <section>
                 <h1> Relatório Administrativo </h1>
-            </div>
+            </section>
         </section>
     );
 }

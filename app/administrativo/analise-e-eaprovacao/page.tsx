@@ -4,9 +4,9 @@ export default function AdministrativoAnaliseAprovacao() {
 
     return (
         <section>
-            <div>
+            <section>
                 <h1> Administrativo Analise e Aprovação </h1>
-            </div>
+            </section>
         </section>
     );
 }

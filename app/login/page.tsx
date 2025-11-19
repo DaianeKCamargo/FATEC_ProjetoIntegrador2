@@ -4,9 +4,9 @@ export default function Login() {
 
     return (
         <section>
-            <div>
+            <section>
                 <h1> Login </h1>
-            </div>
+            </section>
         </section>
     );
 }
