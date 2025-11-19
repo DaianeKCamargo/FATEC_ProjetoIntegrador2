@@ -1,4 +1,4 @@
-/*  TITULO */
+/* TITULO */
 .titulo {
     width: 100%;
     display: inline-block;
@@ -7,24 +7,41 @@
 
 .imgt {
     width: 100%;
+    height: auto;
     display: block;
 }
 
+/* Título principal */
 .escritat {
     position: absolute;
     top: 40%;
-    left: 48%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: #333;
-    font-size: 3rem;
-    /* text-shadow: 2px 2px 1px whitesmoke; */
+    font-size: clamp(1.4rem, 4vw, 3rem);
+    font-weight: 700;
+    text-align: center;
+    width: 90%;
 }
 
+/* Subtítulo */
 .escritap {
     position: absolute;
-    top: 55%;
-    left: 48%;
+    top: 70%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: #333;
-    font-size: 2rem;
+    font-size: clamp(1rem, 3vw, 2rem);
+    text-align: center;
+    width: 90%;
+}
+
+/* Ajuste fino para telas muito pequenas (opcional) */
+@media (max-width: 380px) {
+    .escritat {
+        top: 38%;
+    }
+    .escritap {
+        top: 54%;
+    }
 }
