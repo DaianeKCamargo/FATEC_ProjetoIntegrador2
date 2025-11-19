@@ -1,6 +1,3 @@
-@import "tailwindcss";
-@import "bootstrap/dist/css/bootstrap.min.css";
-
 /* GERAL */
 :root {
   margin: 0;
@@ -31,8 +28,20 @@ section {
 
 /* COMPONENTES */
 
+
 @media (max-width: 768px) {
+
+  /* GERAL */
   section {
     margin: 0;
   }
+
+  /* NAVBAR */
+  /* a {
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+  } */
+
+
 }

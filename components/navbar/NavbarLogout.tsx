@@ -8,6 +8,7 @@ import { FaBarsStaggered } from 'react-icons/fa6';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import FaixaColorida from '../FaixaColorida';
+import { BiSolidHomeHeart } from "react-icons/bi";
 
 export default function NavbarLogout() {
 
@@ -82,6 +83,9 @@ export default function NavbarLogout() {
                 <Offcanvas.Body className={styles.bodylateral}>
                     <Nav className={styles.navlateral}>
                         <div className={styles.navitemslateral}>
+                            <Link className={styles.item} href="/" onClick={handleFechado}>
+                                <BiSolidHomeHeart size={30} />
+                            </Link>
 
                             <NavDropdown className={styles.item1} title="O Projeto">
                                 <NavDropdown.Item
