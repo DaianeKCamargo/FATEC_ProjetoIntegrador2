@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@import "bootstrap/dist/css/bootstrap.min.css";
+
 /* GERAL */
 :root {
   margin: 0;
