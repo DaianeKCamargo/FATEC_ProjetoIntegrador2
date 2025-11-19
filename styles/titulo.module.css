@@ -27,13 +27,14 @@
 /* Subtítulo */
 .escritap {
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #333;
     font-size: clamp(1rem, 3vw, 2rem);
     text-align: center;
     width: 90%;
+    margin-bottom: 0.1rem;
 }
 
 /* Ajuste fino para telas muito pequenas (opcional) */
