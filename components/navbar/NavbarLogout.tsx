@@ -1,6 +1,6 @@
 'use client';
 
-import { Form, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
+import { Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
 import { RiLoginCircleLine } from "react-icons/ri";
 import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
@@ -9,78 +9,133 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import FaixaColorida from '../FaixaColorida';
 
-
-
 export default function NavbarLogout() {
 
-    const [openMenu, setOpenMenu] = useState<boolean>(false);
+    const [openMenu, setOpenMenu] = useState(false);
+    const router = useRouter();
 
     const handleFechado = () => setOpenMenu(false);
     const handleAberto = () => setOpenMenu(true);
 
-    const router = useRouter();
-
+    const handleGoLogin = () => {
+        handleFechado();
+        router.push("/login");
+    };
 
     return (
         <>
-            {/* DESKTOP E MOBILE */}
             <FaixaColorida />
 
-            <nav className={styles.navbar} >
+            <nav className={styles.navbar}>
                 <div className={styles.logotampets}>
-                    <a href="/"><img className={styles.logo} src="/logo_tampets.png" alt="Logo Tampets" width={200} height={100} /></a>
+                    <Link href="/">
+                        <img
+                            className={styles.logo}
+                            src="/logo_tampets.png"
+                            alt="Logo Tampets"
+                            width={200}
+                            height={100}
+                        />
+                    </Link>
                 </div>
 
-                {/* ITENS DESKTOP */}
+                {/* DESKTOP */}
                 <div className={styles.navitems}>
                     <NavDropdown className={styles.item} title="O Projeto">
-                        <NavDropdown.Item className={styles.item} as={Link} href='/sobre-nos'> Sobre Nós </NavDropdown.Item>
-                        <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/tampets-na-midia"> Tampets na Mídia </NavDropdown.Item>
-                        <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/galeria-tampets"> Galeria de Fotos </NavDropdown.Item>
+                        <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos">
+                            Sobre Nós
+                        </NavDropdown.Item>
+                        <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/tampets-na-midia">
+                            Tampets na Mídia
+                        </NavDropdown.Item>
+                        <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/galeria-tampets">
+                            Galeria de Fotos
+                        </NavDropdown.Item>
                     </NavDropdown>
-                    <Link className={styles.item} href="/relatorio"> Relatório </Link>
-                    <Link className={styles.item} href="/ponto-coleta"> Ponto de Coleta </Link>
-                    <Link className={styles.item} href="/como-doar"> Como Doar </Link>
+
+                    <Link className={styles.item} href="/relatorio">Relatório</Link>
+                    <Link className={styles.item} href="/ponto-coleta">Ponto de Coleta</Link>
+                    <Link className={styles.item} href="/como-doar">Como Doar</Link>
                 </div>
+
+                {/* BOTÃO DESKTOP */}
                 <div className={styles.btn}>
-                    <button className={styles.button} onClick={() => { router.push("/login") }}>
+                    <button className={styles.button} onClick={handleGoLogin}>
                         <RiLoginCircleLine size={20} /> Login
                     </button>
                 </div>
 
-
-                {/* ITEM MOBILE */}
+                {/* HAMBURGUER MOBILE */}
                 <div className={styles.navhamburguer}>
                     <FaBarsStaggered size={20} onClick={handleAberto} style={{ cursor: 'pointer' }} />
                 </div>
             </nav>
 
-            {/* Offcanvas (menu lateral) */}
-            <Offcanvas className={styles.meuoffcanvas} show={openMenu} onHide={handleFechado} placement="top">
+            {/* MOBILE MENU */}
+            <Offcanvas
+                className={styles.meuoffcanvas}
+                show={openMenu}
+                onHide={handleFechado}
+                placement="top"
+            >
+
                 <Offcanvas.Body className={styles.bodylateral}>
                     <Nav className={styles.navlateral}>
                         <div className={styles.navitemslateral}>
+
                             <NavDropdown className={styles.item1} title="O Projeto">
-                                <NavDropdown.Item className={styles.item} as={Link} href='/sobre-nos'> Sobre Nós </NavDropdown.Item>
-                                <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/tampets-na-midia"> Tampets na Mídia </NavDropdown.Item>
-                                <NavDropdown.Item className={styles.item} as={Link} href="/sobre-nos/galeria-tampets"> Galeria de Fotos </NavDropdown.Item>
+                                <NavDropdown.Item
+                                    className={styles.item}
+                                    as={Link}
+                                    href="/sobre-nos"
+                                    onClick={handleFechado}
+                                >
+                                    Sobre Nós
+                                </NavDropdown.Item>
+
+                                <NavDropdown.Item
+                                    className={styles.item}
+                                    as={Link}
+                                    href="/sobre-nos/tampets-na-midia"
+                                    onClick={handleFechado}
+                                >
+                                    Tampets na Mídia
+                                </NavDropdown.Item>
+
+                                <NavDropdown.Item
+                                    className={styles.item}
+                                    as={Link}
+                                    href="/sobre-nos/galeria-tampets"
+                                    onClick={handleFechado}
+                                >
+                                    Galeria de Fotos
+                                </NavDropdown.Item>
                             </NavDropdown>
-                            <Link className={styles.item} href="/relatorio"> Relatório </Link>
-                            <Link className={styles.item} href="/ponto-coleta"> Ponto de Coleta </Link>
-                            <Link className={styles.item} href="/como-doar"> Como Doar </Link>
+
+                            <Link className={styles.item} href="/relatorio" onClick={handleFechado}>
+                                Relatório
+                            </Link>
+
+                            <Link className={styles.item} href="/ponto-coleta" onClick={handleFechado}>
+                                Ponto de Coleta
+                            </Link>
+
+                            <Link className={styles.item} href="/como-doar" onClick={handleFechado}>
+                                Como Doar
+                            </Link>
 
                             <div className={styles.bttn}>
-                                <button className={styles.button} onClick={() => { router.push("/login") }}>
+                                <button className={styles.button} onClick={handleGoLogin}>
                                     <RiLoginCircleLine size={20} /> Login
                                 </button>
                             </div>
+
                         </div>
 
+                        <Offcanvas.Header closeButton className={styles.titulomenu} />
                     </Nav>
                 </Offcanvas.Body>
-                <Offcanvas.Header closeButton className={styles.titulomenu} />
             </Offcanvas>
-
         </>
     );
 }
