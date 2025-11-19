@@ -41,7 +41,7 @@
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-        padding: 1rem;
+        padding-bottom: 2rem;
     }
 
     .logoredes {
