@@ -43,3 +43,6 @@ npm install react-bootstrap bootstrap
 
 [react icons](https://react-icons.github.io/react-icons/)
 npm install react-icons --save
+
+[Bootstrap Icons](https://icons.getbootstrap.com/)
+npm i bootstrap-icons

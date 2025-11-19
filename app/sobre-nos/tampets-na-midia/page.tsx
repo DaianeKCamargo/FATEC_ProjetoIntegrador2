@@ -1,17 +1,20 @@
 'use client';
-import NewsCard from "@/components/navbar/NewsCard/NewsCard";
+
+
+import NewsCard from "@/components/newscard/NewsCard";
 import styles from "@/styles/namidia.module.css";
 
 
 export default function TamPetsNaMidia() {
 
-    return(
-        <section>
-           <div>
-                <h1>Tampets na Mídia</h1>
-                <h2>Confira aqui as notícias onde o projeto TamPets marcou presença!</h2>
-            </div>
-            <div className={styles.newsContainer}>
+  return (
+    <section>
+      <div className={styles["titulo"]}>
+        <h1>Tampets na Mídia</h1>
+        <h2>Confira aqui as notícias onde o projeto TamPets marcou presença!</h2>
+      </div>
+
+      <div className={styles["news-container"]}>
         <NewsCard
           imagem="/noticia1.webp"
           titulo="Projeto arrecada tampinhas plásticas para ajudar animais em Sorocaba - G1"
@@ -73,6 +76,6 @@ export default function TamPetsNaMidia() {
         >
         </NewsCard>
       </div>
-        </section>
-    );
+    </section>
+  );
 }

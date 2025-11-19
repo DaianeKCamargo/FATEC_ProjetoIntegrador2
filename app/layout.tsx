@@ -1,7 +1,9 @@
+import './globals.css';
 import type { Metadata } from "next";
-import "@/app/globals.css";
-import NavbarLogout from "@/components/navbar/navbarlogout";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarLogin from '@/components/navbar/NavbarLogin';
+import Footer from '@/components/footer/Footer';
+import Copiryght from '@/components/footer/Copyright';
+import NavbarLogout from '@/components/navbar/NavbarLogout';
 
 export const metadata: Metadata = {
   title: "Bem-Vindos ao Projeto Tampets",
@@ -12,14 +14,14 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) 
-
-{
+}>) {
   return (
     <html lang="en">
       <body>
         <NavbarLogout />
         {children}
+        <Footer />
+        <Copiryght />
       </body>
     </html>
   );

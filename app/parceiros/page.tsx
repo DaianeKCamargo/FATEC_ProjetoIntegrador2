@@ -1,11 +1,11 @@
 'use client'
 
-export default function MeuPerfilPontoColeta() {
+export default function Parceiros() {
 
     return(
         <section>
            <div>
-                <h1> Meu perfil ponto de coleta </h1>
+                <h1> Parceiros </h1>
             </div>
         </section>
     );

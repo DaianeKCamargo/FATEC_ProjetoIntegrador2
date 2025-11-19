@@ -1,0 +1,77 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #17991b8c, #5f81b773, #d6545285, #9e43c27c, #d7c01683);
+    height: 15vh;
+    box-shadow: 0 0 0.2rem 0.4rem rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    color: #333;
+}
+
+/* // LOGO // */
+.logo-redes {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
+/* // SEJA PARCEIRO // */
+
+.sejaparceiro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.mensagemparceiro {
+    font-size: 1.4rem;
+}
+
+.newscardbutton {
+    padding: 8px 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+/* // REDES SOCIAIS // */
+.redessociais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5.0rem;
+    flex-grow: 3;
+}
+
+
+.icons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        height: 23vh;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .logoredes {
+        width: 80%;
+    }
+
+}
