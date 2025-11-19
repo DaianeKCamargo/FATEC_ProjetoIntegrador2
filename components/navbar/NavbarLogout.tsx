@@ -84,7 +84,7 @@ export default function NavbarLogout() {
                     <Nav className={styles.navlateral}>
                         <div className={styles.navitemslateral}>
                             <Link className={styles.item} href="/" onClick={handleFechado}>
-                                <BiSolidHomeHeart size={30} />
+                                <BiSolidHomeHeart size={30} color='#D7C216' />
                             </Link>
 
                             <NavDropdown className={styles.item1} title="O Projeto">
