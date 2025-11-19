@@ -26,7 +26,7 @@ export default function Card({ imagem, titulo, descricao, width, className }: Ca
       </div>
 
       <div className={styles.texto}
-        className={`card ${className ? className : ""}`}
+        // className={`card ${className ? className : ""}`} -> CLASSNAME DUPLICADO
         style={{ width: width ? `${width}px` : "260px" }}
       >
         <div className="imagem">
