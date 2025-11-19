@@ -40,7 +40,7 @@
 /* Ajuste fino para telas muito pequenas (opcional) */
 @media (max-width: 380px) {
     .escritat {
-        top: 38%;
+        top: 30%;
     }
 
     .escritap {
