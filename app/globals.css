@@ -30,3 +30,9 @@ section {
 
 
 /* COMPONENTES */
+
+@media (max-width: 768px) {
+  section {
+    margin: 0;
+  }
+}
