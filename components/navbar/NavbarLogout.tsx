@@ -126,11 +126,12 @@ export default function NavbarLogout() {
                             </Link>
                         </div>
 
-                        <div className={styles.bttn}>
-                            <button className={styles.button} onClick={handleGoLogin}>
-                                <RiLoginCircleLine size={20} />
-                            </button>
+                        <div>
+                            <Link href="/Login" onClick={handleFechado}>
+                                <RiLoginCircleLine size={30} color='#D65552'/>
+                            </Link>
                         </div>
+                                
                     </Nav>
                 </Offcanvas.Body>
             </Offcanvas>

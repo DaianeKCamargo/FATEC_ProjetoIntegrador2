@@ -102,6 +102,7 @@
         align-items: center;
         flex-direction: column;
         gap: 2rem;
+        padding-top: 3rem;
     }
 
     .navhamburguer {
@@ -110,9 +111,6 @@
         margin-right: 5rem;
     }
 
-    .bttn {
-        margin-top: 1rem;
-    }
 
     /* TENTATIVA DE TIRAR O AZUL DO DROPDOWN -V MOBILE */
     .meuoffcanvas a,
