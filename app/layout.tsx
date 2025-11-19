@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={notoSansJp.className}>
-        <NavbarLogin />
+        <NavbarLogout />
         {children}
         <Footer />
         <Copiryght />

@@ -1,7 +1,6 @@
 .direitosautorais {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background: whitesmoke;
     border-top: solid 0.1rem #b5b5b5;
@@ -11,29 +10,11 @@
     height: 5vh;
 }
 
-.politicas {
-    margin-left: 10rem;
-    cursor: pointer;
-}
-
-.copyright {
-    flex-direction: column;
-}
 
 @media (max-width: 768px) {
     .direitosautorais {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         font-size: 0.7rem;
     }
 
-    .divisor {
-        display: none;
-    }
-
-
-    .copyright {
-        border-left: 0.1rem solid;
-        padding-left: 3.5rem;
-    }
 }
