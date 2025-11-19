@@ -37,7 +37,7 @@
 
 @media (max-width: 768px) {
     .footer {
-        height: 30vh;
+        height: 20vh;
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
