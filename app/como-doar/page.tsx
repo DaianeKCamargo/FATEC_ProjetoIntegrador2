@@ -1,18 +1,13 @@
 'use client'
 import React from 'react';
 import styles from '@/styles/como-doar.module.css';
+import Titulo from '@/components/titulo/Titulo';
 
 
 export default function ComoDoarPage() {
   return (
     <section>
-      <div className={styles.titulo}>
-        <img className={styles.imgt} src="/img_titulo_amarelo.png" alt="Fundo Título" />
-
-        <h1 className={styles.escritat}> Como doar </h1>
-
-        <p className={styles.escritap}> Está com duvída de como você pode nos ajudar ? </p>
-      </div>
+      <Titulo src="/img_titulo_amarelo.png" title="Como doar" label=" Está com duvída de como você pode nos ajudar ?"/>
 
       <div className="max-w-4xl mx-auto">
         {/* não utiliza esse formato de style no className, conforme conversamos utilizar o module, já estou deixando importado aqui */}

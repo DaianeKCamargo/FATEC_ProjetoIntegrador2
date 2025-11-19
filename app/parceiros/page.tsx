@@ -1,12 +1,13 @@
 'use client'
 
+import Titulo from "@/components/titulo/Titulo";
+
 export default function Parceiros() {
 
     return (
         <section>
-            <div>
-                <h1> Parceiros </h1>
-            </div>
+            <Titulo src="/img_titulo_vermelho.png" title="Parceiros" label="Quer fazer parte deste projeto ?"/>
+
         </section>
     );
 }

@@ -2,6 +2,7 @@
 
 
 import NewsCard from "@/components/newscard/NewsCard";
+import Titulo from "@/components/titulo/Titulo";
 import styles from "@/styles/namidia.module.css";
 
 
@@ -9,13 +10,7 @@ export default function TamPetsNaMidia() {
 
   return (
     <section>
-      <div className={styles.titulo}>
-        <img className={styles.imgt} src="/img_titulo_vermelho.png" alt="Fundo Título" />
-
-        <h1 className={styles.escritat}> TamPets na Mídia </h1>
-
-        <p className={styles.escritap}> Confira aqui as notícias onde o projeto TamPets marcou presença! </p>
-      </div>
+      <Titulo src="/img_titulo_vermelho.png" title="TamPets na Mídia " label="Confira aqui as notícias onde o projeto TamPets marcou presença!"/>
 
       <div className={styles["news-container"]}>
         <NewsCard

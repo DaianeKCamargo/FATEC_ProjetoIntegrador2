@@ -3,17 +3,13 @@
 import Link from "next/link";
 import styles from "@/styles/galeria.module.css";
 import Card from "@/components/card/Card";
+import Titulo from "@/components/titulo/Titulo";
 
 export default function GaleriaTampets() {
     return (
         <section>
-            <div className={styles.titulo}>
-                <img className={styles.imgt} src="/img_titulo_amarelo.png" alt="Fundo Título" />
+            <Titulo src="/img_titulo_amarelo.png" title="Galeria de Fotos" label="Veja um pouco do projeto TamPets"/>
 
-                <h1 className={styles.escritat}> Galeria de Fotos </h1>
-
-                <p className={styles.escritap}> Veja um pouco do projeto TamPets </p>
-            </div>
 
             <div className={styles["galeria-container"]}>
                 <Link href="./galeria-tampets/coletas">
