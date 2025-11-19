@@ -3,7 +3,6 @@
     justify-content: start;
     background-color: #fff;
     border-bottom: 1px solid #e5e7eb;
-    /* equivalente a border-gray-200 */
     height: 80px;
 }
 
@@ -117,6 +116,6 @@
     }
 
     .bttn {
-        margin-top: 1.5rem;
+        margin-top: 1rem;
     }
 }
