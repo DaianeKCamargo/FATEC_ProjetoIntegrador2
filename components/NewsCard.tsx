@@ -7,6 +7,7 @@ type NewsCardProps = {
   titulo: string;
   data?: string;
   url?: string;
+  text?: string;
 };
 
 const NewsCard: React.FC<NewsCardProps> = ({ imagem, titulo, data, url }) => {
