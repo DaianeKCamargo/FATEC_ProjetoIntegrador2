@@ -1,64 +1,101 @@
+
+.page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e3efe5;
+}
+
 .sobre {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  line-height: 1.7;
-  color: #333;
+    max-width: 1050px;;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    line-height: 1.6;
+    color: #333;
 }
 
-.sobre h2 {
-text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  color: #1a1a1a;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.sectionBox {
+    background: #f7fdf8;            
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    border: 1.5px solid #d6e8d9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+    max-width: 950px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.sobre p {
-  margin-bottom: 1.3rem;
-  font-size: 1.50rem;
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.2rem;
 }
 
-.sobre ul {
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  padding-left: 1.3rem;
+.sectionHeader h2 {
+    font-size: 2.2rem; 
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.sobre ul li {
-  margin-bottom: 0.7rem;
-  font-size: 1.40rem;
+
+.sectionContent p {
+    margin-bottom: 1rem;
+   font-size: 1.25rem;  
 }
 
-.sobre strong {
-  font-weight: 700;
-  color: #000;
+.sectionContent ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.2rem;
+}
+
+.sectionContent ul li {
+     font-size: 1.22rem;
+    margin-bottom: 0.7rem;
+    padding-left: 1.4rem;
+    position: relative;
+}
+
+.sectionContent ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #5da166;
+    font-size: 1.6rem;
+    line-height: 1;
 }
 
 .Image-banner {
-  display: block;
-  margin: 2rem auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: #ffffff solid 2px;
+    display: block;
+    margin: 2rem auto 0 auto;
+    border-radius: 15px;
+    box-shadow: 1 6px 10px rgba(0, 0, 0, 0.08);
 }
 
 
-/* Responsivo */
 @media (max-width: 768px) {
   .sobre {
     padding: 1.5rem 1rem;
   }
 
-  .sobre h2 {
-    font-size: 1.6rem;
+  .sectionHeader h2 {
+   font-size: 1.8rem; 
   }
 
-  .sobre p,
-  .sobre ul li {
-    font-size: 0.95rem;
+  .sectionContent p,
+  .sectionContent ul li {
+     font-size: 1.15rem;
+  }
+
+  .Image-banner {
+    width: 100%;
+    height: auto;
   }
 }
