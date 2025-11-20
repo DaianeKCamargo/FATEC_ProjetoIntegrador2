@@ -1,13 +1,16 @@
-/* CONTEÚDO  */
 .galeria-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 300px); /* 2 por linha */
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* centraliza o conjunto */
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 100px;
+}
+
+.galeria-container a {
+    text-decoration: none;
 }
 
 .body-galeria {
-    background-color: rgb(255, 251, 229);
+    background-color: rgb(250, 249, 221);
 }

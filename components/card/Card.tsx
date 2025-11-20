@@ -13,7 +13,8 @@ export default function Card({ imagem, titulo, descricao, width, className }: Ca
   return (
     <div
       className={`${styles.card} ${className ?? ""}`}
-      style={{ width: width ? `${width}px` : "260px" }}
+      style={{ width: width ? `${width}px` : "100%" }}
+
     >
       {/* IMAGEM */}
       <div className={styles.imagem}>
