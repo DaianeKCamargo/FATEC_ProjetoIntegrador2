@@ -1,13 +1,13 @@
 .news-card {
   width: 100%;
-  max-width: 260px; /* deixa os cards mais compactos */
+  max-width: 260px; 
   border: 1px solid #ffffff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
   background-color: aliceblue;
-  margin: 0 auto; /* evita espaçamento desnecessário */
+  margin: 0 auto; 
 }
 
 .news-card:hover {
@@ -16,7 +16,7 @@
 
 .news-card-img {
   width: 100%;
-  height: 160px; /* diminui um pouco pra caber melhor */
+  height: 160px; 
   object-fit: cover;
 }
 
