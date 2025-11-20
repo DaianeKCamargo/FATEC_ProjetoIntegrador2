@@ -46,3 +46,9 @@ npm install react-icons --save
 
 [Bootstrap Icons](https://icons.getbootstrap.com/)
 npm i bootstrap-icons
+
+[Formik]( npm install formik --save)
+ npm install formik --save
+
+[Yup](https://formik.org/docs/guides/validation)
+npm install yup --save

@@ -1,0 +1,15 @@
+.divprincipal{
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #ccc;
+    background-color: rgb(237, 246, 250);
+    box-shadow: 0 0 0.7rem 0.2rem rgba(0, 0, 0, 0.1);
+    border-radius: 2rem; 
+    margin: 5rem auto;
+    padding-left: 4rem;
+    width:  70rem ;
+}
+.title{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
