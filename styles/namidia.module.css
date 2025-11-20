@@ -1,12 +1,28 @@
-/* CONTEÚDO */
+
 .news-container {
-  display: flex;
-  /* deixa os cards em linha */
-  flex-wrap: wrap;
-  /* permite que quebrem a linha se não couberem */
-  gap: 2rem;
-  /* espaço entre os cards */
-  justify-content: center;
-  /* centraliza os cards na página */
-  padding: 10rem 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto; 
+}
+
+@media (min-width: 600px) {
+  .news-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .news-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px; /* gap menor no desktop */
+  }
+}
+
+.body-news {
+  background-color: rgb(230, 240, 255);
+  padding-bottom: 40px;
 }

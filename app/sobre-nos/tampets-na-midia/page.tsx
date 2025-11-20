@@ -9,8 +9,8 @@ import styles from "@/styles/namidia.module.css";
 export default function TamPetsNaMidia() {
 
   return (
-    <section>
-      <Titulo src="/img_titulo_vermelho.png" title="TamPets na Mídia " label="Confira aqui as notícias onde o projeto TamPets marcou presença!"/>
+    <section className={styles["body-news"]}>
+      <Titulo src="/img_titulo_azul.png" title="TamPets na Mídia " label="Confira aqui as notícias onde o projeto TamPets marcou presença!"/>
 
       <div className={styles["news-container"]}>
         <NewsCard

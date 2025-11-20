@@ -1,5 +1,4 @@
 .card {
-
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -9,6 +8,7 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .card:hover {
@@ -16,10 +16,10 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Container da imagem */
+
 .card .imagem {
   width: 100%;
-  height: 200px;
+  height: 250px;
   overflow: hidden;
   position: relative;
 }
@@ -35,7 +35,7 @@
   transform: scale(1.05);
 }
 
-/* Texto */
+
 .card .texto {
   padding: 16px;
   text-align: center;
@@ -49,12 +49,12 @@
 }
 
 .card .texto p {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 1.0rem;
+  color: #353535;
   line-height: 1.4;
 }
 
-/* Responsividade */
+
 @media (max-width: 600px) {
   .card {
     width: 90%;

@@ -7,7 +7,7 @@ import Titulo from "@/components/titulo/Titulo";
 
 export default function GaleriaTampets() {
     return (
-        <section>
+        <section className={styles["body-galeria"]}>
             <Titulo src="/img_titulo_amarelo.png" title="Galeria de Fotos" label="Veja um pouco do projeto TamPets"/>
 
 
