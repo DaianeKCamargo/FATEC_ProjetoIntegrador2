@@ -5,4 +5,9 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.body-galeria {
+    background-color: rgb(255, 251, 229);
 }
