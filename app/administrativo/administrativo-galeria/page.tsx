@@ -4,55 +4,94 @@ import FileInput from "@/components/input-image/FileInput";
 import Select from "@/components/select/select";
 import style from "@/styles/adm-galeria.module.css";
 import { Button } from "react-bootstrap";
-
-
+import { useState } from "react";
 
 export default function AdministrativoGaleria() {
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        console.log("Valor selecionado:", e.target.value);
-        };
-        const selectOptions = [
+  const [selectedAlbum, setSelectedAlbum] = useState<number | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [statusMessage, setStatusMessage] = useState('');
+
+  const selectOptions = [
     { value: "1", label: "Galeria Coletas" },
     { value: "2", label: "Galeria Empresas" },
     { value: "3", label: "Galeria Escolas" },
     { value: "4", label: "Galeria Eventos" }
   ];
 
-    return (
-        <section className={style['section-page']}>
-            <div>
-                <h1>Área do Adminstrador</h1> 
-                <h2>Galeria TamPets</h2>
-            </div>
-            <div>
-                <h3>PASSO 1: ESCOLHA DO ÁLBUM</h3>
-                <p>A galeria TamPets conta com 4 álbuns onde as fotos do projeto
-                    são exibidas. Escolha o álbum que deseja armazenar a imagem:
-                </p>
-                <Select
-                    options={selectOptions}
-                    defaultValue="Álbuns Disponíveis"
-                    onChange={handleChange}
-                />
-            </div>
-            <div>
-                <h3>PASSO 2: CARREGAMENTO DA IMAGEM</h3>
-                <p>Selecione a imagem que deseja enviar para o álbum escolhido:</p>
-                <FileInput 
-                    label="Insira aqui a imagem desejada:"
-                    controlId="formFile"
-                    onChange={(e) => console.log(e.target.files)}
-                />
-            </div>
-            <div>
-                <h3>PASSO 3: CONFIRMAÇÃO DO ENVIO</h3>
-                <p>Após fazer a escolha do album e da imagem desejados, confirme abaixo para finalizar o envio,
-                    ou cancele para reiniciar o processo:
-                </p>
-                <Button variant="primary">Enviar</Button>
-                <Button variant="secondary">Cancelar</Button>
-            </div>
-        </section>
-        
-    );
+  const handleAlbumChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedAlbum(Number(e.target.value));
+  }
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setSelectedFile(e.target.files[0]);
+    }
+  }
+
+  const handleSubmit = async () => {
+    if (!selectedAlbum || !selectedFile) {
+      setStatusMessage('Selecione um álbum e uma imagem antes de enviar.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('albumId', selectedAlbum.toString());
+    formData.append('file', selectedFile);
+
+    try {
+      const res = await fetch('/api/galeria', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatusMessage('Imagem enviada com sucesso!');
+        setSelectedFile(null);
+      } else {
+        setStatusMessage(`Erro: ${data.error}`);
+      }
+    } catch (err) {
+      setStatusMessage('Erro ao enviar a imagem.');
+      console.error(err);
+    }
+  }
+
+  return (
+    <section className={style['section-page']}>
+      <div>
+        <h1>Área do Administrador</h1>
+        <h2>Galeria TamPets</h2>
+      </div>
+
+      <div>
+        <h3>PASSO 1: ESCOLHA DO ÁLBUM</h3>
+        <p>Escolha o álbum onde a imagem será armazenada:</p>
+        <Select
+          options={selectOptions}
+          defaultValue="Álbuns Disponíveis"
+          onChange={handleAlbumChange}
+        />
+      </div>
+
+      <div>
+        <h3>PASSO 2: CARREGAMENTO DA IMAGEM</h3>
+        <p>Selecione a imagem que deseja enviar:</p>
+        <FileInput
+          label="Insira aqui a imagem desejada:"
+          controlId="formFile"
+          onChange={handleFileChange}
+        />
+      </div>
+
+      <div>
+        <h3>PASSO 3: CONFIRMAÇÃO DO ENVIO</h3>
+        <p>Confirme para finalizar o envio:</p>
+        <Button variant="primary" onClick={handleSubmit}>Enviar</Button>
+        <Button variant="secondary" onClick={() => setSelectedFile(null)}>Cancelar</Button>
+        {statusMessage && <p>{statusMessage}</p>}
+      </div>
+    </section>
+  );
 }
