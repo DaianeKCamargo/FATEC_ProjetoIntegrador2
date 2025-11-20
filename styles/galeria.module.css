@@ -1,14 +1,23 @@
 .galeria-container {
     display: grid;
-    grid-template-columns: repeat(2, 300px); /* 2 por linha */
+    grid-template-columns: repeat(2, 300px); 
     gap: 20px;
-    justify-content: center; /* centraliza o conjunto */
+    justify-content: center; 
     padding-top: 40px;
     padding-bottom: 100px;
 }
 
+
 .galeria-container a {
     text-decoration: none;
+}
+
+
+@media (max-width: 700px) {
+    .galeria-container {
+        grid-template-columns: 1fr; 
+        justify-items: center; 
+    }
 }
 
 .body-galeria {
