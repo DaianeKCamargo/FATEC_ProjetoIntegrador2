@@ -12,7 +12,7 @@ type SelectProps = {
 
 export default function Select({
   options,
-  defaultValue = "Select an option",
+  defaultValue = "Selecione uma opção",
   onChange,
   className,
 }: SelectProps) {

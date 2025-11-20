@@ -1,7 +1,7 @@
 'use client'
 
 import FileInput from "@/components/input-image/FileInput";
-import Select from "@/components/select/Select";
+import Select from "@/components/select/select";
 
 
 export default function AdministrativoGaleria() {
