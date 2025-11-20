@@ -1,1 +1,64 @@
-/*  */
+.sobre {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.sobre h2 {
+text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sobre p {
+  margin-bottom: 1.3rem;
+  font-size: 1.50rem;
+}
+
+.sobre ul {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.3rem;
+}
+
+.sobre ul li {
+  margin-bottom: 0.7rem;
+  font-size: 1.40rem;
+}
+
+.sobre strong {
+  font-weight: 700;
+  color: #000;
+}
+
+.Image-banner {
+  display: block;
+  margin: 2rem auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: #ffffff solid 2px;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sobre {
+    padding: 1.5rem 1rem;
+  }
+
+  .sobre h2 {
+    font-size: 1.6rem;
+  }
+
+  .sobre p,
+  .sobre ul li {
+    font-size: 0.95rem;
+  }
+}
