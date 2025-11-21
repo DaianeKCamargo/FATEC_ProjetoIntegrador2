@@ -2,9 +2,35 @@
 
 import Image from "next/image";
 import styles from '@/styles/home.module.css';
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { ReactNode, useRef } from "react";
+
+// Layout dos Titulos das páginas
+type SectionProps = {
+  children: ReactNode;
+};
+
+function Section({ children }: SectionProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <section ref={ref} className={styles.section}>
+      <span
+        style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        }}
+      >
+        {children}
+      </span>
+    </section>
+  );
+}
 
 export default function Home() {
+
   return (
     <div>
 
@@ -13,94 +39,60 @@ export default function Home() {
       </div>
 
       <div className={styles.doar}>
-        <div className={styles.left}>
-          <h2>Transforme tampinhas em boas ações</h2>
-          <p>
-            Cada tampinha vira impacto real. Veja a transição das tampinhas se
-            transformando em moedas, representando a ajuda que chega a quem
-            precisa.
-          </p>
+        <div className={styles.texto}>
+          <Section>Doe sua Tampinhas!</Section>
+
+          <motion.div
+            className={styles.box1}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <a className={styles.paginaDoar} href="/como-doar">
+              <p>
+                Transforme suas tampinhas em ações, que tal você separa-las para ajudar animais em situação de abandono ? Uma a uma, elas podem ajuda-los muito!
+              </p>
+              <p><b>Clique aqui e saiba mais!</b></p>
+            </a>
+          </ motion.div>
         </div>
 
-        <div className={styles.right}>
-          <motion.div
-            className="box"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.5,
-              ease: [0, 0.71, 0.2, 1.01]
-            }}
-          >
-            {/* IMAGEM 1 */}
-            < motion.div
-              className="box"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
-              }}            >
-              <Image
-                src="/doar_tampinhas.png"
-                width={450}
-                height={450}
-                alt="Tampinhas caindo"
-              />
-            </motion.div>
+        <div className={styles.imagem1}>
+        
 
-            {/* IMAGEM 2 */}
-            <motion.div
-              className="box"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
-              }}
-            >
-              <Image
-                src="/tampinhas_coin_caindo.png"
-                width={450}
-                height={450}
-                alt="Tampinhas se transformando em moedas"
-              />
-            </motion.div>
-
-            {/* IMAGEM 3 */}
-            <motion.div
-              className="box"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
-              }}
-            >
-              <Image
-                src="/coin.png"
-                width={450}
-                height={450}
-                alt="Mão segurando moedas"
-              />
-            </motion.div>
-          </motion.div>
+        
         </div>
       </div >
 
       <div className={styles.pontocoleta}>
-        <h1> Encontre o ponto de coleta mais próximo de você </h1>
+
+
+
+        <div className={styles.texto}>
+          <Section>Encontre o ponto de coleta mais próximo de você! </Section>
+
+          <motion.div
+            className={styles.box2}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <a className={styles.paginaDoar} href="/como-doar">
+              <p>
+                Vá até um ponto de coleta mais próximo de você e deixe suas tampinhas.
+              </p>
+              <p><b>Clique aqui e saiba mais!</b></p>
+            </a>
+          </ motion.div>
+        </div>
+
       </div>
 
-      <div className={styles.participar}>
-        <h1> Tornar parceiro | Voluntário | Ponto de Coleta </h1>
+      <div className={styles.voluntario}>
+        
       </div>
 
-      <div className={styles.resultados}>
+      <div className={styles.resumoRelatorio}>
         <h1> Resumo resultados </h1>
       </div>
 

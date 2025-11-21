@@ -13,53 +13,151 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
-    padding: 60px 20px;
+    padding: 3rem;
+    gap: 2rem;
     width: 100%;
+    height: 50vh;
+    background: linear-gradient(to top,
+            white,
+            #d7c216 );
 }
 
-.left {
+/* TEXTO */
+.texto {
     flex: 1;
+    text-align: center;
+    padding: 3rem;
+    margin: 2rem;
 }
 
-.left h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.section span {
+    display: block;
+    transform: translateX(-100px);
+    opacity: 0;
+    font-size: 4rem;
+    letter-spacing: -0.1rem;
 }
 
-.left p {
-    font-size: 1.1rem;
+.box1 {
+    border-radius: 50px;
+    background: #ffedc2;
+    cursor: pointer;
+    padding: 2rem;
+}
+
+.texto p {
+    font-size: 1.5rem;
     line-height: 1.6;
 }
 
-.right {
+.paginaDoar {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* IMAGEM */
+.imagem1 {
     flex: 1;
     display: flex;
     justify-content: center;
+    height: 20vh;
+    padding-top: 3rem;
 }
 
-.transitionWrapper {
-    position: relative;
+
+
+/* PONTO DE COLETA */
+.pontocoleta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    gap: 30%;
     width: 100%;
-    max-width: 450px;
-    height: 450px;
+    height: 100%;
 }
 
-.img {
-    position: absolute;
-    top: 0;
-    left: 0;
+
+
+        /* TEXTO */
+
+.box2 {
+    border-radius: 50px;
+    background: #cfe9ff;
+    cursor: pointer;
+    padding: 2rem;
 }
 
+/* IMAGEM */
+/* .imagem2 {
+    width: 300px;
+    height: 300px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    border-radius: 20%;
+    padding-top: 3rem;
+} */
+
+      
+
+/* VOLUNTÁRIO */
+.voluntario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    gap: 2rem;
+    width: 100%;
+    height: 50vh;
+    margin-top: 1rem;
+
+}
+
+/* RESUMO RELATORIO */
+.resumoRelatorio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    gap: 2rem;
+    width: 100%;
+    height: 50vh;
+    margin-top: 1rem;
+    background-image: linear-gradient(to bottom, white,#9d43c2);
+}
 
 
 @media (max-width: 768px) {
+
+    /* COMO DOAR */
     .doar {
         flex-direction: column;
         text-align: center;
+        background-color: white;
+        margin: 0;
+        padding: 1rem;
     }
 
-    .right {
-        margin-top: 20px;
+    /* TEXTO */
+
+    .texto {
+        padding: 1rem;
     }
+
+    .section span {
+        margin-bottom: 2rem;
+        font-size: 3rem;
+    }
+
+    .texto p {
+        font-size: 1.2rem;
+    }
+
+    /* IMAGEM */
+    .imagem1 {
+        display: none;
+    }
+
+    /* PONTO COLETA */
 }
