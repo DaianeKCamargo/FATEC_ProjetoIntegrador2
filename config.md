@@ -52,3 +52,9 @@ npm install formik --save
 
 [Yup](https://formik.org/docs/guides/validation)
 npm install yup --save
+
+[Frame Motion](Animação-de-imagem)
+npm install framer-motion
+
+[Icons](biblioteca-de-icons)
+npm install lucide-react

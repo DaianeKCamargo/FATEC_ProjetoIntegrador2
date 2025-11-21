@@ -1,8 +1,24 @@
-import Image from "next/image";
+'use client';
 
+import Image from "next/image";
 import styles from '@/styles/home.module.css';
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+
+  const [show, setShow] = useState(true);
+  const [turnIntoCoin, setTurnIntoCoin] = useState(false);
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setTurnIntoCoin(true), 1500);
+    const t2 = setTimeout(() => setShow(false), 2300);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
+
   return (
     <div>
 
@@ -11,9 +27,7 @@ export default function Home() {
       </div>
 
       <div className={styles.doar}>
-        <h1> Doe Tampinhas </h1>
-        <Image className={styles.doarimg} src="/doar_tampinhas.png" alt="doar tampinhas" width={500} height={200} />
-      </div>
+      </div> 
 
       <div className={styles.pontocoleta}>
         <h1> Encontre o ponto de coleta mais próximo de você </h1>
