@@ -1,5 +1,7 @@
 'use client'
-import Input from '@/components/input/Input';
+import InfoIcon from '@/components/info-icon/InfoIcon';
+import Input from '@/components/form/Input';
+import CheckDown from '@/components/form/CheckDown';
 import styles from '@/styles/log-block.module.css';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
@@ -49,7 +51,32 @@ export default function Cadastrar() {
                         error={values.password}></Input>
                     <Input id="inputConfirmPassword" label='Confirme a Senha' type='password' 
                         name='confirmPassword' error={values.confirmPassword}></Input>
-                    <Button></Button>
+                    <div>
+                    <CheckDown
+                        label="Ponto de coleta"
+                        name="group1"
+                        id='check1'
+                        info='Tornar-se um ponto de coleta ajuda a ampliar nossa rede de coleta.'
+                        children=""/>
+                    </div>
+                    <div>
+                    <CheckDown
+                        label="Parceiro"
+                        name="group1"
+                        id='check2'
+                        info=''
+                        children=""/>
+                    </div>
+                    <div>
+                    <CheckDown
+                        label="Voluntário"
+                        name="group1"
+                        id='check3'
+                        info=''
+                        children=""/>
+                    </div>
+                    <Button variant='primary' className={styles.logBtn}>Cadastrar</Button>
+                    
                 </Form>
 
             </div>
