@@ -26,65 +26,7 @@ function Section({ children }) {
   );
 }
 
-// Animação ponto de coleta
-
-
 export default function Home() {
-
-  // Animação Ponto Coleta
-  const [scope, animate] = useAnimate();
-
-  useEffect(() => {
-    animate(
-      [
-        [
-          scope.current,
-          {
-            transform: [
-              "rotateX(0deg) rotateZ(0deg)",
-              "rotateX(50deg) rotateZ(180deg)"
-            ],
-            /**
-             * Animating backgroundColor because setting opacity
-             * on a layer containing transform-style: preserve-3d
-             * will break 3d on descendants.
-             */
-            backgroundColor: ["#f5f5f500", "#e6f0ff"]
-          },
-          { type: "spring" }
-        ],
-        [
-          ".dot",
-          {
-            transform: ["translateZ(100px)", "translateZ(10px)"],
-            opacity: [0, 1]
-          },
-          {
-            type: "spring",
-            stiffness: 900,
-            damping: 40,
-            delay: stagger(0.1),
-            at: "-1"
-          }
-        ],
-        [
-          ".ponto",
-          {
-            transform: ["translateZ(100px)", "translateZ(10px)"],
-            opacity: [0, 1]
-          },
-          {
-            type: "spring",
-            stiffness: 900,
-            damping: 40,
-            delay: stagger(0.1),
-            at: "-1"
-          }
-        ]
-      ],
-      { delay: 0.3 }
-    );
-  }, []);
 
   return (
     <div>
