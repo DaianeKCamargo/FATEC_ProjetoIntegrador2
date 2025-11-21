@@ -1,4 +1,5 @@
 import { Form } from "react-bootstrap";
+import styles from '@/styles/log-block.module.css';
 
 interface InputProps {
     label: string;
@@ -15,9 +16,9 @@ export default function Input({id,label, name, type, placeholder, value, onChang
     
     return(
         <Form.Group id={id}>
-            <Form.Label >{label}</Form.Label>
+            <Form.Label className={styles.labelContainer}>{label}</Form.Label>
             <Form.Control type={type} name={name}   placeholder={placeholder} value={value}
-            onChange={onChange} isInvalid={!!error} 
+            onChange={onChange} isInvalid={!!error} className={styles.inputContainer}
             ></Form.Control>
         </Form.Group>
     )

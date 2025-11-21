@@ -13,3 +13,22 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+.logBtn{
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 3rem;
+  width: 95%;
+  margin-bottom: 2rem;
+}
+.labelContainer{   
+    font-size: 1.5rem;
+}
+.inputContainer{
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    width: 95%;
+}
+.checkboxContainer{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
