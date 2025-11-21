@@ -13,36 +13,56 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
-    padding: 60px 20px;
+    padding: 3rem;
+    gap: 2rem;
     width: 100%;
+    margin-top: 10rem;
+    background: linear-gradient(to right,
+            white, 60%,
+            #d7c216 30%);
+    border-radius: 5%;
 }
 
-.left {
+/* TEXTO */
+.texto {
     flex: 1;
+    text-align: center;
+    padding: 3rem;
 }
 
-.left h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.section span {
+    display: block;
+    transform: translateX(-100px);
+    opacity: 0;
+    font-size: 4rem;
+    letter-spacing: -0.1rem;
 }
 
-.left p {
-    font-size: 1.1rem;
+.box1 {
+    border-radius: 50px;
+    background: #ffedc2;
+    cursor: pointer;
+    padding: 2rem;
+}
+
+.texto p {
+    font-size: 1.5rem;
     line-height: 1.6;
 }
 
-.right {
+.paginaDoar {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* IMAGEM */
+.imagem1 {
     flex: 1;
     display: flex;
     justify-content: center;
-}
-
-.transitionWrapper {
-    position: relative;
-    width: 100%;
-    max-width: 450px;
-    height: 450px;
+    background-color: rgb(250, 249, 221);
+    border-radius: 20%;
+    padding-top: 3rem;
 }
 
 .img {
@@ -51,15 +71,108 @@
     left: 0;
 }
 
+.fadeWrapper {
+    position: relative;
+    width: 450px;
+    height: 600px;
+    overflow: hidden;
+}
+
+
+/* Todas imagens sobrepostas */
+.fadeImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -30%;
+}
+
+.fadeImageEnd {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 8%;
+}
+
+/* Suaviza transição com gradiente vertical */
+.fadeImage img,
+.fadeImageEnd img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Fadings verticais super suaves */
+.fadeImage,
+.fadeImageEnd {
+    mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(0, 0, 0, 0) 90%);
+}
+
+/* PONTO DE COLETA */
+.pontocoleta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 10rem;
+    background: linear-gradient(to left,
+            white, 60%,
+            #5f81b7 30%);
+    border-radius: 5%;
+}
+
+        /* TEXTO */
+.box2 {
+    border-radius: 50px;
+    background: #cfe9ff;
+    cursor: pointer;
+    padding: 2rem;
+}
+
+        /* IMAGEM */
+
+.imagem2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background-color: ##e6f0ff;
+    border-radius: 20%;
+    padding-top: 3rem;
+}
 
 
 @media (max-width: 768px) {
+
+    /* COMO DOAR */
     .doar {
         flex-direction: column;
         text-align: center;
+        background-color: white;
+        margin: 0;
+        padding: 1rem;
     }
 
-    .right {
-        margin-top: 20px;
+    /* TEXTO */
+
+    .texto {
+        padding: 1rem;
+    }
+
+    .section span {
+        margin-bottom: 2rem;
+        font-size: 3rem;
+    }
+
+    .texto p {
+        font-size: 1.2rem;
+    }
+
+    /* IMAGEM */
+    .imagem1 {
+        display: none;
     }
 }
