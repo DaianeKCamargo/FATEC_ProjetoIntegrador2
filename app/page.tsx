@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import styles from '@/styles/home.module.css';
-import { motion, useInView, stagger, useAnimate } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { HiLocationMarker } from "react-icons/hi";
+import { motion, useInView } from "framer-motion";
+import { ReactNode, useRef } from "react";
 
 // Layout dos Titulos das páginas
-function Section({ children }) {
+type SectionProps = {
+  children: ReactNode;
+};
+
+function Section({ children }: SectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
