@@ -10,25 +10,46 @@
     width:  70rem ;
 }
 .title{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 3.2rem;
 }
 .logBtn{
   cursor: pointer;
   font-size: 1.5rem;
   height: 3rem;
   width: 95%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .labelContainer{   
     font-size: 1.5rem;
+    font-style: bold;
 }
 .inputContainer{
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
     width: 95%;
 }
 .checkboxContainer{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+.divChildren{ 
+    display: flex;
+    flex-direction: row; 
+    gap: 4rem;
+    width: 100%;
+}
+.checkChilLabel{
+    font-size: 1.3rem;
+}
+.checkChilInput{
+    font-size: 1.3rem;
+    min-width: 25rem;
+}
+.divCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
 }

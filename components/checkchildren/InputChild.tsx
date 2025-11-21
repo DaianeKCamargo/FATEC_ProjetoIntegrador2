@@ -13,14 +13,14 @@ interface InputProps {
     classname?: string;
 }
 
-export default function Input({id,label, name, type, placeholder, value, onChange, error, classname}: InputProps){
+export default function InputChild({id,label, name, type, placeholder, value, onChange, error, classname}: InputProps){
     
     return(
         <Form.Group id={id}>
-            <Form.Label className={styles.labelContainer}>{label}</Form.Label>
+            <Form.Label className={styles.checkChilLabel}>{label}</Form.Label>
             <Form.Control type={type} name={name}   placeholder={placeholder} value={value}
-            onChange={onChange} isInvalid={!!error} className={styles.inputContainer}
-        ></Form.Control>
+            onChange={onChange} isInvalid={!!error} className={styles.checkChilInput}
+        ></Form.Control>    
         </Form.Group>
     )
 }

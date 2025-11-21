@@ -16,26 +16,18 @@ export default function CheckDown(
 
     return (
         <div style={{ marginBottom: "16px" }}>
-        {/* Linha: checkbox + ícone */}
-        <div>
-            <Form.Check
-            inline
-            label={label}
-            name={name}
-            className={styles.checkboxContainer}
-            type="checkbox"
-            id={id}
-            onChange={(e) => setChecked(e.target.checked)}
-            />
-            <InfoIcon text={info} />
-        </div>
-
-        {/* Conteúdo extra (children) só aparece se marcado */}
-        {checked && (
             <div>
-            {children}
+                <Form.Check inline label={label} name={name} className={styles.checkboxContainer}
+                type="checkbox" id={id} onChange={(e) => setChecked(e.target.checked)}
+                />
+                <InfoIcon text={info}/>
             </div>
-        )}
+            
+            {checked && (
+                <div>
+                {children}
+                </div>
+            )}
         </div>
     );
 }
