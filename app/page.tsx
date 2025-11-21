@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import styles from '@/styles/home.module.css';
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, stagger, useAnimate } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { HiLocationMarker } from "react-icons/hi";
 
 // Layout dos Titulos das páginas
 function Section({ children }) {
@@ -25,7 +26,66 @@ function Section({ children }) {
   );
 }
 
+// Animação ponto de coleta
+
+
 export default function Home() {
+
+  // Animação Ponto Coleta
+  const [scope, animate] = useAnimate();
+
+  useEffect(() => {
+    animate(
+      [
+        [
+          scope.current,
+          {
+            transform: [
+              "rotateX(0deg) rotateZ(0deg)",
+              "rotateX(50deg) rotateZ(180deg)"
+            ],
+            /**
+             * Animating backgroundColor because setting opacity
+             * on a layer containing transform-style: preserve-3d
+             * will break 3d on descendants.
+             */
+            backgroundColor: ["#f5f5f500", "#e6f0ff"]
+          },
+          { type: "spring" }
+        ],
+        [
+          ".dot",
+          {
+            transform: ["translateZ(100px)", "translateZ(10px)"],
+            opacity: [0, 1]
+          },
+          {
+            type: "spring",
+            stiffness: 900,
+            damping: 40,
+            delay: stagger(0.1),
+            at: "-1"
+          }
+        ],
+        [
+          ".ponto",
+          {
+            transform: ["translateZ(100px)", "translateZ(10px)"],
+            opacity: [0, 1]
+          },
+          {
+            type: "spring",
+            stiffness: 900,
+            damping: 40,
+            delay: stagger(0.1),
+            at: "-1"
+          }
+        ]
+      ],
+      { delay: 0.3 }
+    );
+  }, []);
+
   return (
     <div>
 
@@ -35,7 +95,7 @@ export default function Home() {
 
       <div className={styles.doar}>
         <div className={styles.texto}>
-          <Section>Transforme tampinhas em boas ações!</Section>
+          <Section>Doe sua Tampinhas!</Section>
 
           <motion.div
             className={styles.box1}
@@ -45,7 +105,7 @@ export default function Home() {
           >
             <a className={styles.paginaDoar} href="/como-doar">
               <p>
-                As tampinhas fazem parte da sua vida, que tal você separa-las para ajudar animais em situação de abandono ? Uma a uma, elas podem ajuda-los muito!
+                Transforme suas tampinhas em ações, que tal você separa-las para ajudar animais em situação de abandono ? Uma a uma, elas podem ajuda-los muito!
               </p>
               <p><b>Clique aqui e saiba mais!</b></p>
             </a>
@@ -53,55 +113,16 @@ export default function Home() {
         </div>
 
         <div className={styles.imagem1}>
-          <div className={styles.fadeWrapper}>
+        
 
-            {/* IMAGEM 1 */}
-            <motion.div
-              className={styles.fadeImage}
-              animate={{ opacity: [0, 1] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
-              <Image
-                src="/doar_tampinhas.png"
-                width={450}
-                height={450}
-                alt="Tampinhas caindo"
-              />
-            </motion.div>
-
-
-            {/* IMAGEM 2*/}
-            <motion.div
-              className={styles.fadeImageEnd}
-              animate={{ opacity: [1, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
-              <Image
-                className={styles.fadeImageEnd}
-                src="/receber_moedinhas.png"
-                width={450}
-                height={450}
-                alt="Mão segurando moedas"
-              />
-            </motion.div>
-
-          </div>
+        
         </div>
       </div >
 
       <div className={styles.pontocoleta}>
-        <div className={styles.imagem2}>
 
-        </div>
-        
+
+
         <div className={styles.texto}>
           <Section>Encontre o ponto de coleta mais próximo de você! </Section>
 
@@ -122,11 +143,11 @@ export default function Home() {
 
       </div>
 
-      <div className={styles.participar}>
-        <h1> Tornar parceiro | Voluntário | Ponto de Coleta </h1>
+      <div className={styles.voluntario}>
+        
       </div>
 
-      <div className={styles.resultados}>
+      <div className={styles.resumoRelatorio}>
         <h1> Resumo resultados </h1>
       </div>
 
