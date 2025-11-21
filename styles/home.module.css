@@ -13,13 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem;
+    padding: 5rem;
     gap: 2rem;
     width: 100%;
-    height: 50vh;
-    background: linear-gradient(to top,
+    background: linear-gradient(to left,
             white,
-            #d7c216 );
+            #d7c216);
+
 }
 
 /* TEXTO */
@@ -56,50 +56,103 @@
 }
 
 /* IMAGEM */
-.imagem1 {
+.imagem {
     flex: 1;
     display: flex;
+    align-items: center;
+    /* centraliza vertical */
     justify-content: center;
-    height: 20vh;
-    padding-top: 3rem;
+    /* centraliza horizontal */
+    height: 100%;
+    overflow: visible;
+    /* garante que a animação não corte nada */
+    position: relative;
 }
 
+.img {
+    width: 100%;
+    height: 100%;
+}
 
+.card {
+    position: relative;
+    z-index: 2;
+
+    width: 280px;
+    height: 380px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    border-radius: 25px 25px 25px 0px;
+
+    box-shadow: px 0 18px rgba(0, 0, 0, 0.15);
+    transform-origin: 10% 60%;
+    clip-path: polygon(0 0,
+            /* topo esquerdo */
+            100% 0,
+            /* topo direito */
+            100% 100%,
+            /* bottom right */
+            170px 100%,
+            /* desloca pra direita */
+            0 calc(100% - 30px)
+            /* sobe 40px */
+        );
+}
+
+.cardContainer {
+    position: relative;
+    width: 330px;
+    /* controla largura geral */
+    height: 450px;
+    /* controla altura geral */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.splash {
+    position: absolute;
+    z-index: 1;
+    /* atrás do card */
+
+    width: 380px;
+    /* maior que o card */
+    height: 428px;
+    /* maior que o card */
+
+    top: 10px;
+    left: -20px;
+
+    border-radius: 30px 90px 30px 30px;
+
+    clip-path: path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"
+        );
+}
 
 /* PONTO DE COLETA */
 .pontocoleta {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem;
-    gap: 30%;
+    padding: 5rem;
+    gap: 10%;
     width: 100%;
     height: 100%;
+    background-image: linear-gradient(to right, white, #5f81b7);
 }
 
-
-
         /* TEXTO */
-
 .box2 {
     border-radius: 50px;
     background: #cfe9ff;
     cursor: pointer;
     padding: 2rem;
 }
-
-/* IMAGEM */
-/* .imagem2 {
-    width: 300px;
-    height: 300px;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    border-radius: 20%;
-    padding-top: 3rem;
-} */
-
-      
 
 /* VOLUNTÁRIO */
 .voluntario {
@@ -124,7 +177,7 @@
     width: 100%;
     height: 50vh;
     margin-top: 1rem;
-    background-image: linear-gradient(to bottom, white,#9d43c2);
+    background-image: linear-gradient(to left, white, #9d43c2);
 }
 
 
@@ -155,7 +208,7 @@
     }
 
     /* IMAGEM */
-    .imagem1 {
+    .imagem {
         display: none;
     }
 
