@@ -1,7 +1,7 @@
 'use client'
 
 import FileInput from "@/components/input-image/FileInput";
-import Select from "@/components/select/select";
+import Select from "@/components/select/Select";
 import style from "@/styles/adm-galeria.module.css";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
