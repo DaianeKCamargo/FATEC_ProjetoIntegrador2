@@ -1,11 +1,13 @@
 'use client'
 import InfoIcon from '@/components/info-icon/InfoIcon';
 import Input from '@/components/form/Input';
-import CheckDown from '@/components/form/CheckDown';
+import CheckDown from '@/components/checkchildren/CheckDown';
 import styles from '@/styles/log-block.module.css';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/navigation';
 import { Button, Form } from 'react-bootstrap';
+import { a, div } from 'framer-motion/client';
+import InputChild from '@/components/checkchildren/InputChild';
 
 export default function Cadastrar() {
 
@@ -18,6 +20,7 @@ export default function Cadastrar() {
         phone: string;
         password: string;
         confirmPassword: string;
+        namePC?: string;
     }
     //Configuração do formik
     const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik<values>({
@@ -52,35 +55,41 @@ export default function Cadastrar() {
                     <Input id="inputConfirmPassword" label='Confirme a Senha' type='password' 
                         name='confirmPassword' error={values.confirmPassword}></Input>
                     <div>
-                    <CheckDown
-                        label="Ponto de coleta"
-                        name="group1"
-                        id='check1'
-                        info='Tornar-se um ponto de coleta ajuda a ampliar nossa rede de coleta.'
-                        children=""/>
+                        <CheckDown
+                            label="Ponto de coleta"
+                            name="group1"
+                            id='check1'
+                            info='Tornar-se um ponto de coleta ajuda a ampliar nossa rede de coleta.'
+                            children={
+                                <div className={styles.divChildren}>
+                                    <InputChild id='inputNamePC' label='Nome do estabelecimento' type='text'
+                                        error={values.namePC} name='namePC'/>
+                                    <InputChild id='inputEndPC' label='Endereço' type='text'
+                                        error={values.namePC} name='endePC'/>
+                                </div>
+                            }
+                        />
                     </div>
                     <div>
-                    <CheckDown
-                        label="Parceiro"
-                        name="group1"
-                        id='check2'
-                        info=''
-                        children=""/>
-                    </div>
-                    <div>
-                    <CheckDown
-                        label="Voluntário"
-                        name="group1"
-                        id='check3'
-                        info=''
-                        children=""/>
+                        <CheckDown
+                            label="Parceiro"
+                            name="group1"
+                            id='check2'
+                            info='Torne-se Parceiro Tampets e nós ajude a divulgar o projeto.'
+                            children={
+                                <div className={styles.divChildren}>
+                                    <InputChild id='inputNameP' label='Nome do Parceiro/Perfil' type='text'
+                                        error={values.namePC} name='nameP'/>
+                                    <InputChild id='inputLinkP' label='Link para o perfil' type='text'
+                                        error={values.namePC} name='linkP'/>
+                                </div>
+                            }
+                        />
                     </div>
                     <Button variant='primary' className={styles.logBtn}>Cadastrar</Button>
-                    
+                    <div className={styles.divCenter}><a href="/login">Ja tem uma conta? Clique aqui</a></div>    
                 </Form>
-
             </div>
-
         </section>
     );
 }
