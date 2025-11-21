@@ -9,9 +9,57 @@
 }
 
 /* COMO DOAR */
+.doar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.left {
+    flex: 1;
+}
+
+.left h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.left p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.transitionWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 
 
 @media (max-width: 768px) {
-    
+    .doar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .right {
+        margin-top: 20px;
+    }
 }
