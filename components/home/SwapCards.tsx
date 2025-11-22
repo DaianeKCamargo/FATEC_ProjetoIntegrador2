@@ -1,8 +1,9 @@
 "use client";
 
 import styles from "@/styles/swap-cards.module.css";
+import { useRouter } from 'next/navigation';
 import Link from "next/link";
-import WhatsModal from "./WhatsModal";
+import WhatsModal from "@/components/home/WhatsModal";
 
 interface SwapCardProps {
   imagem: string;
@@ -13,15 +14,22 @@ interface SwapCardProps {
   onOpenModal?: () => void;
 }
 
-export default function SwapCard(props: SwapCardProps) {
+export default function SwapCard({imagem, titulo, descricao, src, label, onOpenModal }: SwapCardProps) {
 
-  const { imagem, titulo, descricao, src, label, onOpenModal } = props;
+  const router = useRouter();
 
-  {
-    onOpenModal ? (
-      <WhatsModal numero={"05515988327955"} />
-    ) : (" ")
-  }
+  const navPage = () => {
+    if (src) router.push(src);
+  };
+
+  const handleClick = () => {
+    if (onOpenModal) {
+      onOpenModal();   // abre modal
+    } else {
+      navPage();       // navega normalmente
+    }
+  };
+
 
   return (
     <section className={styles.document}>
@@ -84,9 +92,9 @@ export default function SwapCard(props: SwapCardProps) {
           <h2>{titulo}</h2>
           <figcaption>{descricao}</figcaption>
 
-          <Link href={src} className={styles.button} >
+          <button className={styles.button} onClick={handleClick} >
             {label}
-          </Link>
+          </button>
         </figure>
 
       </section>

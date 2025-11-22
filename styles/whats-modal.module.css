@@ -1,75 +1,63 @@
-.openBtn {
-  padding: 10px 20px;
-  background: #25d366;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-.openBtn:hover {
-  background: #1ebe5d;
-}
-
-/* Overlay */
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 999;
+  align-items: flex-start;
+  /* <-- NÃO CENTRALIZA mais */
+  padding-top: 120%;
+  /* <-- controla altura do modal na tela */
+  z-index: 9999;
 }
 
-/* Conteúdo */
 .modalContent {
+  width: 500px;
   background: white;
-  width: 350px;
   padding: 20px;
   border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+.modalContent label {
+  font-size: 1.2rem;
+}
+
+
 .modalContent input,
 .modalContent textarea {
   width: 100%;
   padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  font-size: 1.2rem;
 }
 
 .btnArea {
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
+  font-size: 1.2rem;
 }
 
-.btnArea button {
-  padding: 8px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.btnArea button:first-child {
-  background: #25d366;
+.sendBtn {
+  background: #17991b;
   color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.btnArea button:first-child:hover {
-  background: #1ebe5d;
-}
-
-.btnArea button:last-child {
-  background: #ccc;
-}
-
-.btnArea button:last-child:hover {
-  background: #bbb;
+.closeBtn {
+  background: #ffb1af;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
 }

@@ -1,57 +1,65 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "@/styles/whats-modal.module.css";
 
 interface WhatsModalProps {
-  numero: string; // ex: "5515999999999"
+  numero: string; // exemplo "5515999999999"
+  open: boolean;
+  onClose: () => void;
 }
 
-export default function WhatsModal({ numero }: WhatsModalProps) {
-  const [open, setOpen] = useState(false);
+export default function WhatsModal({ numero, open, onClose }: WhatsModalProps) {
   const [nome, setNome] = useState("");
-  const [mensagem, setMensagem] = useState("");
+  const [bairro, setBairro] = useState("");
+  const mensagem = "Olá, tenho interesse em ser voluntária, poderia me passar mais detalhes de quais ajuda vocês estão precisando? Fico no aguardo do seu retorno";
+
+  useEffect(() => {
+    if (!open) {
+      setNome("");
+      setBairro("");
+    }
+  }, [open]);
+
+  if (!open) return null;
 
   const handleSend = () => {
-    const texto = `Olá, meu nome é ${nome}. ${mensagem}`;
+    const texto = `Olá, meu nome é ${nome}, moro no bairro ${bairro}. ${mensagem}`;
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
-
     window.open(url, "_blank");
-    setOpen(false);
+    onClose();
   };
 
   return (
-    <>
-      {/* Botão que abre o modal */}
-      <button className={styles.openBtn} onClick={() => setOpen(true)}>
-        Fale Conosco
-      </button>
+    <div className={styles.modalOverlay} role="dialog" aria-modal="true">
+      <div className={styles.modalContent}>
+        <h2>Enviar mensagem</h2>
 
-      {/* Modal */}
-      {open && (
-        <div className={styles.modalOverlay}>
-          <div className={styles.modalContent}>
-            <h2>Enviar mensagem</h2>
+        <label>Qual é o seu nome?</label>
+        <input
+          type="text"
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+          placeholder="Seu nome"
+        />
 
-            <label>Seu nome:</label>
-            <input
-              type="text"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            />
+        <label>Qual é o seu bairro?</label>
+        <input
+          type="text"
+          value={bairro}
+          onChange={(e) => setBairro(e.target.value)}
+          placeholder="Seu Bairro"
+        />
 
-            <label>Mensagem:</label>
-            <textarea
-              value={mensagem}
-              onChange={(e) => setMensagem(e.target.value)}
-            />
+        <label>Mensagem:</label>
+        <textarea
+          value={mensagem}
+        />
 
-            <div className={styles.btnArea}>
-              <button onClick={handleSend}>Enviar no WhatsApp</button>
-              <button onClick={() => setOpen(false)}>Fechar</button>
-            </div>
-          </div>
+        <div className={styles.btnArea}>
+          <button onClick={handleSend} className={styles.sendBtn}>Enviar no WhatsApp</button>
+          <button onClick={onClose} className={styles.closeBtn}>Fechar</button>
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 }

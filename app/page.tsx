@@ -3,7 +3,7 @@
 import Image from "next/image"
 import styles from '@/styles/home.module.css'
 import { motion, useInView, Variants } from "framer-motion"
-import { ReactNode, useRef } from "react"
+import { ReactNode, useRef, useState } from "react"
 import SwapCards from "@/components/home/SwapCards"
 import WhatsModal from "@/components/home/WhatsModal"
 
@@ -76,6 +76,8 @@ const cardsData = [
 
 export default function Home() {
 
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div>
 
@@ -142,14 +144,14 @@ export default function Home() {
               label={"Ser Ponto de Coleta "} />
           </div>
           <div className={styles.voluntario}>
-              <SwapCards
-                imagem={"/voluntario.png"}
-                titulo={"Seja um voluntário"}
-                descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam."}
-                src={"ModalVoluntario"}
-                label={"Ser voluntário "} 
-                onOpenModal={() => setOpenModal(true)}/>
-                
+            <SwapCards
+              imagem={"/voluntario.png"}
+              titulo={"Seja um voluntário"}
+              descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam."}
+              label={"Ser voluntário "}
+              onOpenModal={() => setOpenModal(true)}
+            />
+
           </div>
           <div className={styles.parceiro}>
             <SwapCards
@@ -159,6 +161,12 @@ export default function Home() {
               src={"/cadastro"}
               label={"Ser Parceiro"} />
           </div>
+
+          <WhatsModal
+            numero={"5515988327955"}
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+          />
         </div>
       </div>
 
