@@ -284,9 +284,6 @@
     }
 
     /* RESULTADOS */
-    .resumoRelatorio {
-        height: auto;
-    }
 
     .animacao {
         flex-direction: column;
