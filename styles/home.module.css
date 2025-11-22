@@ -230,17 +230,17 @@
 .circle h2 {
     color: white;
     font-size: 2rem;
-    text-shadow:2px 2px 5px rgba(0,0,0,0.4);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     flex-wrap: wrap;
     text-align: center;
-    
+
 }
 
 .textCount {
     color: white;
     font-size: 4rem;
     font-weight: 700;
-    text-shadow:2px 2px 5px rgba(0,0,0,0.4);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -294,4 +294,21 @@
         gap: 3rem;
     }
 
+    .circle {
+    width: 200px;
+    height: 200px;
+    padding: 2rem;
+}
+
+    .circle h2 {
+        font-size: 1.3rem;
+
+    }
+
+    .textCount {
+        color: white;
+        font-size: 3rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    }
 }

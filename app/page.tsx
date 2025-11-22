@@ -181,7 +181,7 @@ export default function Home() {
         <div className={styles.animacao}>
           <div className={styles.gatos}>
             <div className={styles.circle}>
-              <p><FaCat size={50} color="white" /></p>
+              <p><FaCat size={40} color="white" /></p>
               <CountUp
                 to={50}
                 duration={8}
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
           <div className={styles.cachorros}>
             <div className={styles.circle}>
-              <p><FaDog size={50} color="white" /></p>
+              <p><FaDog size={40} color="white" /></p>
               <CountUp
                 to={12}
                 duration={8}
@@ -203,7 +203,7 @@ export default function Home() {
           </div>
           <div className={styles.tampinhas}>
             <div className={styles.circle}>
-              <p><AiFillGold size={50} color="white" /></p>
+              <p><AiFillGold size={40} color="white" /></p>
               <CountUp
                 to={1458521}
                 duration={8}
