@@ -178,41 +178,43 @@ export default function Home() {
           <Section> Resultados </Section>
         </div>
 
-        <div className={styles.animacao}>
-          <div className={styles.gatos}>
-            <div className={styles.circle}>
-              <p><FaCat size={40} color="white" /></p>
-              <CountUp
-                to={50}
-                duration={8}
-                className={styles.textCount}
-              />
-              <h2>Gatos Castrados</h2>
+        <a className={styles.paginas} href="/relatorio">
+          <div className={styles.animacao}>
+            <div className={styles.gatos}>
+              <div className={styles.circle}>
+                <p><FaCat size={40} color="white" /></p>
+                <CountUp
+                  to={50}
+                  duration={8}
+                  className={styles.textCount}
+                />
+                <h2>Gatos Castrados</h2>
+              </div>
+            </div>
+            <div className={styles.cachorros}>
+              <div className={styles.circle}>
+                <p><FaDog size={40} color="white" /></p>
+                <CountUp
+                  to={12}
+                  duration={8}
+                  className={styles.textCount}
+                />
+                <h2>Cachorros Castrados</h2>
+              </div>
+            </div>
+            <div className={styles.tampinhas}>
+              <div className={styles.circle}>
+                <p><AiFillGold size={40} color="white" /></p>
+                <CountUp
+                  to={1458521}
+                  duration={8}
+                  className={styles.textCount}
+                />
+                <h2>Tampinhas Coletadas(un)</h2>
+              </div>
             </div>
           </div>
-          <div className={styles.cachorros}>
-            <div className={styles.circle}>
-              <p><FaDog size={40} color="white" /></p>
-              <CountUp
-                to={12}
-                duration={8}
-                className={styles.textCount}
-              />
-              <h2>Cachorros Castrados</h2>
-            </div>
-          </div>
-          <div className={styles.tampinhas}>
-            <div className={styles.circle}>
-              <p><AiFillGold size={40} color="white" /></p>
-              <CountUp
-                to={1458521}
-                duration={8}
-                className={styles.textCount}
-              />
-              <h2>Tampinhas Coletadas(un)</h2>
-            </div>
-          </div>
-        </div>
+        </a>
       </div>
 
       <div className={styles.parceiros}>
