@@ -193,7 +193,7 @@
     flex-direction: column;
     padding: 3rem;
     gap: 2rem;
-    width: auto;
+    width: 100%;
     background-image: linear-gradient(to left, white, #9d43c2);
 }
 
