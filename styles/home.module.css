@@ -187,18 +187,58 @@
     width: 100%;
 }
 
-
 /* RESUMO RELATORIO */
 .resumoRelatorio {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 3rem;
     gap: 2rem;
     width: 100%;
-    height: 50vh;
-    margin-top: 1rem;
     background-image: linear-gradient(to left, white, #9d43c2);
+}
+
+.texto2 {
+    width: 100%;
+    text-align: center;
+}
+
+.animacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 2rem;
+}
+
+.circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 5px dashed #fff;
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 4px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    padding: 3rem;
+}
+
+.circle h2 {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.textCount {
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -208,6 +248,12 @@
     /* IMAGEM */
     .imagem {
         display: none;
+    }
+
+    .box1,
+    .box2 {
+        padding: 0.5rem 3rem;
+        gap: 0;
     }
 
     /* COMO DOAR */
@@ -241,5 +287,29 @@
         gap: 1rem;
     }
 
+    /* RESULTADOS */
 
+    .animacao {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+        padding: 2rem;
+    }
+
+    .circle h2 {
+        font-size: 1.3rem;
+
+    }
+
+    .textCount {
+        color: white;
+        font-size: 3rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    }
 }
