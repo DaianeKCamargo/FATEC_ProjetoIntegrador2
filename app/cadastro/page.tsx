@@ -73,19 +73,19 @@ export default function Cadastrar() {
                                 <>
                                     <div className={styles.divChildren}>
                                         <InputChild id='inputNamePC' label='Nome do estabelecimento' type='text'
-                                            error={errors.namePC} name='namePC'/>
+                                            error={errors.namePC} onChange={handleChange} name='namePC'/>
                                         <InputChild id='inputEndPC' label='Endereço' type='text'
-                                            error={errors.endePC} name='endePC'/>
+                                            error={errors.endePC} onChange={handleChange} name='endePC'/>
                                     </div>
                                      <div className={styles.divChildren}>
                                         <InputChild id='inputEndPC' label='Horario de Funcionamento' type='text'
-                                            error={errors.horaFuncPC} name='horaFuncPC'/>
+                                            error={errors.horaFuncPC} onChange={handleChange} name='horaFuncPC'/>
                                         <InputChild id='inputEndPC' label='Horario de Funcionamento' type='text'
-                                            error={errors.cnpj} name='cnpj'/>
+                                            error={errors.cnpj} onChange={handleChange} name='cnpj'/>
                                     </div>
                                     <div className={styles.divChildren}>
                                         <InputChild id='photoP' name='photoPC' type='file' label='Foto'
-                                            error={errors.photoPC}/>
+                                            error={errors.photoPC} onChange={handleChange}/>
                                     </div>
                                 </>
                             }
@@ -101,9 +101,9 @@ export default function Cadastrar() {
                                 <>
                                     <div className={styles.divChildren}>
                                         <InputChild id='inputNameP' label='Nome do Perfil' type='text'
-                                            error={errors.nameP} name='nameP' placeholder='Insira o nome do seu Perfil da sua rede social.'/>
+                                            error={errors.nameP} onChange={handleChange} name='nameP' placeholder='Insira o nome do seu Perfil da sua rede social.'/>
                                         <InputChild id='inputLinkP' label='Link' type='text'
-                                            error={errors.linkP} name='linkP' placeholder='Insira o link para uma de suas redes sociais.'/>
+                                            error={errors.linkP} onChange={handleChange} name='linkP' placeholder='Insira o link para uma de suas redes sociais.'/>
                                         
                                     </div>
                                     <div className={styles.divChildren}>
