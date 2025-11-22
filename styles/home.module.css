@@ -194,7 +194,6 @@
     padding: 3rem;
     gap: 2rem;
     width: 100%;
-    height: auto;
     background-image: linear-gradient(to left, white, #9d43c2);
 }
 
@@ -252,6 +251,12 @@
         display: none;
     }
 
+    .box1,
+    .box2 {
+        padding: 0.5rem 3rem;
+        gap: 0;
+    }
+
     /* COMO DOAR */
     .doar,
     .pontocoleta {
@@ -292,10 +297,10 @@
     }
 
     .circle {
-    width: 200px;
-    height: 200px;
-    padding: 2rem;
-}
+        width: 200px;
+        height: 200px;
+        padding: 2rem;
+    }
 
     .circle h2 {
         font-size: 1.3rem;
