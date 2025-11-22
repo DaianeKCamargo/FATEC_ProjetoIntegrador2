@@ -1,0 +1,28 @@
+.divprincipal{
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #ccc;
+    background-color: rgb(237, 246, 250);
+    box-shadow: 0 0 0.7rem 0.2rem rgba(0, 0, 0, 0.1);
+    border-radius: 2rem; 
+    margin: 5rem auto;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    width:  70rem ;
+}
+.divCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.button{
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.input{
+    margin-bottom: 1rem;
+}
