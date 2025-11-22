@@ -20,7 +20,10 @@ export default function InputChild({id,label, name, type, placeholder, value, on
             <Form.Label className={styles.checkChilLabel}>{label}</Form.Label>
             <Form.Control type={type} name={name}   placeholder={placeholder} value={value}
             onChange={onChange} isInvalid={!!error} className={styles.checkChilInput}
-        ></Form.Control>    
+        ></Form.Control>   
+        <Form.Control.Feedback type='invalid'>
+            {error}
+        </Form.Control.Feedback> 
         </Form.Group>
     )
 }

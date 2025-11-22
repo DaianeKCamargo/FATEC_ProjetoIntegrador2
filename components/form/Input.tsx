@@ -21,6 +21,9 @@ export default function Input({id,label, name, type, placeholder, value, onChang
             <Form.Control type={type} name={name}   placeholder={placeholder} value={value}
             onChange={onChange} isInvalid={!!error} className={styles.inputContainer}
         ></Form.Control>
+        <Form.Control.Feedback type='invalid'>
+            {error}
+        </Form.Control.Feedback>
         </Form.Group>
     )
 }

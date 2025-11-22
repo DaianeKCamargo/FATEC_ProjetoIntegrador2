@@ -1,3 +1,4 @@
+/*Computador*/
 .divprincipal{
     justify-content: center;
     align-content: center;
@@ -7,6 +8,7 @@
     border-radius: 2rem; 
     margin: 5rem auto;
     padding-left: 4rem;
+    padding-right: 4rem;
     width:  70rem ;
 }
 .title{
@@ -16,10 +18,10 @@
 }
 .logBtn{
   cursor: pointer;
-  font-size: 1.5rem;
-  height: 3rem;
-  width: 95%;
+  font-size: 1.3rem;
+  width: 100%;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .labelContainer{   
     font-size: 1.5rem;
@@ -28,7 +30,7 @@
 .inputContainer{
     margin-bottom: 1rem;
     font-size: 1.3rem;
-    width: 95%;
+    width: 100%;
 }
 .checkboxContainer{
     font-size: 1.3rem;
@@ -44,7 +46,7 @@
     font-size: 1.3rem;
 }
 .checkChilInput{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     min-width: 25rem;
 }
 .divCenter{
@@ -53,3 +55,44 @@
     align-items: center;
     margin-bottom: 2rem;
 }
+.link{
+    font-size: 1.3rem;
+}
+.forceColumn {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {  /* tablet */
+.divprincipal{
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #ccc;
+    background-color: rgb(237, 246, 250);
+    box-shadow: 0 0 0.7rem 0.2rem rgba(0, 0, 0, 0.1);
+    border-radius: 2rem; 
+    margin: 5rem auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    width:  44rem ;
+}
+.title{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+}
+}
+@media (max-width: 576px) {  /* celular */ 
+.divprincipal{
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #ccc;
+    background-color: rgb(237, 246, 250);
+    box-shadow: 0 0 0.7rem 0.2rem rgba(0, 0, 0, 0.1);
+    border-radius: 2rem; 
+    margin: 5rem auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width:  33,6rem ;
+}}
