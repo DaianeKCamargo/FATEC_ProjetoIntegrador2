@@ -4,6 +4,7 @@ import Image from "next/image"
 import styles from '@/styles/home.module.css'
 import { motion, useInView, Variants } from "framer-motion"
 import { ReactNode, useRef } from "react"
+import SwapCards from "@/components/home/SwapCards"
 
 
 // SECTION ANIMATION
@@ -49,7 +50,7 @@ const cardVariants: Variants = {
   }
 }
 
-function Card({ img, color }: CardProps) {
+function ContainerImagens({ img, color }: CardProps) {
   return (
     <motion.div
       className={styles.cardContainer}
@@ -92,7 +93,7 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <a className={styles.paginaDoar} href="/como-doar">
+            <a className={styles.paginas} href="/como-doar">
               <p>Transforme suas tampinhas em ações...</p>
               <p><b>Clique aqui e saiba mais!</b></p>
             </a>
@@ -100,13 +101,13 @@ export default function Home() {
         </div>
 
         <div className={styles.imagem}>
-          <Card img="/doar.png" color="#d7c216" />
+          <ContainerImagens img="/doar.png" color="#d7c216" />
         </div>
       </div>
 
       <div className={styles.pontocoleta}>
         <div className={styles.imagem}>
-          <Card img="/localizacao.png" color="#5f81b7" />
+          <ContainerImagens img="/localizacao.png" color="#5f81b7" />
         </div>
 
         <div className={styles.texto}>
@@ -118,7 +119,7 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <a className={styles.paginaDoar} href="/como-doar">
+            <a className={styles.paginas} href="/como-doar">
               <p>Veja os pontos de coleta mais próximos...</p>
               <p><b>Clique aqui e saiba mais!</b></p>
             </a>
@@ -126,8 +127,37 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.voluntario}>
+      <div className={styles.ajuda}>
+        <div className={styles.texto1}>
+          <Section> Faça parte do projeto! </Section>
+        </div>
 
+        <div className={styles.cardsAjuda}>
+          <div className={styles.voluntario}>
+            <SwapCards 
+            imagem={"/voluntario.png"} 
+            titulo={"Seja um voluntário"} 
+            descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam"} 
+            src={"ModalVoluntario"} 
+            label={"Ser um voluntário "} />
+          </div>
+          <div className={styles.pontodecoleta}>
+            <SwapCards 
+            imagem={"/voluntario.png"} 
+            titulo={"Seja um voluntário"} 
+            descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam"} 
+            src={"ModalVoluntario"} 
+            label={"Ser um voluntário "} />
+          </div>
+          <div className={styles.parceiro}>
+            <SwapCards 
+            imagem={"/voluntario.png"} 
+            titulo={"Seja um voluntário"} 
+            descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam"} 
+            src={"ModalVoluntario"} 
+            label={"Ser um voluntário "} />
+          </div>
+        </div>
       </div>
 
       <div className={styles.resumoRelatorio}>

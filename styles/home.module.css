@@ -1,35 +1,10 @@
-/* HERO */
-.hero {
-    width: 100%;
-}
-
-.folder {
-    width: 100%;
-    height: auto;
-}
-
-/* COMO DOAR */
-.doar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5rem;
-    gap: 2rem;
-    width: 100%;
-    background: linear-gradient(to left,
-            white,
-            #d7c216);
-
+/* GERAL */
+.paginas {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* TEXTO */
-.texto {
-    flex: 1;
-    text-align: center;
-    padding: 3rem;
-    margin: 2rem;
-}
-
 .section span {
     display: block;
     transform: translateX(-100px);
@@ -38,11 +13,11 @@
     letter-spacing: -0.1rem;
 }
 
-.box1 {
-    border-radius: 50px;
-    background: #ffedc2;
-    cursor: pointer;
-    padding: 2rem;
+.texto {
+    flex: 1;
+    text-align: center;
+    padding: 3rem;
+    margin: 2rem;
 }
 
 .texto p {
@@ -50,12 +25,7 @@
     line-height: 1.6;
 }
 
-.paginaDoar {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* IMAGEM */
+/* IMAGENS */
 .imagem {
     flex: 1;
     display: flex;
@@ -103,6 +73,7 @@
         );
 }
 
+/* ANIMAÇÕES DAS IMAGENS */
 .cardContainer {
     position: relative;
     width: 330px;
@@ -134,6 +105,38 @@
         );
 }
 
+
+/* HERO */
+.hero {
+    width: 100%;
+}
+
+.folder {
+    width: 100%;
+    height: auto;
+}
+
+/* COMO DOAR */
+.doar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem;
+    gap: 2rem;
+    width: 100%;
+    background: linear-gradient(to left,
+            white,
+            #d7c216);
+
+}
+
+.box1 {
+    border-radius: 50px;
+    background: #ffedc2;
+    cursor: pointer;
+    padding: 2rem;
+}
+
 /* PONTO DE COLETA */
 .pontocoleta {
     display: flex;
@@ -146,7 +149,7 @@
     background-image: linear-gradient(to right, white, #5f81b7);
 }
 
-        /* TEXTO */
+/* TEXTO */
 .box2 {
     border-radius: 50px;
     background: #cfe9ff;
@@ -155,17 +158,29 @@
 }
 
 /* VOLUNTÁRIO */
-.voluntario {
+.ajuda {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem;
-    gap: 2rem;
+    flex-direction: column;
     width: 100%;
-    height: 50vh;
+    height: auto;
     margin-top: 1rem;
-
+    gap: 5rem;
+    padding: 3rem;
 }
+
+/* TEXTO */
+.texto1 {
+    text-align: center;
+    padding: 1rem;
+}
+
+.cardsAjuda {
+    display: flex;
+    flex-direction: row;
+}
+
 
 /* RESUMO RELATORIO */
 .resumoRelatorio {
@@ -183,6 +198,12 @@
 
 @media (max-width: 768px) {
 
+    /* GERAL */
+    /* IMAGEM */
+    .imagem {
+        display: none;
+    }
+
     /* COMO DOAR */
     .doar {
         flex-direction: column;
@@ -193,7 +214,6 @@
     }
 
     /* TEXTO */
-
     .texto {
         padding: 1rem;
     }
@@ -207,10 +227,10 @@
         font-size: 1.2rem;
     }
 
-    /* IMAGEM */
-    .imagem {
-        display: none;
-    }
 
-    /* PONTO COLETA */
+    /* VOLUNTARIO */
+    .cardsAjuda {
+        flex-direction: column;
+        width: 100%;
+    }
 }
