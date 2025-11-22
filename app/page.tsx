@@ -6,9 +6,13 @@ import { motion, useInView, Variants } from "framer-motion"
 import { ReactNode, useRef, useState } from "react"
 import SwapCards from "@/components/home/SwapCards"
 import WhatsModal from "@/components/home/WhatsModal"
+import CountUp from "@/components/home/CountUp"
+import { FaCat, FaDog } from "react-icons/fa";
+import { AiFillGold } from "react-icons/ai";
 
 
-// SECTION ANIMATION
+
+// Animação dos titulos
 type SectionProps = { children: ReactNode }
 
 function Section({ children }: SectionProps) {
@@ -30,8 +34,7 @@ function Section({ children }: SectionProps) {
   )
 }
 
-
-// CARD voluntario (AGORA COM IMAGEM + COR)
+// Card voluntarios (AGORA COM IMAGEM + COR)
 interface CardProps {
   img: string
   color: string
@@ -67,8 +70,7 @@ function ContainerImagens({ img, color }: CardProps) {
   )
 }
 
-
-// LISTA DE CARDS COMO DOAR E PONTO DE COLETA (AGORA COM IMAGENS)
+// Lista dos cards como doar e ponto de coleta - imagens
 const cardsData = [
   { img: "/doar.png", color: "#FAF9DD" },
   { img: "/localizacao.png", color: "#5f81b7" }
@@ -76,6 +78,7 @@ const cardsData = [
 
 export default function Home() {
 
+  // Voluntario
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -121,7 +124,7 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <a className={styles.paginas} href="/como-doar">
+            <a className={styles.paginas} href="/ponto-coleta">
               <p>Veja os pontos de coleta mais próximos...</p>
               <p><b>Clique aqui e saiba mais!</b></p>
             </a>
@@ -171,7 +174,45 @@ export default function Home() {
       </div>
 
       <div className={styles.resumoRelatorio}>
-        <h1> Resumo resultados </h1>
+        <div className={styles.texto2}>
+          <Section> Resultados </Section>
+        </div>
+
+        <div className={styles.animacao}>
+          <div className={styles.gatos}>
+            <div className={styles.circle}>
+              <p><FaCat size={50} color="white" /></p>
+              <CountUp
+                to={50}
+                duration={8}
+                className={styles.textCount}
+              />
+              <h2>Gatos Castrados</h2>
+            </div>
+          </div>
+          <div className={styles.cachorros}>
+            <div className={styles.circle}>
+              <p><FaDog size={50} color="white" /></p>
+              <CountUp
+                to={12}
+                duration={8}
+                className={styles.textCount}
+              />
+              <h2>Cachorros Castrados</h2>
+            </div>
+          </div>
+          <div className={styles.tampinhas}>
+            <div className={styles.circle}>
+              <p><AiFillGold size={50} color="white" /></p>
+              <CountUp
+                to={1458521}
+                duration={8}
+                className={styles.textCount}
+              />
+              <h2>Tampinhas Coletadas(un)</h2>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className={styles.parceiros}>
