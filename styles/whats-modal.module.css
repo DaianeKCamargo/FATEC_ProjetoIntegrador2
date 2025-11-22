@@ -61,3 +61,14 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .modalOverlay {
+
+    padding-top: 310%;
+  }
+
+  .modalContent {
+    margin: 1rem;
+  }
+}
