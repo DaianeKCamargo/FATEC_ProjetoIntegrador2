@@ -2,18 +2,26 @@
 
 import styles from "@/styles/swap-cards.module.css";
 import Link from "next/link";
+import WhatsModal from "./WhatsModal";
 
 interface SwapCardProps {
   imagem: string;
   titulo: string;
   descricao: string;
-  src: string;
+  src?: string;
   label: string;
+  onOpenModal?: () => void;
 }
 
 export default function SwapCard(props: SwapCardProps) {
 
-  const { imagem, titulo, descricao, src, label } = props;
+  const { imagem, titulo, descricao, src, label, onOpenModal } = props;
+
+  {
+    onOpenModal ? (
+      <WhatsModal numero={"05515988327955"} />
+    ) : (" ")
+  }
 
   return (
     <section className={styles.document}>
@@ -76,7 +84,7 @@ export default function SwapCard(props: SwapCardProps) {
           <h2>{titulo}</h2>
           <figcaption>{descricao}</figcaption>
 
-          <Link href={src} className={styles.button}>
+          <Link href={src} className={styles.button} >
             {label}
           </Link>
         </figure>

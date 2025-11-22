@@ -1,0 +1,75 @@
+.openBtn {
+  padding: 10px 20px;
+  background: #25d366;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.openBtn:hover {
+  background: #1ebe5d;
+}
+
+/* Overlay */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Conteúdo */
+.modalContent {
+  background: white;
+  width: 350px;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modalContent input,
+.modalContent textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btnArea {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btnArea button {
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btnArea button:first-child {
+  background: #25d366;
+  color: white;
+}
+
+.btnArea button:first-child:hover {
+  background: #1ebe5d;
+}
+
+.btnArea button:last-child {
+  background: #ccc;
+}
+
+.btnArea button:last-child:hover {
+  background: #bbb;
+}

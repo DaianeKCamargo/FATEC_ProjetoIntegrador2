@@ -5,10 +5,10 @@ import styles from '@/styles/home.module.css'
 import { motion, useInView, Variants } from "framer-motion"
 import { ReactNode, useRef } from "react"
 import SwapCards from "@/components/home/SwapCards"
+import WhatsModal from "@/components/home/WhatsModal"
 
 
 // SECTION ANIMATION
-// ---------------------------------------------
 type SectionProps = { children: ReactNode }
 
 function Section({ children }: SectionProps) {
@@ -31,7 +31,7 @@ function Section({ children }: SectionProps) {
 }
 
 
-// CARD (AGORA COM IMAGEM + COR)
+// CARD voluntario (AGORA COM IMAGEM + COR)
 interface CardProps {
   img: string
   color: string
@@ -68,7 +68,7 @@ function ContainerImagens({ img, color }: CardProps) {
 }
 
 
-// LISTA DE CARDS (AGORA COM IMAGENS)
+// LISTA DE CARDS COMO DOAR E PONTO DE COLETA (AGORA COM IMAGENS)
 const cardsData = [
   { img: "/doar.png", color: "#FAF9DD" },
   { img: "/localizacao.png", color: "#5f81b7" }
@@ -133,29 +133,31 @@ export default function Home() {
         </div>
 
         <div className={styles.cardsAjuda}>
-          <div className={styles.voluntario}>
-            <SwapCards 
-            imagem={"/voluntario.png"} 
-            titulo={"Seja um voluntário"} 
-            descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam"} 
-            src={"ModalVoluntario"} 
-            label={"Ser um voluntário "} />
-          </div>
           <div className={styles.pontodecoleta}>
-            <SwapCards 
-            imagem={"/voluntario.png"} 
-            titulo={"Seja um voluntário"} 
-            descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam"} 
-            src={"ModalVoluntario"} 
-            label={"Ser um voluntário "} />
+            <SwapCards
+              imagem={"/voluntario.png"}
+              titulo={"Seja um Ponto de Coleta"}
+              descricao={"Você que tem um estabelecimento, você pode nos ajudar aceitando receber as tampinhas. "}
+              src={"/cadastro"}
+              label={"Ser Ponto de Coleta "} />
+          </div>
+          <div className={styles.voluntario}>
+              <SwapCards
+                imagem={"/voluntario.png"}
+                titulo={"Seja um voluntário"}
+                descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam."}
+                src={"ModalVoluntario"}
+                label={"Ser voluntário "} 
+                onOpenModal={() => setOpenModal(true)}/>
+                
           </div>
           <div className={styles.parceiro}>
-            <SwapCards 
-            imagem={"/voluntario.png"} 
-            titulo={"Seja um voluntário"} 
-            descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam"} 
-            src={"ModalVoluntario"} 
-            label={"Ser um voluntário "} />
+            <SwapCards
+              imagem={"/voluntario.png"}
+              titulo={"Seja uma Parceiro"}
+              descricao={"Aqui você pode nos ajudar de alguma outra forma, clique no botão e saiba mais."}
+              src={"/cadastro"}
+              label={"Ser Parceiro"} />
           </div>
         </div>
       </div>
