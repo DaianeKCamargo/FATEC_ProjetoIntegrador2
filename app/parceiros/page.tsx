@@ -1,3 +1,5 @@
+"use client"
+
 import Titulo from "@/components/titulo/Titulo";
 import styles from "@/styles/parceiros.module.css";
 import PartnerCard from "@/components/partners/PartnerCard";
