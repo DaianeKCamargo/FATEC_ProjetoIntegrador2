@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import styles from "@/styles/carrossel.module.css";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -26,25 +27,17 @@ export default function PartnersCarousel() {
   return (
     <Swiper
       modules={[Autoplay, Pagination]}
-      slidesPerView={1}
+      slidesPerView={3}
       loop
       autoplay={{ delay: 3000 }}
-      pagination={{ clickable: true }}
-      style={{ width: "100%", maxWidth: "600px" }}
+      style={{ width: "100%", maxWidth: "600px", display: "flex", justifyContent: "space-between"}}
     >
       {approvedPartners.map((partner, index) => (
         <SwiperSlide key={index}>
-          <div
-            style={{
-              padding: "20px",
-              borderRadius: "12px",
-              background: "#f8f8f8",
-              textAlign: "center",
-              boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-            }}
-          >
-
-            <a href={partner.linkP}><img src={partner.photoP} alt="foto do parceiro" /></a>
+          <div className={styles.carrossel} >
+            <a href={partner.linkP} target="_blank">
+              <img src={partner.photoP} alt="foto do parceiro" />
+            </a>
           </div>
         </SwiperSlide>
       ))}
