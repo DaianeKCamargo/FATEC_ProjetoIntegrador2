@@ -6,7 +6,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  perspective: 1200px;
 }
+
 
 .body {
   background-color: #fff;
@@ -33,6 +35,10 @@ section {
 @media (max-width: 768px) {
 
   /* GERAL */
+  html, body {
+    overflow-x: hidden;
+  }
+
   section {
     margin: 0;
   }

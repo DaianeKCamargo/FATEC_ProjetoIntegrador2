@@ -10,16 +10,21 @@ interface InputProps {
     value?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     error?: string | undefined;
+    classname?: string;
+    disabled?: boolean;
 }
 
-export default function Input({id,label, name, type, placeholder, value, onChange, error }: InputProps){
+export default function Input({id,label, name, type, placeholder, value, onChange, error, classname, disabled}: InputProps){
     
     return(
         <Form.Group id={id}>
             <Form.Label className={styles.labelContainer}>{label}</Form.Label>
             <Form.Control type={type} name={name}   placeholder={placeholder} value={value}
-            onChange={onChange} isInvalid={!!error} className={styles.inputContainer}
-            ></Form.Control>
+            onChange={onChange} isInvalid={!!error} className={styles.inputContainer} disabled={disabled}
+        ></Form.Control>
+        <Form.Control.Feedback type='invalid'>
+            {error}
+        </Form.Control.Feedback>
         </Form.Group>
     )
 }

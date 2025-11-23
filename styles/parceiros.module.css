@@ -1,0 +1,13 @@
+.secao {
+    background-color: #e3efe5;
+    height: 100vh;
+}
+
+.container {
+  padding: 20px;
+}
+
+.item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}

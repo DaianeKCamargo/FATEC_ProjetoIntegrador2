@@ -55,14 +55,14 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    border: solid 0.1rem #D65552;
+    border: solid 0.1rem #F85818;
     border-radius: 5rem;
     padding: 1rem;
     font-size: 1.6rem;
-    color: #D65552;
+    color: #F85818;
 
     &:hover {
-        background-color: #D65552;
+        background-color: #F85818;
         color: #333;
         box-shadow: 0 0 0.1rem 0.1rem #333;
     }

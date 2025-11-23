@@ -1,14 +1,23 @@
-'use client';
+'use client'
 
-import Image from "next/image";
-import styles from '@/styles/home.module.css';
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import Image from "next/image"
+import styles from '@/styles/home.module.css'
+import { motion, useInView, Variants } from "framer-motion"
+import { ReactNode, useEffect, useRef, useState } from "react"
+import SwapCards from "@/components/home/SwapCards"
+import WhatsModal from "@/components/home/WhatsModal"
+import CountUp from "@/components/home/CountUp"
+import { FaCat, FaDog } from "react-icons/fa";
+import { AiFillGold } from "react-icons/ai";
+import PartnersCarousel from "@/components/partners/Carrossel"
 
-// Layout dos Titulos das páginas
-function Section({ children }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+
+// Animação dos titulos
+type SectionProps = { children: ReactNode }
+
+function Section({ children }: SectionProps) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
 
   return (
     <section ref={ref} className={styles.section}>
@@ -22,10 +31,57 @@ function Section({ children }) {
         {children}
       </span>
     </section>
-  );
+  )
 }
 
+// Card voluntarios (AGORA COM IMAGEM + COR)
+interface CardProps {
+  img: string
+  color: string
+}
+
+const cardVariants: Variants = {
+  offscreen: { y: 300 },
+  onscreen: {
+    y: 50,
+    rotate: -10,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8
+    }
+  }
+}
+
+function ContainerImagens({ img, color }: CardProps) {
+  return (
+    <motion.div
+      className={styles.cardContainer}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+    >
+      <div className={styles.splash} style={{ background: color }} />
+
+      <motion.div className={styles.card} variants={cardVariants}>
+        <Image className={styles.img} src={img} alt="icone" width={500} height={600} />
+      </motion.div>
+    </motion.div>
+  )
+}
+
+// Lista dos cards como doar e ponto de coleta - imagens
+const cardsData = [
+  { img: "/doar.png", color: "#FAF9DD" },
+  { img: "/localizacao.png", color: "#5f81b7" }
+]
+
+
 export default function Home() {
+
+  // Voluntario
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div>
 
@@ -35,7 +91,7 @@ export default function Home() {
 
       <div className={styles.doar}>
         <div className={styles.texto}>
-          <Section>Transforme tampinhas em boas ações!</Section>
+          <Section>Doe sua Tampinhas!</Section>
 
           <motion.div
             className={styles.box1}
@@ -43,67 +99,25 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <a className={styles.paginaDoar} href="/como-doar">
-              <p>
-                As tampinhas fazem parte da sua vida, que tal você separa-las para ajudar animais em situação de abandono ? Uma a uma, elas podem ajuda-los muito!
-              </p>
+            <a className={styles.paginas} href="/como-doar">
+              <p>Transforme suas tampinhas em ações...</p>
               <p><b>Clique aqui e saiba mais!</b></p>
             </a>
-          </ motion.div>
+          </motion.div>
         </div>
 
-        <div className={styles.imagem1}>
-          <div className={styles.fadeWrapper}>
-
-            {/* IMAGEM 1 */}
-            <motion.div
-              className={styles.fadeImage}
-              animate={{ opacity: [0, 1] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
-              <Image
-                src="/doar_tampinhas.png"
-                width={450}
-                height={450}
-                alt="Tampinhas caindo"
-              />
-            </motion.div>
-
-
-            {/* IMAGEM 2*/}
-            <motion.div
-              className={styles.fadeImageEnd}
-              animate={{ opacity: [1, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
-              <Image
-                className={styles.fadeImageEnd}
-                src="/receber_moedinhas.png"
-                width={450}
-                height={450}
-                alt="Mão segurando moedas"
-              />
-            </motion.div>
-
-          </div>
+        <div className={styles.imagem}>
+          <ContainerImagens img="/doar.png" color="#d7c216" />
         </div>
-      </div >
+      </div>
 
       <div className={styles.pontocoleta}>
-        <div className={styles.imagem2}>
-
+        <div className={styles.imagem}>
+          <ContainerImagens img="/localizacao.png" color="#5f81b7" />
         </div>
-        
+
         <div className={styles.texto}>
-          <Section>Encontre o ponto de coleta mais próximo de você! </Section>
+          <Section>Pontos de coleta</Section>
 
           <motion.div
             className={styles.box2}
@@ -111,29 +125,107 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <a className={styles.paginaDoar} href="/como-doar">
-              <p>
-                Vá até um ponto de coleta mais próximo de você e deixe suas tampinhas.
-              </p>
+            <a className={styles.paginas} href="/ponto-coleta">
+              <p>Veja os pontos de coleta mais próximos...</p>
               <p><b>Clique aqui e saiba mais!</b></p>
             </a>
-          </ motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      <div className={styles.ajuda}>
+        <div className={styles.texto1}>
+          <Section> Faça parte do projeto! </Section>
         </div>
 
+        <div className={styles.cardsAjuda}>
+          <div className={styles.pontodecoleta}>
+            <SwapCards
+              imagem={"/voluntario.png"}
+              titulo={"Seja um Ponto de Coleta"}
+              descricao={"Você que tem um estabelecimento, você pode nos ajudar aceitando receber as tampinhas. "}
+              src={"/cadastro"}
+              label={"Ser Ponto de Coleta "} />
+          </div>
+          <div className={styles.voluntario}>
+            <SwapCards
+              imagem={"/voluntario.png"}
+              titulo={"Seja um voluntário"}
+              descricao={"Venha fazer parte desse projeto e ajudar aqueles animaiszinhos que mais tanto precisam."}
+              label={"Ser voluntário "}
+              onOpenModal={() => setOpenModal(true)}
+            />
+
+          </div>
+          <div className={styles.parceiro}>
+            <SwapCards
+              imagem={"/voluntario.png"}
+              titulo={"Seja uma Parceiro"}
+              descricao={"Aqui você pode nos ajudar de alguma outra forma, clique no botão e saiba mais."}
+              src={"/cadastro"}
+              label={"Ser Parceiro"} />
+          </div>
+
+          <WhatsModal
+            numero={"5515988327955"}
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+          />
+        </div>
       </div>
 
-      <div className={styles.participar}>
-        <h1> Tornar parceiro | Voluntário | Ponto de Coleta </h1>
-      </div>
+      <div className={styles.resumoRelatorio}>
+        <div className={styles.texto2}>
+          <Section> Resultados </Section>
+        </div>
 
-      <div className={styles.resultados}>
-        <h1> Resumo resultados </h1>
+        <a className={styles.paginas} href="/relatorio">
+          <div className={styles.animacao}>
+            <div className={styles.gatos}>
+              <div className={styles.circle}>
+                <p><FaCat size={40} color="white" /></p>
+                <CountUp
+                  to={50}
+                  duration={8}
+                  className={styles.textCount}
+                />
+                <h2>Gatos Castrados</h2>
+              </div>
+            </div>
+            <div className={styles.cachorros}>
+              <div className={styles.circle}>
+                <p><FaDog size={40} color="white" /></p>
+                <CountUp
+                  to={12}
+                  duration={8}
+                  className={styles.textCount}
+                />
+                <h2>Cachorros Castrados</h2>
+              </div>
+            </div>
+            <div className={styles.tampinhas}>
+              <div className={styles.circle}>
+                <p><AiFillGold size={40} color="white" /></p>
+                <CountUp
+                  to={1458521}
+                  duration={8}
+                  className={styles.textCount}
+                />
+                <h2>Tampinhas Coletadas(un)</h2>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
 
       <div className={styles.parceiros}>
-        <h1> Parceiros </h1>
+        <div className={styles.texto3}>
+          <h1> Parceiros </h1>
+        </div>
+        <div className={styles.carrossel}>
+          <PartnersCarousel />
+        </div>
       </div>
-
     </div >
   );
 }

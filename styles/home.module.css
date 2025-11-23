@@ -1,3 +1,111 @@
+/* GERAL */
+.paginas {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* TEXTO */
+.section span {
+    display: block;
+    transform: translateX(-100px);
+    opacity: 0;
+    font-size: 4rem;
+    letter-spacing: -0.1rem;
+}
+
+.texto {
+    flex: 1;
+    text-align: center;
+    padding: 3rem;
+    margin: 2rem;
+}
+
+.texto p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* IMAGENS */
+.imagem {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    /* centraliza vertical */
+    justify-content: center;
+    /* centraliza horizontal */
+    height: 100%;
+    overflow: visible;
+    /* garante que a animação não corte nada */
+    position: relative;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    position: relative;
+    z-index: 2;
+
+    width: 280px;
+    height: 380px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    border-radius: 25px 25px 25px 0px;
+
+    box-shadow: px 0 18px rgba(0, 0, 0, 0.15);
+    transform-origin: 10% 60%;
+    clip-path: polygon(0 0,
+            /* topo esquerdo */
+            100% 0,
+            /* topo direito */
+            100% 100%,
+            /* bottom right */
+            170px 100%,
+            /* desloca pra direita */
+            0 calc(100% - 30px)
+            /* sobe 40px */
+        );
+}
+
+/* ANIMAÇÕES DAS IMAGENS */
+.cardContainer {
+    position: relative;
+    width: 330px;
+    /* controla largura geral */
+    height: 450px;
+    /* controla altura geral */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.splash {
+    position: absolute;
+    z-index: 1;
+    /* atrás do card */
+
+    width: 380px;
+    /* maior que o card */
+    height: 428px;
+    /* maior que o card */
+
+    top: 10px;
+    left: -20px;
+
+    border-radius: 30px 90px 30px 30px;
+
+    clip-path: path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"
+        );
+}
+
+
 /* HERO */
 .hero {
     width: 100%;
@@ -13,29 +121,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem;
+    padding: 5rem;
     gap: 2rem;
     width: 100%;
-    margin-top: 10rem;
-    background: linear-gradient(to right,
-            white, 60%,
-            #d7c216 30%);
-    border-radius: 5%;
-}
+    background: linear-gradient(to left,
+            white,
+            #d7c216);
 
-/* TEXTO */
-.texto {
-    flex: 1;
-    text-align: center;
-    padding: 3rem;
-}
-
-.section span {
-    display: block;
-    transform: translateX(-100px);
-    opacity: 0;
-    font-size: 4rem;
-    letter-spacing: -0.1rem;
 }
 
 .box1 {
@@ -45,87 +137,19 @@
     padding: 2rem;
 }
 
-.texto p {
-    font-size: 1.5rem;
-    line-height: 1.6;
-}
-
-.paginaDoar {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* IMAGEM */
-.imagem1 {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(250, 249, 221);
-    border-radius: 20%;
-    padding-top: 3rem;
-}
-
-.img {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.fadeWrapper {
-    position: relative;
-    width: 450px;
-    height: 600px;
-    overflow: hidden;
-}
-
-
-/* Todas imagens sobrepostas */
-.fadeImage {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: -30%;
-}
-
-.fadeImageEnd {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 8%;
-}
-
-/* Suaviza transição com gradiente vertical */
-.fadeImage img,
-.fadeImageEnd img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* Fadings verticais super suaves */
-.fadeImage,
-.fadeImageEnd {
-    mask-image: linear-gradient(to bottom,
-            rgba(0, 0, 0, 1) 50%,
-            rgba(0, 0, 0, 0) 90%);
-}
-
 /* PONTO DE COLETA */
 .pontocoleta {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem;
-    gap: 2rem;
+    padding: 5rem;
+    gap: 10%;
     width: 100%;
-    margin-top: 10rem;
-    background: linear-gradient(to left,
-            white, 60%,
-            #5f81b7 30%);
-    border-radius: 5%;
+    height: 100%;
+    background-image: linear-gradient(to right, white, #5f81b7);
 }
 
-        /* TEXTO */
+/* TEXTO */
 .box2 {
     border-radius: 50px;
     background: #cfe9ff;
@@ -133,22 +157,127 @@
     padding: 2rem;
 }
 
-        /* IMAGEM */
+/* VOLUNTÁRIO */
+.ajuda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* garante centralização */
+    width: 100%;
+    padding: 2rem;
+    gap: 1rem;
+    /* diminui o espaço */
+}
 
-.imagem2 {
-    flex: 1;
+/* TEXTO */
+.texto1 {
+    text-align: center;
+    padding: 1rem;
+}
+
+.cardsAjuda {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    /* espaçamento entre os cards */
+    justify-content: center;
+    /* centraliza */
+    align-items: center;
+    width: 100%;
+}
+
+/* RESUMO RELATORIO */
+.resumoRelatorio {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 2rem;
+    width: 100%;
+    background-image: linear-gradient(to left, white, #9d43c2);
+}
+
+.texto2 {
+    width: 100%;
+    text-align: center;
+}
+
+.animacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 2rem;
+}
+
+.circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: transparent;
     display: flex;
     justify-content: center;
-    background-color: ##e6f0ff;
-    border-radius: 20%;
-    padding-top: 3rem;
+    align-items: center;
+    flex-direction: column;
+    outline: 3px dashed rgba(255, 255, 255, 0.7);
+    outline-offset: 4px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    padding: 3rem;
 }
+
+.circle h2 {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.textCount {
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* PARCEIROS */
+.parceiros {
+    width: 100%;
+    height: 20vh;
+}
+
+.texto3 {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 768px) {
 
+    /* GERAL */
+    /* IMAGEM */
+    .imagem {
+        display: none;
+    }
+
+    .box1,
+    .box2 {
+        padding: 0.5rem 3rem;
+        gap: 0;
+    }
+
     /* COMO DOAR */
-    .doar {
+    .doar,
+    .pontocoleta {
         flex-direction: column;
         text-align: center;
         background-color: white;
@@ -157,7 +286,6 @@
     }
 
     /* TEXTO */
-
     .texto {
         padding: 1rem;
     }
@@ -171,8 +299,36 @@
         font-size: 1.2rem;
     }
 
-    /* IMAGEM */
-    .imagem1 {
-        display: none;
+    /* VOLUNTARIO */
+    .cardsAjuda {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    /* RESULTADOS */
+
+    .animacao {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+        padding: 2rem;
+    }
+
+    .circle h2 {
+        font-size: 1.3rem;
+
+    }
+
+    .textCount {
+        color: white;
+        font-size: 3rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     }
 }

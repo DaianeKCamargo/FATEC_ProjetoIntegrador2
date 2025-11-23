@@ -1,0 +1,29 @@
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.previewImg {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.btnDelete {
+    background: #ff4f4f;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btnDelete:hover {
+    background: #d63333;
+}
