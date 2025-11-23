@@ -287,15 +287,10 @@
         display: none;
     }
 
-    .box1 {
-        width: 100%;
-        padding: 1rem;
-    }
-
-
-    .box2 {
-        padding: 1rem 3rem;
-        gap: 0;
+    /* HERO */
+    .folder {
+        height: 250px;
+        object-fit: cover;
     }
 
     /* COMO DOAR */
@@ -305,6 +300,11 @@
         text-align: center;
         background-color: white;
         margin: 0;
+        padding: 1rem;
+    }
+
+    .box1 {
+        width: 100%;
         padding: 1rem;
     }
 
@@ -320,6 +320,12 @@
 
     .texto p {
         font-size: 1.2rem;
+    }
+
+    /* PONTO COLETA */
+    .box2 {
+        padding: 1rem 3rem;
+        gap: 0;
     }
 
     /* VOLUNTARIO */
