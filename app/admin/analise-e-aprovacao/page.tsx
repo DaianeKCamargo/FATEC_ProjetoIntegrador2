@@ -65,9 +65,9 @@ export default function AdministrativoAnaliseAprovacao() {
                 <Tabs
                     defaultActiveKey="perfil"
                     id="tabs-card"
-                    className="mb-3"
+                    className={styles.tabs}
                 >
-                    <Tab eventKey="parceiros" title="Parceiros">
+                    <Tab eventKey="parceiros" title="Parceiros" className={styles.tab}>
                         <Accordion defaultActiveKey="0" flush>
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header> Cadastros Pendentes </Accordion.Header>

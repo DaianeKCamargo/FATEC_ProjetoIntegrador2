@@ -1,11 +1,12 @@
 .body {
-    background-image: linear-gradient(
-            #faf9dd,
+    background-image: linear-gradient(#faf9dd,
             #e1f1ff,
             #dcd7fc);
 
-    height: auto;
+    /* height: auto; */
     padding-bottom: 5rem;
+    height: 700vh;
+    
 }
 
 .titulo {
@@ -22,14 +23,42 @@
 }
 
 .card {
-    margin: 10rem;
+    margin: 4rem auto;
     border-radius: 2rem;
-    height: 20vh;
+    background: white;
+    padding: 2rem;
+    border: none;
+    width: 90%;
+    max-width: 1000px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+.tabs {
+    margin: 1rem;
+    font-size: 3rem;
+}
+
+.tab {
+    font-size: 1.5rem !important;
+}
+
+:global(.accordion-item) {
+    color: #333;
+
+}
+
+:global(.accordion-button) {
+    color: #333;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .previewImg {
-    width: 100%;
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
     border-radius: 8px;
     margin-bottom: 10px;
 }
