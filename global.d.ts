@@ -3,3 +3,6 @@ declare module 'bootstrap/dist/css/bootstrap.min.css';
 
 declare module '*.css';
 // Diz que qualquer tipo de css é válido
+
+declare module "swiper/css";
+declare module "swiper/css/pagination";
