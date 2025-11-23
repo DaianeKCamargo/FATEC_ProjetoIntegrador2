@@ -6,6 +6,9 @@ import Copiryght from '@/components/footer/Copyright';
 import NavbarLogout from '@/components/navbar/NavbarLogout';
 import { Noto_Sans_JP } from 'next/font/google';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ConditionalNavbar from '@/components/navbar/ConditionalNavbar';
+import ConditionalFooter from '@/components/footer/CoditionalFooter';
+import ConditionalCopyright from '@/components/footer/CoditionalCopyright';
 
 
 
@@ -28,10 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={notoSansJp.className}>
-        <NavbarLogout />
+        <ConditionalNavbar />
         {children}
-        <Footer />
-        <Copiryght />
+        <ConditionalFooter />
+        <ConditionalCopyright />
       </body>
     </html>
   );

@@ -3,37 +3,45 @@
 .section-page {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza horizontalmente */
+  align-items: center;
+  /* centraliza horizontalmente */
   justify-content: flex-start;
   padding: 60px 20px;
-  gap: 50px; /* espaço entre os blocos */
+  gap: 50px;
+  /* espaço entre os blocos */
   min-height: 100vh;
-  background-color: #f9f9f9;
+  background-image: linear-gradient(#faf9dd,
+      #e1f1ff,
+      #dcd7fc);
 }
 
 /* Título principal e subtítulo */
-.section-page > div:first-child {
+.section-page>div:first-child {
   text-align: center;
 }
 
 .section-page h1 {
-  font-size: 3rem; /* maior que antes */
+  font-size: 3rem;
+  /* maior que antes */
   margin-bottom: 15px;
 }
 
 .section-page h2 {
-  font-size: 2.2rem; /* maior que antes */
+  font-size: 2.2rem;
+  /* maior que antes */
   color: #555555;
 }
 
 /* Blocos de seleção e upload */
-.section-page > div:nth-child(n+2) {
+.section-page>div:nth-child(n+2) {
   background-color: #fff;
-  padding: 30px 40px; /* blocos maiores */
+  padding: 30px 40px;
+  /* blocos maiores */
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   width: 100%;
-  max-width: 600px; /* blocos mais largos */
+  max-width: 600px;
+  /* blocos mais largos */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -41,14 +49,18 @@
 
 /* Textos dentro dos blocos */
 .section-page p {
-  font-size: 1.2rem; /* maior que antes */
+  font-size: 1.2rem;
+  /* maior que antes */
   color: #2e2e2e;
   margin: 0;
 }
+
 .center-icon {
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  margin-top: 10px; /* opcional, para dar espaço acima */
+  justify-content: center;
+  /* centraliza horizontalmente */
+  margin-top: 10px;
+  /* opcional, para dar espaço acima */
 }
 
 
@@ -67,7 +79,7 @@
     font-size: 1.8rem;
   }
 
-  .section-page > div:nth-child(n+2) {
+  .section-page>div:nth-child(n+2) {
     padding: 25px 20px;
   }
 
