@@ -1,0 +1,24 @@
+.body {
+    background-image: linear-gradient(#faf9dd,
+            #e1f1ff,
+            #dcd7fc);
+
+    height: 100vh;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.titulo h1 {
+    font-size: 4rem;
+}
+
+.titulo p {
+    font-size: 1.6rem;
+}
