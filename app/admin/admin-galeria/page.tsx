@@ -59,7 +59,7 @@ export default function AdministrativoGaleria() {
   }
 
   return (
-    <section className={style['section-page']}>
+    <div className={style['section-page']}>
       <div>
         <h1>Área do Administrador</h1>
         <h2>Galeria TamPets</h2>
@@ -72,6 +72,7 @@ export default function AdministrativoGaleria() {
           options={selectOptions}
           defaultValue="Álbuns Disponíveis"
           onChange={handleAlbumChange}
+          className={style.select}
         />
       </div>
 
@@ -82,16 +83,17 @@ export default function AdministrativoGaleria() {
           label="Insira aqui a imagem desejada:"
           controlId="formFile"
           onChange={handleFileChange}
+          className={style.input}
         />
       </div>
 
       <div>
         <h3>PASSO 3: CONFIRMAÇÃO DO ENVIO</h3>
         <p>Confirme para finalizar o envio:</p>
-        <Button variant="primary" onClick={handleSubmit}>Enviar</Button>
-        <Button variant="secondary" onClick={() => setSelectedFile(null)}>Cancelar</Button>
+        <Button variant="primary" onClick={handleSubmit} className={style.btn}>Enviar</Button>
+        <Button variant="secondary" onClick={() => setSelectedFile(null)} className={style.btn}>Cancelar</Button>
         {statusMessage && <p>{statusMessage}</p>}
       </div>
-    </section>
+    </ div>
   );
 }
