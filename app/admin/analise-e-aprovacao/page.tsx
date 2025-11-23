@@ -10,6 +10,7 @@ import PartnersList from "@/components/partners/PartnerList";
 
 // parceiros
 interface values {
+    id?: string,
     username?: string;
     cpf: string;
     email: string;
@@ -26,8 +27,12 @@ export default function AdministrativoAnaliseAprovacao() {
     const [partners, setPartners] = useState<values[]>([]);
 
     useEffect(() => {
-        const stored = localStorage.getItem("partners");
-        if (stored) setPartners(JSON.parse(stored));
+        async function load() {
+            const res = await fetch("/api/partners");
+            const data = await res.json();
+            setPartners(data);
+        }
+        load();
     }, []);
 
     const approvePartner = (index: number) => {
@@ -35,6 +40,19 @@ export default function AdministrativoAnaliseAprovacao() {
         updated[index].approved = true;
         setPartners(updated);
         localStorage.setItem("partners", JSON.stringify(updated));
+    };
+
+    //botao delete
+    const handleDelete = async (id: string) => {
+        if (!confirm("Tem certeza que deseja excluir?")) return;
+
+        await fetch(`/api/partners/${id}`, {
+            method: "DELETE",
+        });
+
+        // remove da tela sem recarregar
+        const updated = partners.filter((p) => p.id !== id);
+        setPartners(updated);
     };
 
     return (
@@ -61,25 +79,27 @@ export default function AdministrativoAnaliseAprovacao() {
                                             .filter(({ partner }) => !partner.approved)
                                             .map(({ partner, index }) => (
                                                 <div key={index} className={styles.card}>
+                                                    <p>Id:</p>{partner.id}
+
                                                     <p><b>Foto da Empresa:</b></p>
-                                                    <img 
-                                                    src={partner.photoP} 
-                                                    alt="logo da empresa" 
-                                                    className={styles.previewImg} 
+                                                    <img
+                                                        src={partner.photoP}
+                                                        alt="logo da empresa"
+                                                        className={styles.previewImg}
                                                     />
 
-                                                    <p><b>Nome:</b> 
-                                                    {partner.username}</p>
+                                                    <p><b>Nome:</b>
+                                                        {partner.username}</p>
 
                                                     <p><b>CPF:</b>
-                                                    {partner.cpf}</p>
+                                                        {partner.cpf}</p>
 
                                                     <p><b>Telefone:</b>
-                                                    {partner.phone}</p>
+                                                        {partner.phone}</p>
 
                                                     <p><b>Nome da Empresa:
                                                     </b>{partner.nameP}</p>
-                                                    
+
                                                     <p><b>Link da Empresa:</b></p>
                                                     {partner.linkP && (
                                                         <a
@@ -92,7 +112,12 @@ export default function AdministrativoAnaliseAprovacao() {
                                                     )}
 
 
-
+                                                    <button
+                                                        className={styles.btnDelete}
+                                                        onClick={() => handleDelete(partner.id!)}
+                                                    >
+                                                        Excluir
+                                                    </button>
                                                     <button onClick={() => approvePartner(index)}>
                                                         Aprovar
                                                     </button>

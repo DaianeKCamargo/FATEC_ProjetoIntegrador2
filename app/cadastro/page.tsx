@@ -15,6 +15,7 @@ export default function Cadastrar() {
     const router = useRouter();
     //Definição dos valores do formulário
     interface values {
+        id?: string;
         username?: string;
         cpf: string;
         email: string;
@@ -66,10 +67,11 @@ export default function Cadastrar() {
     const [linkP, setLinkP] = useState("");
     const [photoP, setPhotoP] = useState("");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         const newPartner: values = {
+            id: crypto.randomUUID(),
             username,
             cpf,
             email,
@@ -87,13 +89,16 @@ export default function Cadastrar() {
             approved: false,
         };
 
-        const stored = localStorage.getItem("partners");
-        const partners: values[] = stored ? JSON.parse(stored) : [];
-
-        partners.push(newPartner);
-        localStorage.setItem("partners", JSON.stringify(partners));
+        await fetch("/api/partners", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newPartner),
+        });
 
         alert("Cadastro enviado! Aguarde aprovação.");
+        
         setUsername("");
         setCpf("");
         setEmail("");

@@ -23,18 +23,32 @@ interface values {
 }
 
 export default function PartnersList() {
-  const [partners, setPartners] = useState<values[]>([]);
+  const [partners, setPartners] = useState<any[]>([]);
+
+  // Carrega da API (não mais do localStorage)
+  const loadPartners = async () => {
+    const res = await fetch("/api/partners");
+    const data = await res.json();
+    setPartners(data);
+  };
 
   useEffect(() => {
-    const stored = localStorage.getItem("partners");
-    if (stored) setPartners(JSON.parse(stored));
+    loadPartners();
   }, []);
 
-  const approvedPartners = partners.filter((p) => p.approved);
+  // Deletar do arquivo e do estado
+  const handleDelete = async (id: number) => {
+    await fetch(`/api/partners/${id}`, { method: "DELETE" });
+
+    // Remove do estado local sem precisar recarregar página
+    setPartners(prev => prev.filter((p, index) => index !== id));
+  };
 
   return (
     <div className={styles.list}>
-      {approvedPartners.map((partner, index) => (
+      {partners.length === 0 && <p>Nenhum parceiro encontrado.</p>}
+
+      {partners.map((partner, index) => (
         <div key={index} className={styles.item}>
           <p><b>Foto da Empresa:</b></p>
           <img
@@ -65,6 +79,10 @@ export default function PartnersList() {
               Ver perfil
             </a>
           )}
+
+          <button onClick={() => handleDelete(index)}>
+            Excluir
+          </button>
         </div>
       ))}
     </div>
