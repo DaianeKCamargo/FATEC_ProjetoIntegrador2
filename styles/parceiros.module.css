@@ -1,13 +1,11 @@
 .secao {
-    background-color: #e3efe5;
-    height: 100vh;
+  background-color: #e3efe5;
+  height: auto;
 }
 
-.container {
-  padding: 20px;
-}
-
-.item {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 5rem;
 }

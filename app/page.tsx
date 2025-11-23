@@ -10,6 +10,7 @@ import CountUp from "@/components/home/CountUp"
 import { FaCat, FaDog } from "react-icons/fa";
 import { AiFillGold } from "react-icons/ai";
 import PartnersCarousel from "@/components/partners/Carrossel"
+import { CiCirclePlus } from "react-icons/ci";
 
 
 // Animação dos titulos
@@ -183,7 +184,7 @@ export default function Home() {
           <div className={styles.animacao}>
             <div className={styles.gatos}>
               <div className={styles.circle}>
-                <p><FaCat size={40} color="white" /></p>
+                <p><FaCat size={40} color="" /></p>
                 <CountUp
                   to={50}
                   duration={8}
@@ -194,7 +195,7 @@ export default function Home() {
             </div>
             <div className={styles.cachorros}>
               <div className={styles.circle}>
-                <p><FaDog size={40} color="white" /></p>
+                <p><FaDog size={40} color="" /></p>
                 <CountUp
                   to={12}
                   duration={8}
@@ -205,7 +206,7 @@ export default function Home() {
             </div>
             <div className={styles.tampinhas}>
               <div className={styles.circle}>
-                <p><AiFillGold size={40} color="white" /></p>
+                <p><AiFillGold size={40} color="" /></p>
                 <CountUp
                   to={1458521}
                   duration={8}
@@ -220,7 +221,10 @@ export default function Home() {
 
       <div className={styles.parceiros}>
         <div className={styles.texto3}>
-          <h1> Parceiros </h1>
+          <h1> Parceiros</h1>
+          <a href="/parceiros" className={styles.paginas}>
+              <CiCirclePlus size={30} />
+            </a>
         </div>
         <div className={styles.carrossel}>
           <PartnersCarousel />
