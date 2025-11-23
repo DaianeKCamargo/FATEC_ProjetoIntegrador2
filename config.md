@@ -58,3 +58,6 @@ npm install framer-motion
 
 [Icons](biblioteca-de-icons)
 npm install lucide-react
+
+[carrossel Home](font-chatgpt)
+npm install swiper

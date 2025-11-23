@@ -3,13 +3,13 @@
 import Image from "next/image"
 import styles from '@/styles/home.module.css'
 import { motion, useInView, Variants } from "framer-motion"
-import { ReactNode, useRef, useState } from "react"
+import { ReactNode, useEffect, useRef, useState } from "react"
 import SwapCards from "@/components/home/SwapCards"
 import WhatsModal from "@/components/home/WhatsModal"
 import CountUp from "@/components/home/CountUp"
 import { FaCat, FaDog } from "react-icons/fa";
 import { AiFillGold } from "react-icons/ai";
-
+import PartnersCarousel from "@/components/partners/Carrossel"
 
 
 // Animação dos titulos
@@ -75,6 +75,7 @@ const cardsData = [
   { img: "/doar.png", color: "#FAF9DD" },
   { img: "/localizacao.png", color: "#5f81b7" }
 ]
+
 
 export default function Home() {
 
@@ -218,9 +219,13 @@ export default function Home() {
       </div>
 
       <div className={styles.parceiros}>
-        <h1> Parceiros </h1>
+        <div className={styles.texto3}>
+          <h1> Parceiros </h1>
+        </div>
+        <div className={styles.carrossel}>
+          <PartnersCarousel />
+        </div>
       </div>
-
     </div >
   );
 }

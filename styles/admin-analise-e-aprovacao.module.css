@@ -1,0 +1,14 @@
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.previewImg {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}

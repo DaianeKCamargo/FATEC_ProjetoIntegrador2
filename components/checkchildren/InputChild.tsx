@@ -13,17 +13,28 @@ interface InputProps {
     classname?: string;
 }
 
-export default function InputChild({id,label, name, type, placeholder, value, onChange, error, classname}: InputProps){
-    
-    return(
+export default function InputChild({ id, label, name, type, placeholder, value, onChange, error, classname }: InputProps) {
+    const isFile = type === "file";
+    return (
         <Form.Group id={id}>
-            <Form.Label className={styles.checkChilLabel}>{label}</Form.Label>
-            <Form.Control type={type} name={name}   placeholder={placeholder} value={value}
-            onChange={onChange} isInvalid={!!error} className={styles.checkChilInput}
-        ></Form.Control>   
-        <Form.Control.Feedback type='invalid'>
-            {error}
-        </Form.Control.Feedback> 
+            <Form.Label
+                className={styles.checkChilLabel}>
+                {label}
+            </Form.Label>
+
+            <Form.Control
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                {...(!isFile && { value })}
+                onChange={onChange}
+                isInvalid={!!error}
+                className={classname ? classname : styles.checkChilInput}
+            />
+            <Form.Control.Feedback
+                type='invalid'>
+                {error}
+            </Form.Control.Feedback>
         </Form.Group>
     )
 }
