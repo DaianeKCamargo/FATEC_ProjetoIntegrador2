@@ -36,20 +36,35 @@ export default function PartnersList() {
     <div className={styles.list}>
       {approvedPartners.map((partner, index) => (
         <div key={index} className={styles.item}>
-          {partner.username}
-          {partner.cpf}
-          {partner.phone}
-          {partner.password}
-          {partner.confirmPassword}
-          {partner.namePC}
-          {partner.horaFuncPC}
-          {partner.cnpj}
-          {partner.photoPC}
-          {partner.cnpj}
-          {partner.photoPC}
-          {partner.nameP}
-          {partner.linkP}
-          {partner.photoP}
+          <p><b>Foto da Empresa:</b></p>
+          <img
+            src={partner.photoP}
+            alt="logo da empresa"
+            className={styles.previewImg}
+          />
+
+          <p><b>Nome:</b>
+            {partner.username}</p>
+
+          <p><b>CPF:</b>
+            {partner.cpf}</p>
+
+          <p><b>Telefone:</b>
+            {partner.phone}</p>
+
+          <p><b>Nome da Empresa:
+          </b>{partner.nameP}</p>
+
+          <p><b>Link da Empresa:</b></p>
+          {partner.linkP && (
+            <a
+              href={partner.linkP}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver perfil
+            </a>
+          )}
         </div>
       ))}
     </div>
