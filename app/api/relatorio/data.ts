@@ -1,4 +1,5 @@
-// simulando um banco de dados com dados estáticos, de 3 anos
+// simulando um banco de dados com dados estáticos dos cachorros e gatos castrados 
+// e a quantidade de tampinhas arrecadadas, de 3 anos
 export const relatorioData = [
     { month: 1, year: 2025, dog: 15, cat: 7, caps: 3500 },
     { month: 2, year: 2025, dog: 18, cat: 9, caps: 4000 },
@@ -38,4 +39,46 @@ export const relatorioData = [
     { month: 10, year: 2023, dog: 6, cat: 3, caps: 1400 },
     { month: 11, year: 2023, dog: 12, cat: 4, caps: 2500 },
     { month: 12, year: 2023, dog: 8, cat: 2, caps: 1600 }
+];
+
+// simulando um banco de dados com dados estáticos da redução do CO2, de 3 anos
+export const relatorioCo2 = [
+    { month: 1, year: 2025, co2: 120 },
+    { month: 2, year: 2025, co2: 140 },
+    { month: 3, year: 2025, co2: 160 },
+    { month: 4, year: 2025, co2: 150 },
+    { month: 5, year: 2025, co2: 170 },
+    { month: 6, year: 2025, co2: 165 },
+    { month: 7, year: 2025, co2: 180 },
+    { month: 8, year: 2025, co2: 175 },
+    { month: 9, year: 2025, co2: 190 },
+    { month: 10, year: 2025, co2: 185 },
+    { month: 11, year: 2025, co2: 200 },
+    { month: 12, year: 2025, co2: 210 },
+
+    { month: 1, year: 2024, co2: 80 },
+    { month: 2, year: 2024, co2: 90 },
+    { month: 3, year: 2024, co2: 100 },
+    { month: 4, year: 2024, co2: 95 },
+    { month: 5, year: 2024, co2: 110 },
+    { month: 6, year: 2024, co2: 105 },
+    { month: 7, year: 2024, co2: 120 },
+    { month: 8, year: 2024, co2: 115 },
+    { month: 9, year: 2024, co2: 130 },
+    { month: 10, year: 2024, co2: 125 },
+    { month: 11, year: 2024, co2: 140 },
+    { month: 12, year: 2024, co2: 145 },
+
+    { month: 1, year: 2023, co2: 60 },
+    { month: 2, year: 2023, co2: 70 },
+    { month: 3, year: 2023, co2: 80 },
+    { month: 4, year: 2023, co2: 75 },
+    { month: 5, year: 2023, co2: 90 },
+    { month: 6, year: 2023, co2: 85 },
+    { month: 7, year: 2023, co2: 100 },
+    { month: 8, year: 2023, co2: 95 },
+    { month: 9, year: 2023, co2: 110 },
+    { month: 10, year: 2023, co2: 100 },
+    { month: 11, year: 2023, co2: 120 },
+    { month: 12, year: 2023, co2: 130 },
 ];

@@ -27,5 +27,5 @@ export async function GET(request: Request) {
         );
     }
 
-    return NextResponse.json(result);       
+    return NextResponse.json(result);
 }

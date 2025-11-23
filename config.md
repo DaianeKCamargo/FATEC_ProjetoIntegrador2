@@ -58,3 +58,6 @@ npm install framer-motion
 
 [Icons](biblioteca-de-icons)
 npm install lucide-react
+
+[Recharts Graphics](https://recharts.github.io/en-US/guide/)
+npm install recharts
