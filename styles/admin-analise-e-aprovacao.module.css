@@ -1,9 +1,30 @@
+.body {
+    background-image: linear-gradient(
+            #faf9dd,
+            #e1f1ff,
+            #dcd7fc);
+
+    height: auto;
+    padding-bottom: 5rem;
+}
+
 .titulo {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 5rem;
+    gap: 2rem;
+}
+
+.titulo h2 {
+    color: #555;
+}
+
+.card {
+    margin: 10rem;
+    border-radius: 2rem;
+    height: 20vh;
 }
 
 .previewImg {

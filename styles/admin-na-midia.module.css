@@ -1,0 +1,10 @@
+.body {
+    background-image: linear-gradient(#faf9dd,
+            #e1f1ff,
+            #dcd7fc);
+
+    height: auto;
+    padding-bottom: 5rem;
+}
+
+/* deixar com esta cor de fundo os demais podem mudar */

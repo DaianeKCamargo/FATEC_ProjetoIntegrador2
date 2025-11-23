@@ -56,12 +56,12 @@ export default function AdministrativoAnaliseAprovacao() {
     };
 
     return (
-        <section>
+        <div className={styles.body}>
             <div className={styles.titulo}>
-                <h1> Area do Administrador </h1>
+                <h1> Área do Administrador </h1>
                 <h2> Análise e Aprovação de cadastros </h2>
             </div>
-            <Card style={{ padding: 20 }}>
+            <Card style={{ padding: 20 }} className={styles.card}>
                 <Tabs
                     defaultActiveKey="perfil"
                     id="tabs-card"
@@ -141,6 +141,6 @@ export default function AdministrativoAnaliseAprovacao() {
                 </Tabs>
             </Card>
 
-        </section>
+        </div>
     );
 }
