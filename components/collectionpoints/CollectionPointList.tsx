@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import styles from "@/styles/collections-points-list.module.css"
+import styles from "@/styles/lists.module.css"
 
 
 interface CP {
@@ -44,6 +44,7 @@ export default function CollectionPointList() {
             {collectionPoints.length === 0 && <p>Nenhum parceiro encontrado.</p>}
 
             {collectionPoints.map((pc, index) => (
+
                 <div key={index} className={styles.item}>
                     <p><b>Foto do Local da Empresa:</b></p>
                     <img
@@ -67,9 +68,10 @@ export default function CollectionPointList() {
                     <p><b>horaFuncPC:
                     </b>{pc.horaFuncPC}</p>
 
-                    <button onClick={() => handleDelete(index)}>
+                    <button onClick={() => handleDelete(index)} >
                         Excluir
                     </button>
+
                 </div>
             ))}
         </div>

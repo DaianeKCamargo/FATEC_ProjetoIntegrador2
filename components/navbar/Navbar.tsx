@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import FaixaColorida from '../FaixaColorida';
+import FaixaColorida from './FaixaColorida';
 import { BiSolidHomeHeart } from "react-icons/bi";
 import { BsPersonCircle } from 'react-icons/bs';
 import { useAuth } from "@/context/AuthContext";

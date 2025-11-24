@@ -1,6 +1,6 @@
 import { PiCopyrightThin } from "react-icons/pi";
 import styles from "@/styles/copyright.module.css";
-import FaixaColorida from "../FaixaColorida";
+import FaixaColorida from "../navbar/FaixaColorida";
 
 export default function Copiryght() {
     return (

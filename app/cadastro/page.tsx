@@ -151,7 +151,8 @@ export default function Cadastrar() {
         const reader = new FileReader();
 
         reader.onloadend = () => {
-            setPhotoP(reader.result as string); // aqui vira base64
+            setPhotoP(reader.result as string);
+            setPhotoPC(reader.result as string); // aqui vira base64
         };
 
         reader.readAsDataURL(file);
