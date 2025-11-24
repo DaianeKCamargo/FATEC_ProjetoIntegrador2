@@ -88,7 +88,7 @@ export default function NavbarLogout() {
                                 </Link>
                             )}
 
-                            <button className={styles.button} onClick={handleLogout}>
+                            <button className={styles.buttonS} onClick={handleLogout}>
                                 <RiLogoutCircleLine size={20} /> Sair
                             </button>
 
@@ -174,7 +174,7 @@ export default function NavbarLogout() {
                                     )}
 
                                     <button onClick={handleLogout} className={styles.mobileLogoutBtn}>
-                                        <RiLogoutCircleLine size={30} color='#fa7f45' />
+                                        <RiLogoutCircleLine size={30} color='#d65552' />
                                     </button>
 
                                 </div>

@@ -69,6 +69,24 @@
     }
 }
 
+.buttonS {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: solid 0.1rem #d65552;
+    border-radius: 5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: #d65552;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #d65552;
+        color: #333;
+        box-shadow: 0 0 0.1rem 0.1rem #333;
+    }
+}
+
 .loggedButtons {
     display: flex;
     align-items: center;
