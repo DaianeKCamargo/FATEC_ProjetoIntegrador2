@@ -1,5 +1,98 @@
-export default function Eventos() {
+'use client';
+import Card from "@/components/card/Card";
+import Titulo from "@/components/titulo/Titulo";
+import styles from "@/styles/albuns.module.css"
+
+
+
+export default function galeriaEventos() {
     return (
-        <h1> album coletas </h1>
+        <section className={styles.bodya}>
+            <Titulo src="/img_titulo_amarelo.png" title="Galeria de Fotos" label="Eventos TamPets"/>
+
+            <div  className={styles.cardsContainer}>
+                 <Card
+                    imagem={"/MPSL-empresa-evento.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+
+                <Card
+                    imagem={"/EEgualbertomoreira-escolas-coletas.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/palestraCMEIRaphaela-evento.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/palestraEEML-evento.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/palestraEHSHITER-evento-empresas.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/palestraFudacaoCasa-evento.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/palestraWPM-evento.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/MPSL-empresa-evento.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+
+                <Card
+                    imagem={"/EEgualbertomoreira-escolas-coletas.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/palestraCMEIRaphaela-evento.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/palestraEEML-evento.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/palestraEHSHITER-evento-empresas.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+                <Card
+                    imagem={"/palestraFudacaoCasa-evento.jpg"}
+                    titulo="Coleta TamPets"
+                    descricao="Coleta das tampinhas no centro tal"
+                    className={styles.cardsContainer}
+                />
+
+            </div>
+        </section>
     );
 }

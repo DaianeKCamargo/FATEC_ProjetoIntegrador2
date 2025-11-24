@@ -9,6 +9,7 @@ export default function GaleriaTampets() {
     return (
         <section className={styles["body-galeria"]}>
             <Titulo src="/img_titulo_amarelo.png" title="Galeria de Fotos" label="Veja um pouco do projeto TamPets"/>
+            
             <div className={styles["galeria-container"]}>
                 <Link href="./galeria-tampets/coletas">
                     <Card
