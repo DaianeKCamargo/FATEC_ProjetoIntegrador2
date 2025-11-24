@@ -9,12 +9,19 @@
 
 }
 
+.voltar {
+    padding: 2rem;
+
+    &:hover {
+        color: #5f81b7;
+    }
+}
+
 .titulo {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 5rem;
     gap: 2rem;
 }
 
