@@ -65,7 +65,7 @@ export default function Login() {
         <section>
             <div className={styles.divprincipal}>
                 <h1 className={styles.title}> Login </h1>
-                <Form onSubmit={handleLogin}>
+                <Form onSubmit={handleLogin} className={styles.formWrapper}>
 
                     <Input id='logEmail' label='Email' name='logEmail' error={errors.email}
                         placeholder='Insira seu Email' onChange={(e) => {
@@ -87,8 +87,6 @@ export default function Login() {
                     <div className={`${styles.divCenter} ${styles.forceColumn}`}>
                         <div>
                             <a href="/cadastro" className={styles.link}>Não tem uma conta? Clique aqui</a>
-                        </div>
-                        <div>
                             <a href="/login/alterar-senha" className={styles.link}>Esqueci minha senha</a>
                         </div>
                     </div>
