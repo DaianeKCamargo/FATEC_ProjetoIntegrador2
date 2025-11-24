@@ -7,6 +7,7 @@ import { Tab, Tabs } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import PartnersList from "@/components/partners/PartnerList";
 import CollectionPointList from "@/components/collectionpoints/CollectionPointList";
+import { TbArrowBackUp } from "react-icons/tb";
 
 export default function AdministrativoAnaliseAprovacao() {
     //ponto de coleta
@@ -44,11 +45,17 @@ export default function AdministrativoAnaliseAprovacao() {
 
     return (
         <div className={styles.body}>
+            <div className={styles.voltar}>
+                <a href="/admin" style={{ textDecoration: "none", color: "inherit" }}>
+                    <TbArrowBackUp size={40} />
+                </a>
+            </div>
+
             <div className={styles.titulo}>
                 <h1> Área do Administrador </h1>
                 <h2> Análise e Aprovação de cadastros </h2>
             </div>
-            <Card style={{ padding: 20 }} className={styles.card}>
+            <Card style={{ padding: 20 }} className={styles.cardAcordeon}>
                 <Tabs
                     defaultActiveKey="perfil"
                     id="tabs-card"
@@ -63,7 +70,7 @@ export default function AdministrativoAnaliseAprovacao() {
 
                                         {partners.filter((p) => !p.approved).map((p) => (
                                             <div key={p.id} className={styles.card}>
-                                                <p>Id:</p>{p.id}
+                                                <p><b>Id:</b></p>{p.id}
 
                                                 <p><b>Foto da Empresa:</b></p>
                                                 <img
@@ -96,8 +103,8 @@ export default function AdministrativoAnaliseAprovacao() {
                                                 )}
 
 
-                                                <button onClick={() => approvePartner(p.id)}>Aprovar</button>
-                                                <button onClick={() => deletePartner(p.id)}>Excluir</button>
+                                                <button className={styles.btnApproved} onClick={() => approvePartner(p.id)}>Aprovar</button>
+                                                <button className={styles.btnDelete} onClick={() => deletePartner(p.id)}>Excluir</button>
                                             </div>
                                         ))}
                                     </div>
@@ -121,7 +128,7 @@ export default function AdministrativoAnaliseAprovacao() {
 
                                         {points.filter((p) => !p.approved).map((p) => (
                                             <div key={p.id} className={styles.card}>
-                                                <p>Id:</p>{p.id}
+                                                <p><b>Id:</b></p>{p.id}
 
                                                 <p><b>Foto do Local:</b></p>
                                                 <img
@@ -147,8 +154,8 @@ export default function AdministrativoAnaliseAprovacao() {
                                                 <p><b>Horario de Funcionamento:</b>
                                                     {p.horaFuncPC}</p>
 
-                                                <button onClick={() => approvePoint(p.id)}>Aprovar</button>
-                                                <button onClick={() => deletePoint(p.id)}>Excluir</button>
+                                                <button className={styles.btnApproved} onClick={() => approvePartner(p.id)}>Aprovar</button>
+                                                <button className={styles.btnDelete} onClick={() => deletePartner(p.id)}>Excluir</button>
                                             </ div>
                                         ))}
                                     </div>

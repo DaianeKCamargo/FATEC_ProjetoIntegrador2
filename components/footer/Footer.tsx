@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "@/styles/footer.module.css";
-import FaixaColorida from "../FaixaColorida";
+import FaixaColorida from "../navbar/FaixaColorida";
 
 export default function Footer() {
     return (

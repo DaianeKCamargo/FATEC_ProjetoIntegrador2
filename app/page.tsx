@@ -143,11 +143,19 @@ export default function Home() {
         <div className={styles.cardsAjuda}>
           <div className={styles.pontodecoleta}>
             <SwapCards
-              imagem={"/voluntario.png"}
+              imagem={"/ponto_coleta.png"}
               titulo={"Seja um Ponto de Coleta"}
               descricao={"Você que tem um estabelecimento, você pode nos ajudar aceitando receber as tampinhas. "}
               src={"/cadastro"}
               label={"Ser Ponto de Coleta "} />
+          </div>
+          <div className={styles.parceiro}>
+            <SwapCards
+              imagem={"/parceiro.png"}
+              titulo={"Seja uma Parceiro"}
+              descricao={"Aqui você pode nos ajudar de alguma outra forma, clique no botão e saiba mais."}
+              src={"/cadastro"}
+              label={"Ser Parceiro"} />
           </div>
           <div className={styles.voluntario}>
             <SwapCards
@@ -157,15 +165,6 @@ export default function Home() {
               label={"Ser voluntário "}
               onOpenModal={() => setOpenModal(true)}
             />
-
-          </div>
-          <div className={styles.parceiro}>
-            <SwapCards
-              imagem={"/voluntario.png"}
-              titulo={"Seja uma Parceiro"}
-              descricao={"Aqui você pode nos ajudar de alguma outra forma, clique no botão e saiba mais."}
-              src={"/cadastro"}
-              label={"Ser Parceiro"} />
           </div>
 
           <WhatsModal

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "@/styles/partner-list.module.css";
+import styles from "@/styles/lists.module.css";
 
 interface values {
   username?: string;
@@ -68,8 +68,7 @@ export default function PartnersList() {
               href={partner.linkP}
               target="_blank"
               rel="noopener noreferrer"
-            >
-              Ver perfil
+            > Ver perfil
             </a>
           )}
 

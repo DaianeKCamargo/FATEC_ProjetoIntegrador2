@@ -6,7 +6,15 @@
     /* height: auto; */
     padding-bottom: 5rem;
     height: 700vh;
-    
+
+}
+
+.voltar {
+    padding: 2rem;
+
+    &:hover {
+        color: #5f81b7;
+    }
 }
 
 .titulo {
@@ -14,7 +22,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 5rem;
     gap: 2rem;
 }
 
@@ -22,15 +29,38 @@
     color: #555;
 }
 
-.card {
+.cardAcordeon {
     margin: 4rem auto;
     border-radius: 2rem;
     background: white;
     padding: 2rem;
-    border: none;
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 2rem;
+    gap: 1rem;
+    width: 50%;
+    margin: 4rem auto;
+    background: #f5d2cb;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.card p {
+    margin-right: 1rem;
+}
+
+.card img {
+    align-self: center;
 }
 
 .tabs {
@@ -44,6 +74,9 @@
 
 :global(.accordion-item) {
     color: #333;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
 }
 
@@ -53,8 +86,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    gap: 5rem;
 
+}
 
 .previewImg {
     width: 150px;
@@ -63,17 +97,48 @@
     margin-bottom: 10px;
 }
 
-.btnDelete {
-    background: #ff4f4f;
-    border: none;
+.btnApproved {
+    background: white;
+    border: #17991b solid 0.1rem;
     padding: 6px 12px;
     border-radius: 8px;
     cursor: pointer;
-    color: white;
+    color: #17991b;
     font-weight: 600;
     transition: 0.2s;
+
+    &:hover {
+        background-color: #17991b;
+        color: #333;
+    }
 }
 
-.btnDelete:hover {
-    background: #d63333;
+.btnDelete {
+    background: white;
+    border: #d65552 solid 0.1rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #d65552;
+    font-weight: 600;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: #d65552;
+        color: #333;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .card {
+        margin: 2rem;
+        width: auto;
+    }
+
+    .tabs {
+        margin: 1rem;
+        font-size: 1.5rem;
+    }
 }
