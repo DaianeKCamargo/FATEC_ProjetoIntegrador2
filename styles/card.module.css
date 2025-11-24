@@ -1,4 +1,7 @@
 .card {
+  width: 100%;
+  max-width: 320px;   /* largura ideal */
+  min-width: 280px;   /* impede de esmagar */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -6,10 +9,9 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
   cursor: pointer;
-  
 }
+
 
 .card:hover {
   transform: translateY(-6px);
@@ -42,29 +44,44 @@
 }
 
 .card .texto h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 8px;
 }
 
 .card .texto p {
-  font-size: 1.0rem;
+  font-size: 1.3rem;
   color: #353535;
   line-height: 1.4;
 }
 
+/* animação */
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.card {
+  animation: slideLeft 0.6s ease forwards;
+}
+
+
 
 @media (max-width: 600px) {
   .card {
-    width: 90%;
+    max-width: 320px;
+    min-width: 280px;
   }
 
-  .card .texto h3 {
-    font-size: 1.1rem;
-  }
-
-  .card .texto p {
-    font-size: 0.85rem;
+  .card .imagem {
+    height: 200px;
   }
 }
+
