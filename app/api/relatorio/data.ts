@@ -82,3 +82,19 @@ export const relatorioCo2 = [
     { month: 11, year: 2023, co2: 120 },
     { month: 12, year: 2023, co2: 130 },
 ];
+
+// pega o nome dos meses para exibir nos filtros de acordo com o número do mês
+export const mesesFiltro = [
+    { numero: 1, nome: "Janeiro" },
+    { numero: 2, nome: "Fevereiro" },
+    { numero: 3, nome: "Março" },
+    { numero: 4, nome: "Abril" },
+    { numero: 5, nome: "Maio" },
+    { numero: 6, nome: "Junho" },
+    { numero: 7, nome: "Julho" },
+    { numero: 8, nome: "Agosto" },
+    { numero: 9, nome: "Setembro" },
+    { numero: 10, nome: "Outubro" },
+    { numero: 11, nome: "Novembro" },
+    { numero: 12, nome: "Dezembro" }
+];
