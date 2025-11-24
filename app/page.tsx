@@ -222,7 +222,7 @@ export default function Home() {
 
       <div className={styles.parceiros}>
         <div className={styles.texto3}>
-          <h1> Parceiros</h1>
+          <h1> Conheça nossos parceiros</h1>
           <a href="/parceiros" className={styles.paginas}>
             <CiCirclePlus size={30} />
           </a>

@@ -8,6 +8,8 @@ import { useRouter } from 'next/navigation';
 import { LogSchema } from "@/schemas/logSchema";
 import { useState } from "react";
 import { users } from "@/utils/users";
+import { useAuth } from "@/context/AuthContext";
+
 
 
 export default function Login() {
@@ -16,6 +18,7 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const { login } = useAuth();
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
@@ -25,17 +28,18 @@ export default function Login() {
         );
 
         if (user) {
-            // salva role no localStorage para persistir sessão (só teste)
+            login(); // ativa o estado global de usuário logado
+
+            // salva role para você continuar usando no sistema
             localStorage.setItem("role", user.role);
+
             if (user.role === "admin") {
                 router.push("/admin");
             } else {
-                router.push("/user");
+                router.push("/meu-perfil"); // redireciona para perfil
             }
-        } else {
-            setError("Email ou senha incorretos!");
-        }
-    };
+        };
+    }
 
 
     //Definição dos valores do formulário

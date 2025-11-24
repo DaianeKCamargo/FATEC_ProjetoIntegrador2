@@ -2,9 +2,10 @@ import './globals.css';
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from 'next/font/google';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ConditionalNavbarLogout from '@/components/navbar/ConditionalNavbarLogout';
+import ConditionalNavbar from '@/components/navbar/ConditionalNavbar';
 import ConditionalFooter from '@/components/footer/CoditionalFooter';
 import ConditionalCopyright from '@/components/footer/CoditionalCopyright';
+import { AuthProvider } from "@/context/AuthContext";
 
 
 
@@ -27,10 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={notoSansJp.className}>
-        <ConditionalNavbarLogout />
+        <AuthProvider >
+        <ConditionalNavbar />
         {children}
         <ConditionalFooter />
         <ConditionalCopyright />
+        </AuthProvider>
       </body>
     </html>
   );

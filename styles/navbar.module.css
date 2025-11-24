@@ -60,12 +60,19 @@
     padding: 1rem;
     font-size: 1.6rem;
     color: #F85818;
+    text-decoration: none;
 
     &:hover {
         background-color: #F85818;
         color: #333;
         box-shadow: 0 0 0.1rem 0.1rem #333;
     }
+}
+
+.loggedButtons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;;
 }
 
 @media (max-width: 768px) {

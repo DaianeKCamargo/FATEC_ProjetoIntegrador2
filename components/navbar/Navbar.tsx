@@ -1,16 +1,25 @@
 'use client';
 
 import { Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
+import { RiLoginCircleLine, RiLogoutCircleLine } from "react-icons/ri";
 import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
 import { FaBarsStaggered } from 'react-icons/fa6';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import FaixaColorida from '../FaixaColorida';
 import { BiSolidHomeHeart } from "react-icons/bi";
 import { BsPersonCircle } from 'react-icons/bs';
+import { useAuth } from "@/context/AuthContext";
 
 export default function NavbarLogout() {
+    const { isLogged, logout } = useAuth();
+    const [role, setRole] = useState<string | null>(null);
+
+    useEffect(() => {
+        const r = localStorage.getItem("role");
+        setRole(r);
+    }, []);
 
     const [openMenu, setOpenMenu] = useState(false);
     const router = useRouter();
@@ -21,6 +30,12 @@ export default function NavbarLogout() {
     const handleGoLogin = () => {
         handleFechado();
         router.push("/login");
+    };
+
+    const handleLogout = () => {
+        logout();
+        handleFechado();
+        router.push("/");
     };
 
     return (
@@ -61,19 +76,38 @@ export default function NavbarLogout() {
 
                 {/* BOTÃO DESKTOP */}
                 <div className={styles.btn}>
-                    <button className={styles.button} onClick={() => { router.push("/meu-perfil") }}>
-                        <BsPersonCircle size={20} /> Meu Perfil
-                    </button>
+                    {isLogged ? (
+                        <div className={styles.loggedButtons}>
+                            {role === "admin" ? (
+                                <Link className={styles.button} href="/admin">
+                                    <BsPersonCircle size={20} /> Área do Admin
+                                </Link>
+                            ) : (
+                                <Link className={styles.button} href="/meu-perfil">
+                                    <BsPersonCircle size={20} /> Meu Perfil
+                                </Link>
+                            )}
+
+                            <button className={styles.button} onClick={handleLogout}>
+                                <RiLogoutCircleLine size={20} /> Sair
+                            </button>
+
+                        </div>
+                    ) : (
+                        <button className={styles.button} onClick={handleGoLogin}>
+                            <RiLoginCircleLine size={20} /> Login
+                        </button>
+                    )}
                 </div>
 
                 {/* HAMBURGUER MOBILE */}
                 <div className={styles.navhamburguer}>
                     <FaBarsStaggered size={20} onClick={handleAberto} style={{ cursor: 'pointer' }} />
                 </div>
-            </nav>
+            </nav >
 
             {/* MOBILE MENU */}
-            <Offcanvas
+            < Offcanvas
                 className={styles.meuoffcanvas}
                 show={openMenu}
                 onHide={handleFechado}
@@ -127,18 +161,36 @@ export default function NavbarLogout() {
                         </div>
 
                         <div>
-                            <Link href="/Login" onClick={handleFechado}>
-                                <BsPersonCircle size={30} color='#D65552' />
-                            </Link>
+                            {isLogged ? (
+                                <div className={styles.mobileButtons}>
+
+                                    {role === "admin" ? (
+                                        <Link href="/admin" onClick={handleFechado}>
+                                            <BsPersonCircle size={30} color='#fa7f45' />
+                                        </Link>
+                                    ) : (
+                                        <Link href="/meu-perfil" onClick={handleFechado}>
+                                            <BsPersonCircle size={30} color='#fa7f45' />
+                                        </Link>
+                                    )}
+
+                                    <button onClick={handleLogout} className={styles.mobileLogoutBtn}>
+                                        <RiLogoutCircleLine size={30} color='#fa7f45' />
+                                    </button>
+
+                                </div>
+                            ) : (
+                                // usuário DESLOGADO → Login
+                                <Link href="/login" onClick={handleFechado}>
+                                    <RiLoginCircleLine size={30} color='#fa7f45' />
+                                </Link>
+                            )}
+
                         </div>
 
                     </Nav>
                 </Offcanvas.Body>
-            </Offcanvas>
+            </Offcanvas >
         </>
     );
 }
-
-
-
-
