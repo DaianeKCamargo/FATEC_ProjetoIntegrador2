@@ -163,7 +163,6 @@ export default function NavbarLogout() {
                         <div>
                             {isLogged ? (
                                 <div className={styles.mobileButtons}>
-
                                     {role === "admin" ? (
                                         <Link href="/admin" onClick={handleFechado}>
                                             <BsPersonCircle size={30} color='#fa7f45' />

@@ -72,7 +72,7 @@
 .loggedButtons {
     display: flex;
     align-items: center;
-    gap: 2rem;;
+    gap: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -170,5 +170,11 @@
     /* opcional: garante que o link do Next Link (quando renderiza <a>) herde o estilo */
     .meuoffcanvas a[role="link"] {
         color: inherit !important;
+    }
+
+    .mobileButtons {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 }
