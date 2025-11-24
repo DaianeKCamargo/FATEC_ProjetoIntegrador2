@@ -1,0 +1,13 @@
+// utils/users.ts
+export const users = [
+    {
+        email: "admin@test.com",
+        password: "admin123",
+        role: "admin",
+    },
+    {
+        email: "user@test.com",
+        password: "user123",
+        role: "user",
+    },
+];

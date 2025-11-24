@@ -1,4 +1,5 @@
 'use client'
+
 import FraseMotivacional from "@/components/admin-home/FrasesMotivacionais";
 import styles from "@/styles/admin-home.module.css";
 import { motion } from "framer-motion";
@@ -7,9 +8,22 @@ import { GoCodescanCheckmark } from "react-icons/go";
 import { SiDatadog } from "react-icons/si";
 import { MdOutlineDataThresholding } from "react-icons/md";
 import { GiDogHouse } from "react-icons/gi";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { getRole } from "@/utils/auth";
 
 
 export default function AdministrativoHome() {
+    // Login
+    const router = useRouter();
+
+    useEffect(() => {
+        const role = getRole();
+        if (role !== "admin") {
+            router.push("/login");
+        }
+    }, []);
+
     return (
         <div className={styles.body}>
             <div className={styles.titulo}>
@@ -71,7 +85,7 @@ export default function AdministrativoHome() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1, transition: { duration: 1 } }}
                         whileHover={{ scale: 1.05, boxShadow: "0px 5px 8px #207" }}>
-                        <GiDogHouse  size={50} />
+                        <GiDogHouse size={50} />
                         <p>Visitar o Site</p>
                     </motion.div>
                 </a>

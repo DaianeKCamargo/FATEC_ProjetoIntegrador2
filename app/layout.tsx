@@ -2,10 +2,9 @@ import './globals.css';
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from 'next/font/google';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ConditionalNavbar from '@/components/navbar/ConditionalNavbar';
+import ConditionalNavbarLogout from '@/components/navbar/ConditionalNavbarLogout';
 import ConditionalFooter from '@/components/footer/CoditionalFooter';
 import ConditionalCopyright from '@/components/footer/CoditionalCopyright';
-import VLibras from '@/components/acessibilidade/VLibras';
 
 
 
@@ -28,8 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={notoSansJp.className}>
-        <VLibras />
-        <ConditionalNavbar />
+        <ConditionalNavbarLogout />
         {children}
         <ConditionalFooter />
         <ConditionalCopyright />
