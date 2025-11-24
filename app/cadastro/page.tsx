@@ -8,8 +8,7 @@ import { Button, Form } from 'react-bootstrap';
 import InputChild from '@/components/checkchildren/InputChild';
 import { cadSchema } from "@/schemas/cadSchema";
 import { useState } from "react";
-import { boolean } from 'yup';
-import { Phone } from 'lucide-react';
+
 
 export default function Cadastrar() {
     const router = useRouter();
@@ -70,35 +69,64 @@ export default function Cadastrar() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        const newPartner: values = {
-            id: crypto.randomUUID(),
-            username,
-            cpf,
-            email,
-            phone,
-            password,
-            confirmPassword,
-            namePC,
-            endePC,
-            horaFuncPC,
-            cnpj,
-            photoPC,
-            nameP,
-            linkP,
-            photoP,
-            approved: false,
-        };
+        // identifica se foi selecionado ponto de coleta (A) ou parceiro (B)
+        const isPontoColeta = values.options?.includes("A");
+        const isParceiro = values.options?.includes("B");
 
-        await fetch("/api/partners", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newPartner),
-        });
+        if (!isPontoColeta && !isParceiro) {
+            alert("Selecione ao menos uma opção!");
+            return;
+        }
 
-        alert("Cadastro enviado! Aguarde aprovação.");
-        
+        // se for ponto de coleta
+        if (isPontoColeta) {
+            const newColeta = {
+                id: crypto.randomUUID(),
+                username,
+                cpf,
+                email,
+                phone,
+                namePC,
+                endePC,
+                horaFuncPC,
+                cnpj,
+                photoPC,
+                approved: false
+            };
+
+            await fetch("/api/collectionpoints", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newColeta),
+            });
+
+            alert("Cadastro enviado como Ponto de Coleta! Aguarde aprovação.");
+        }
+
+        // se for parceiro
+        if (isParceiro) {
+            const newPartner = {
+                id: crypto.randomUUID(),
+                username,
+                cpf,
+                email,
+                phone,
+                nameP,
+                linkP,
+                photoP,
+                approved: false,
+            };
+
+            await fetch("/api/partners", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newPartner),
+            });
+
+            alert("Cadastro enviado como Parceiro! Aguarde aprovação.");
+        }
+
+
         setUsername("");
         setCpf("");
         setEmail("");
@@ -170,9 +198,12 @@ export default function Cadastrar() {
                     <div>
                         <CheckDown
                             label="Ponto de coleta"
-                            name="options" value='A'
-                            id='check1' error={errors.options}
+                            name="options"
+                            value="A"
+                            id='check1'
+                            error={errors.options}
                             info='Tornar-se um ponto de coleta ajuda a ampliar nossa rede de coleta.'
+                            onChange={handleChange}
                             children={
                                 <>
                                     <div className={styles.divChildren}>
@@ -193,7 +224,7 @@ export default function Cadastrar() {
                                                 handleChange(e);
                                                 setHoraFuncPC(e.target.value);
                                             }} name='horaFuncPC' value={horaFuncPC} />
-                                        <InputChild id='inputEndPC' label='Horario de Funcionamento' type='text'
+                                        <InputChild id='inputEndPC' label='CNPJ' type='text'
                                             error={errors.cnpj} onChange={(e) => {
                                                 handleChange(e);
                                                 setCnpj(e.target.value);
@@ -208,8 +239,10 @@ export default function Cadastrar() {
                                             error={errors.photoPC}
                                             onChange={(e) => {
                                                 handleChange(e);
-                                                setPhotoPC(e.target.value);
-                                            }} value={photoPC} />
+                                                handlePhotoChange(e);
+                                            }}
+                                            placeholder='Insira a foto da fachada do seu estabelecimento aqui'
+                                        />
                                     </div>
                                 </>
                             }
@@ -218,9 +251,12 @@ export default function Cadastrar() {
                     <div>
                         <CheckDown
                             label="Parceiro"
-                            name="options" value="B"
-                            id='check2' error={errors.options}
+                            name="options"
+                            value="B"
+                            id='check2'
+                            error={errors.options}
                             info='Torne-se Parceiro Tampets e nós ajude a divulgar o projeto.'
+                            onChange={handleChange}
                             children={
                                 <>
                                     <div className={styles.divChildren}>

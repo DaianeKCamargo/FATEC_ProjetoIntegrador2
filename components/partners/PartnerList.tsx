@@ -8,13 +8,6 @@ interface values {
   cpf: string;
   email: string;
   phone: string;
-  password: string;
-  confirmPassword: string;
-  namePC?: string;
-  endePC?: string;
-  horaFuncPC?: string;
-  cnpj?: string;
-  photoPC?: string;
   nameP?: string;
   linkP?: string;
   photoP?: string;

@@ -27,6 +27,7 @@ export default async function Parceiros() {
                         id={p.id}
                         nameP={p.nameP}
                         photoP={p.photoP}
+                        linkP={p.linkP}
                     />
                 ))}
             </div>

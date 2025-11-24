@@ -1,0 +1,28 @@
+[
+  {
+    "id": "112e0369-c27e-4180-83f2-09f4539deb57",
+    "username": "Janaina",
+    "cpf": "00000000000",
+    "email": "janaina@gmail.com",
+    "phone": "15988562145",
+    "namePC": "Janaina e Você",
+    "endePC": "rua das flores, 291 vila barao sorocaba/sp ",
+    "horaFuncPC": "Seg a Sex das 8hrs ate as 17hrs",
+    "cnpj": "12456789000011",
+    "photoPC": "C:\\fakepath\\distribuidoraJMF-coleta.jpg",
+    "approved": false
+  },
+  {
+    "id": "4cd1b539-783c-48c6-9189-66edbdbec7c3",
+    "username": "Gina",
+    "cpf": "00000000000",
+    "email": "gina@hotmail.com",
+    "phone": "15988327955",
+    "namePC": "Gina e Gina",
+    "endePC": "rua das flores, 123 vila barao sorocaba",
+    "horaFuncPC": "seg a sex das 8hrs ate as 17hrs",
+    "cnpj": "11236569000122",
+    "photoPC": "",
+    "approved": false
+  }
+]
