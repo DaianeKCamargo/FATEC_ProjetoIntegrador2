@@ -1,3 +1,26 @@
+/* CENTRALIZAÇÃO DA PÁGINA */
+.container{
+  margin: 0 auto;
+}
+
+.margin {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+/* AJUSTE DO SELECT EM CAIXAS DOS GRÁFICOS */
+.graficoBox select {
+  padding: 10px 16px;  
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  outline: none;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.18s ease;
+}
+
 /* CONTÊINER DOS FILTROS */
 .filtros {
   display: flex;
@@ -12,11 +35,12 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  font-size: 1.5rem;
 }
 
 /* LABEL (ex: "Mês:", "Ano:") */
 .filtroItem label {
-  font-size: 0.95rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #444;
 }
@@ -27,7 +51,7 @@
   border-radius: 25px;
   border: 1px solid #ddd;
   background-color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.3rem;
   cursor: pointer;
   outline: none;
 
@@ -46,22 +70,13 @@
   box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.25);
 }
 
-/* AJUSTE DO SELECT EM CAIXAS DOS GRÁFICOS */
-.graficoBox select {
-  padding: 10px 16px;
-  border-radius: 25px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  font-size: 0.95rem;
-  cursor: pointer;
-  outline: none;
 
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.18s ease;
-}
 
 /* FOCUS PARA SELECT DOS GRÁFICOS */
 .graficoBox select:focus {
   border-color: #8a2be2;
   box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.25);
+}
+.label {
+  font-size: 5rem;
 }
