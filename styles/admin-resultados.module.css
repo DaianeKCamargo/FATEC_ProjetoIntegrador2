@@ -61,3 +61,20 @@
 .botao:hover {
     background-color: #5435c4;
 }
+
+/* Remove as setinhas no Chrome, Edge, Safari */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove as setinhas no Firefox */
+.input[type="number"] {
+    -moz-appearance: textfield;
+}
+.mensagem {
+    margin-top: 20px;
+    font-size: 16px;
+    color: green;
+}

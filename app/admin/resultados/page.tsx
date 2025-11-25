@@ -8,13 +8,19 @@ export default function AdminitrativoResultados() {
     const [month, setMonth] = useState(1);
     const [year, setYear] = useState(2025);
 
-    const [cats, setCats] = useState(0);
-    const [dogs, setDogs] = useState(0);
-    const [caps, setCaps] = useState(0);
+    const [cats, setCats] = useState("");
+    const [dogs, setDogs] = useState("");
+    const [caps, setCaps] = useState("");
 
 
     async function handleSave() {
-        const payload = { month, year, cats, dogs, caps };
+        const payload = {
+            month, 
+            year,
+            cats: Number(cats),
+            dogs: Number(dogs),
+            caps: Number(caps)
+        };
 
         const response = await fetch("/api/admin/add", {
             method: "POST",
@@ -27,7 +33,7 @@ export default function AdminitrativoResultados() {
     }
 
     return (
-        <section className="{styles.container}">
+        <section className={styles.container}>
             <h1 className="styles.titulo">Relatório Administrativo</h1>
             <p className={styles.subtitulo}>Adicionar dados mensais</p>
 
@@ -64,7 +70,7 @@ export default function AdminitrativoResultados() {
                     <input
                         type="number"
                         value={cats}
-                        onChange={(e) => setCats(Number(e.target.value))}
+                        onChange={(e) => setCats(e.target.value)}
                         className={styles.input}
                     />
                 </label>
@@ -74,7 +80,7 @@ export default function AdminitrativoResultados() {
                     <input
                         type="number"
                         value={dogs}
-                        onChange={(e) => setDogs(Number(e.target.value))}
+                        onChange={(e) => setDogs(e.target.value)}
                         className={styles.input}
                     />
                 </label>
@@ -84,7 +90,7 @@ export default function AdminitrativoResultados() {
                     <input
                         type="number"
                         value={caps}
-                        onChange={(e) => setCaps(Number(e.target.value))}
+                        onChange={(e) => setCaps(e.target.value)}
                         className={styles.input}
                     />
                 </label>
