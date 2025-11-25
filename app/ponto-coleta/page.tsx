@@ -1,8 +1,7 @@
 'use client'
 
 import Titulo from '@/components/titulo/Titulo';
-import styles from '@/styles/ponto-coleta.module.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'leaflet/dist/leaflet.css';
 import Mapa from '@/components/mapa-pc/mapa';
 import StreetView from '@/components/mapa-pc/streetview/streetview';
 import { useState } from 'react';
@@ -10,11 +9,12 @@ import Search from '@/components/mapa-pc/search/search';
 
 export default function PontoColeta() {
 
-    const [results, setResults] = useState([]);
-     const handleSearch = async (query: any) => {
+    const [setResults] = useState([]);
+
+    const handleSearch = async (query: unknown) => {
     const res = await fetch(`/api/search?q=${query}`);
     const data = await res.json();
-    setResults(data);
+    setResults(data.results);
   };
 
     return (

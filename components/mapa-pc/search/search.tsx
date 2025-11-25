@@ -2,25 +2,25 @@
 
 import { FormEvent, useState } from "react";
 
-export default function Search({ onSearch }) {
+type SearchProps = {
+  onSearch: (query: string) => void;
+};
+
+export default function Search({ onSearch }: SearchProps) {
     const [query, setQuery] = useState("");
 
-    const handleSearch = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-        onSearch(query);
-    };
-
-    function handleSubmit(event: FormEvent<HTMLFormElement>): void {
-        throw new Error("Function not implemented.");
-    }
+    const handleSearch = (e: FormEvent) => {
+    e.preventDefault();
+    onSearch(query); 
+  };
 
     return (
         <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSearch}
         style={{ 
             display: "flex", 
             alignItems: "center", 
-            width: "360px",
+            width: "660px",
             background: "#fff",
             borderRadius: "400px",
             border: "1px solid #d1d1d1",
