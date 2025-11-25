@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { mesesFiltro } from '@/app/api/relatorio/data';
 import {
   LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
 } from "recharts";
@@ -9,6 +10,7 @@ import styles from "@/styles/grafico-co2.module.css";
 
 type Mes = {
   month: number;
+  monthName?: string;
   year: number;
   co2: number;
 };
@@ -45,9 +47,11 @@ export default function GraficoCo2({ year }: { year: number }) {
 
         for (let i = 1; i <= 12; i++) {
           const item = json.co2.find(m => m.month === i);
+          const mes = mesesFiltro.find((m) => m.value === i);
 
           mesesFormatados.push({
             month: i,
+            monthName: mes?.label || "",
             year: year,
             co2: item ? item.co2 : 0
           });
@@ -88,7 +92,7 @@ export default function GraficoCo2({ year }: { year: number }) {
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={dados}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="month" />
+          <XAxis dataKey="monthName" />
           <YAxis />
           <Tooltip />
           <Line type="monotone" dataKey="co2" stroke="#00cc66" strokeWidth={3} />

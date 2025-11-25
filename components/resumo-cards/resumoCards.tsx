@@ -6,8 +6,8 @@ import styles from "@/styles/resumo-cards.module.css";
 type Dados = {
   month: number;
   year: number;
-  dog: number;
   cat: number;
+  dog: number;
   caps: number;
 };
 
@@ -43,9 +43,23 @@ export default function ResumoCards({ month, year }: { month: number; year: numb
 
   return (
     <div className={styles.container}>
-      <div className={styles.card}>🐶 Cães: {data?.dog}</div>
-      <div className={styles.card}>🐱 Gatos: {data?.cat}</div>
-      <div className={styles.card}>🧢 Tampinhas: {data?.caps}</div>
+      <div className={styles.card}>
+        <span className={styles.label}>Gatos </span>
+        <span className={styles.value}>{data?.cat}</span>
+        <img src="gatoRelatorio.png" alt="gato" className={styles.icon} />
+      </div>
+
+      <div className={styles.card}>
+        <span className={styles.label}>Cães </span>
+        <span className={styles.value}>{data?.dog}</span>
+        <img src="cachorroRelatorio.png" alt="cachorro" className={styles.icon} />
+      </div>
+
+      <div className={styles.card}>
+        <span className={styles.label}>Tampinhas </span>
+        <span className={styles.value}>{data?.caps.toLocaleString("pt-BR")}</span>
+        <img src="tampinhasRelatorio.png" alt="tampinhas" className={styles.icon} />
+      </div>
     </div>
   );
 }

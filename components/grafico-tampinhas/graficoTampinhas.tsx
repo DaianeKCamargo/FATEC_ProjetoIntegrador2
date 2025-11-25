@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { mesesFiltro } from '@/app/api/relatorio/data';
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
 } from "recharts";
@@ -9,6 +10,7 @@ import styles from "@/styles/grafico-tampinhas.module.css";
 
 type Mes = {
   month: number;
+  monthName: string;
   year: number;
   caps: number;
 };
@@ -32,15 +34,17 @@ export default function GraficoTampinhas({ year }: { year: number }) {
 
           for (let i = 1; i <= 12; i++) {
             const item = json.relatorio.find((m: Mes) => m.month === i);
+            const mes = mesesFiltro.find((m) => m.value === i);
 
             arr.push({
               month: i,
+              monthName: mes?.label || "",
               year: year,
               caps: item ? item.caps : 0
             });
           }
 
-          setDados(arr);
+          setDados(arr);  
         }
       } catch (_) {
         setErro("Falha ao conectar com API");
@@ -62,7 +66,7 @@ export default function GraficoTampinhas({ year }: { year: number }) {
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={dados}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="month" />
+          <XAxis dataKey="monthName" />
           <YAxis />
           <Tooltip />
           <Bar dataKey="caps" fill="#0088ff" />
