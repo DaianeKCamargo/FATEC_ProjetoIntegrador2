@@ -15,7 +15,6 @@ export const relatorioData = [
     { month: 9, year: 2025, dog: 23, cat: 13, caps: 5200 },
     { month: 10, year: 2025, dog: 18, cat: 9, caps: 4100 },
     { month: 11, year: 2025, dog: 24, cat: 11, caps: 5500 },
-    { month: 12, year: 2025, dog: 20, cat: 10, caps: 4500 },
 
     { month: 1, year: 2024, dog: 5, cat: 2, caps: 800 },
     { month: 2, year: 2024, dog: 7, cat: 3, caps: 1200 },
@@ -57,7 +56,6 @@ export const relatorioCo2 = [
     { month: 9, year: 2025, co2: 190 },
     { month: 10, year: 2025, co2: 185 },
     { month: 11, year: 2025, co2: 200 },
-    { month: 12, year: 2025, co2: 210 },
 
     { month: 1, year: 2024, co2: 80 },
     { month: 2, year: 2024, co2: 90 },

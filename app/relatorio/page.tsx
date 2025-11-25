@@ -24,7 +24,7 @@ export default function Relatorio() {
     const [co2Year, setCo2Year] = useState(2025);
 
     const anosDisponiveis = [2025, 2024, 2023];
-    
+
 
     return (
         <section className={styles.container}>
