@@ -12,7 +12,7 @@ import { mesesFiltro } from '@/app/api/relatorio/data';
 import styles from '@/styles/relatorio.module.css';
 
 export default function Relatorio() {
-
+    
     // Filtros dos cards
     const [cardMonth, setCardMonth] = useState(1);
     const [cardYear, setCardYear] = useState(2025);
@@ -36,69 +36,76 @@ export default function Relatorio() {
             />
 
             {/* Filtros dos cards */}
-            <div className={styles.filtros}>
+            <div className={styles.margin}>
+                <div className={styles.filtros}>
 
-                <div className={styles.filtroItem}>
-                    <label>Mês:</label>
-                    <select
-                        value={cardMonth}
-                        onChange={(e) => setCardMonth(Number(e.target.value))}
-                    >
-                        {mesesFiltro.map((m) => (
-                            <option key={m.value} value={m.value}>
-                                {m.label}
-                            </option>
-                        ))}
-                    </select>
+                    <div className={styles.filtroItem}>
+                        <label>Mês:</label>
+                        <select
+                            value={cardMonth}
+                            onChange={(e) => setCardMonth(Number(e.target.value))}
+                        >
+                            {mesesFiltro.map((m) => (
+                                <option key={m.value} value={m.value}>
+                                    {m.label}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div className={styles.filtroItem}>
+                        <label>Ano:</label>
+                        <select
+                            value={cardYear}
+                            onChange={(e) => setCardYear(Number(e.target.value))}
+                        >
+                            {anosDisponiveis.map((a) => (
+                                <option key={a} value={a}>{a}</option>
+                            ))}
+                        </select>
+                    </div>
+
                 </div>
 
-                <div className={styles.filtroItem}>
-                    <label>Ano:</label>
-                    <select
-                        value={cardYear}
-                        onChange={(e) => setCardYear(Number(e.target.value))}
-                    >
-                        {anosDisponiveis.map((a) => (
-                            <option key={a} value={a}>{a}</option>
-                        ))}
-                    </select>
+                {/* Cards */}
+                <ResumoCards month={cardMonth} year={cardYear} />
+
+                {/* Gráfico de Tampinhas */}
+                <div className={styles.graficoBox}>
+                    <div className={styles.filtros}>
+                        <div className={styles.filtroItem}>
+                            <label className={styles.label}>Ano:</label>
+                            <select
+                                value={tampinhasYear}
+                                onChange={(e) => setTampinhasYear(Number(e.target.value))}
+                            >
+                                {anosDisponiveis.map((a) => (
+                                    <option key={a} value={a}>{a}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+                    <GraficoTampinhas year={tampinhasYear} />
                 </div>
 
+                {/* Gráfico CO2 */}
+                <div className={styles.graficoBox}>
+                    <div className={styles.filtros}>
+                        <div className={styles.filtroItem}>
+                            <label>Ano:</label>
+                            <select
+                                value={co2Year}
+                                onChange={(e) => setCo2Year(Number(e.target.value))}
+                            >
+                                {anosDisponiveis.map((a) => (
+                                    <option key={a} value={a}>{a}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+                    <GraficoCo2 year={co2Year} />
+                </div>
             </div>
-
-            {/* Cards */}
-            <ResumoCards month={cardMonth} year={cardYear} />
-
-            {/* Gráfico de Tampinhas */}
-            <div className={styles.graficoBox}>
-                <label>Ano:</label>
-                <select
-                    value={tampinhasYear}
-                    onChange={(e) => setTampinhasYear(Number(e.target.value))}
-                >
-                    {anosDisponiveis.map((a) => (
-                        <option key={a} value={a}>{a}</option>
-                    ))}
-                </select>
-
-                <GraficoTampinhas year={tampinhasYear} />
-            </div>
-
-            {/* Gráfico CO2 */}
-            <div className={styles.graficoBox}>
-                <label>Ano:</label>
-                <select
-                    value={co2Year}
-                    onChange={(e) => setCo2Year(Number(e.target.value))}
-                >
-                    {anosDisponiveis.map((a) => (
-                        <option key={a} value={a}>{a}</option>
-                    ))}
-                </select>
-
-                <GraficoCo2 year={co2Year} />
-            </div>
-
         </section>
     );
 }
