@@ -1,26 +1,26 @@
 import * as yup from "yup";
 
-// function validarCPF(cpf : string): boolean {
-//   cpf = cpf.replace(/[^\d]+/g, ""); // Remove tudo que não for número
-//   if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false; // Verifica repetidos tipo 11111111111
+ function validarCPF(cpf : string): boolean {
+  cpf = cpf.replace(/[^\d]+/g, ""); // Remove tudo que não for número
+  if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false; // Verifica repetidos tipo 11111111111
 
-//   let soma = 0;
-//   let resto;
+  let soma = 0;
+  let resto;
 
-//   // Primeiro dígito verificador
-//   for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
-//   resto = (soma * 10) % 11;
-//   if (resto === 10 || resto === 11) resto = 0;
-//   if (resto !== parseInt(cpf.substring(9, 10))) return false;
+// Primeiro dígito verificador
+  for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+  resto = (soma * 10) % 11;
+  if (resto === 10 || resto === 11) resto = 0;
+  if (resto !== parseInt(cpf.substring(9, 10))) return false;
 
-//   // Segundo dígito verificador
-//   soma = 0;
-//   for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
-//   resto = (soma * 10) % 11;
-//   if (resto === 10 || resto === 11) resto = 0;
+// Segundo dígito verificador
+  soma = 0;
+  for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+  resto = (soma * 10) % 11;
+  if (resto === 10 || resto === 11) resto = 0;
 
-//   return resto === parseInt(cpf.substring(10, 11));
-// }
+  return resto === parseInt(cpf.substring(10, 11));
+}
 
 function validarTelefone(valor: string): boolean {
   if (!valor) return false;
@@ -55,9 +55,9 @@ export const cadSchema = yup.object().shape({
     .matches(/\d/, "A senha deve conter pelo menos um número")
     .matches(/[@$!%*?&^#()_\-+=]/, "A senha deve conter pelo menos um caractere especial"),
 
-  // cpf: yup.string().required("CPF é obrigatório").test("valid-cpf", "CPF inválido", (value) => {
-  //   return validarCPF(value || "");
-  // }),
+ cpf: yup.string().required("CPF é obrigatório").test("valid-cpf", "CPF inválido", (value) => {
+   return validarCPF(value || "");
+   }),
 
   phone: yup.string().required("Telefone é obrigatório").test("valid-phone", "Telefone inválido", (value) => {
     return validarTelefone(value || "");

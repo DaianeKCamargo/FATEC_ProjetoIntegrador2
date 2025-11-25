@@ -18,7 +18,7 @@ export default function InputChild({ id, label, name, type, placeholder, value, 
     return (
         <Form.Group id={id}>
             <Form.Label
-                className={styles.checkChilLabel}>
+                className={styles.labelContainer}>
                 {label}
             </Form.Label>
 
@@ -29,7 +29,7 @@ export default function InputChild({ id, label, name, type, placeholder, value, 
                 {...(!isFile && { value })}
                 onChange={onChange}
                 isInvalid={!!error}
-                className={classname ? classname : styles.checkChilInput}
+                className={styles.inputContainer}
             />
             <Form.Control.Feedback
                 type='invalid'>

@@ -2,7 +2,7 @@ import { m } from "framer-motion";
 import { NextResponse } from "next/server";
 import { relatorioData } from "./data";
 
-// método htttp GET para buscar dados por mês e ano, nos cards de resumo
+// método http GET para buscar dados por mês e ano, nos cards de resumo
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
 

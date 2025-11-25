@@ -162,36 +162,36 @@ export default function Cadastrar() {
         <section>
             <div className={styles.divprincipal}>
                 <h1 className={styles.title}> Cadastrar </h1>
-                <Form onSubmit={handleSubmit}>
-                    <Input id="inputName" label="Nome Completo" type="text" name="username"
+                <Form onSubmit={handleSubmit} className={styles.formWrapper}>
+                    <Input id="inputName" placeholder='Insira seu nome completo'label="Nome Completo" type="text" name="username"
                         error={errors.username} onChange={(e) => {
                             handleChange(e);
                             setUsername(e.target.value);
                         }} value={username} />
 
-                    <Input id="inputCPF" label='CPF' type='number' name='cpf'
+                    <Input id="inputCPF" label='CPF' placeholder='Insira o seu CPF sem caracteres especiais' type='number' name='cpf'
                         error={errors.cpf} onChange={(e) => {
                             handleChange(e);
                             setCpf(e.target.value);
                         }} value={cpf} />
 
-                    <Input id="inputEmail" label="Email" type='email' name='email'
+                    <Input id="inputEmail" label="Email" placeholder='Insira o seu email completp' type='email' name='email'
                         error={errors.email} onChange={(e) => {
                             handleChange(e);
                             setEmail(e.target.value);
                         }} value={email} />
-                    <Input id="inputTelefone" label='Telefone' type='tel' name='phone'
+                    <Input id="inputTelefone" placeholder='Insira o seu telefone' label='Telefone' type='tel' name='phone'
                         error={errors.phone} onChange={(e) => {
                             handleChange(e);
                             setPhone(e.target.value);
                         }} value={phone} />
-                    <Input id="inputPassword" label='Senha' type='password' name="password"
+                    <Input id="inputPassword" label='Senha' placeholder='Insira a senha' type='password' name="password"
                         error={errors.password} onChange={(e) => {
                             handleChange(e);
                             setPassword(e.target.value);
                         }} value={password} />
 
-                    <Input id="inputConfirmPassword" label='Confirme a Senha' type='password'
+                    <Input id="inputConfirmPassword" label='Confirme a Senha' placeholder='Insira novamente a senha' type='password'
                         name='confirmPassword' error={errors.confirmPassword} onChange={(e) => {
                             handleChange(e);
                             setConfirmPassword(e.target.value);
@@ -208,24 +208,24 @@ export default function Cadastrar() {
                             children={
                                 <>
                                     <div className={styles.divChildren}>
-                                        <InputChild id='inputNamePC' label='Nome do estabelecimento' type='text'
+                                        <InputChild id='inputNamePC' placeholder='Insira o nome do estabelecimento' label='Nome do estabelecimento' type='text'
                                             error={errors.namePC} onChange={(e) => {
                                                 handleChange(e);
                                                 setNamePC(e.target.value);
                                             }} name='namePC' value={namePC} />
-                                        <InputChild id='inputEndPC' label='Endereço' type='text'
+                                        <InputChild id='inputEndPC' placeholder='Insira o CEP do estabelecimento' label='Endereço' type='text'
                                             error={errors.endePC} onChange={(e) => {
                                                 handleChange(e);
                                                 setEndPC(e.target.value);
                                             }} name='endePC' value={endePC} />
                                     </div>
                                     <div className={styles.divChildren}>
-                                        <InputChild id='inputEndPC' label='Horario de Funcionamento' type='text'
+                                        <InputChild id='inputEndPC' placeholder='Insira o horario de funcionamento' label='Horario de Funcionamento' type='text'
                                             error={errors.horaFuncPC} onChange={(e) => {
                                                 handleChange(e);
                                                 setHoraFuncPC(e.target.value);
                                             }} name='horaFuncPC' value={horaFuncPC} />
-                                        <InputChild id='inputEndPC' label='CNPJ' type='text'
+                                        <InputChild id='inputEndPC' label='CNPJ' placeholder='Insira o CNPJ da empresa' type='text'
                                             error={errors.cnpj} onChange={(e) => {
                                                 handleChange(e);
                                                 setCnpj(e.target.value);

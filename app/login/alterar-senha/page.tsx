@@ -9,10 +9,10 @@ export default function AlterarSenha() {
         <section>
             <div className={styles.divprincipal}>
                 <h1 className={styles.title}> Alterar senha </h1>
-                <Form>
+                <Form className={styles.formWrapper}>
                     <Input id='redPassword' name='redPassword' type='email' placeholder='Insira seu email'
                     label='Email'/>
-                    <Button className={styles.logBtn}>Enviar codigo para o Email</Button>
+                    <Button className={styles.logBtn}>Enviar codigo no Email</Button>
                 </Form>
             </div>
         </section>
