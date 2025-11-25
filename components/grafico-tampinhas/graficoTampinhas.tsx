@@ -5,7 +5,7 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
 } from "recharts";
 
-import styles from "../styles/GraficoTampinhas.module.css";
+import styles from "@/styles/grafico-tampinhas.module.css";
 
 type Mes = {
   month: number;

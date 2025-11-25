@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import styles from "../styles/ResumoCards.module.css";
+import styles from "@/styles/resumo-cards.module.css";
 
 type Dados = {
   month: number;
