@@ -1,6 +1,5 @@
 'use client'
 
-import { u } from 'framer-motion/m';
 import { Viewer } from 'mapillary-js';
 import { useEffect } from 'react';
 

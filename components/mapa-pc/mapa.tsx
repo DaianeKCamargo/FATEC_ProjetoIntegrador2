@@ -2,10 +2,9 @@
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet'; 
-import { defaultValueTypes } from 'framer-motion';
+import Leaflet from 'leaflet'; 
 
-delete L.Icon.Default.prototype._getIconUrl;
+delete Leaflet.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
     iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
