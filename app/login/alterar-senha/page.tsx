@@ -6,7 +6,7 @@ import { Button, Form } from 'react-bootstrap';
 export default function AlterarSenha() {
 
     return (
-        <section>
+        <section className={styles.body}>
             <div className={styles.divprincipal}>
                 <h1 className={styles.title}> Alterar senha </h1>
                 <Form className={styles.formWrapper}>

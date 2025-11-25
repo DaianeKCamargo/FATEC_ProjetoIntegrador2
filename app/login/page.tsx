@@ -62,7 +62,7 @@ export default function Login() {
         },
     });
     return (
-        <section>
+        <section className={styles.body}>
             <div className={styles.divprincipal}>
                 <h1 className={styles.title}> Login </h1>
                 <Form onSubmit={handleLogin} className={styles.formWrapper}>

@@ -1,6 +1,9 @@
 .body {
   margin: 0;
-  min-height: 100vh;
+  height: auto;
+  min-height: 54rem;
+  width: 100%;
+  align-content: center;
   background: linear-gradient(
     135deg,
     #2E3A40,
@@ -11,21 +14,22 @@
 }
 
 /* CARD PRINCIPAL */
+
 .divprincipal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+ 
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 2rem;
-
-  padding: 4rem;
-  margin: 5rem auto;
-
+    padding: 4rem;
+    margin:  auto;
   width: 100%;
   max-width: 70rem;
+   margin-top: 2rem; 
+   margin-bottom: 2rem;
 
   box-shadow: 0 0 0.7rem 0.2rem rgba(0, 0, 0, 0.1);
 }
@@ -42,7 +46,8 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  display: block;
+  display: block;}
+pa.labelContainer:not(:first-of-type) {
   margin-top: 1rem;
 }
 
