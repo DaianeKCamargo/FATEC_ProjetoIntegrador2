@@ -1,8 +1,9 @@
 'use client'
 import React from 'react';
+import Image from 'next/image';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Titulo from '@/components/titulo/Titulo';
-import { style } from 'framer-motion/m';
+import style from '@/styles/como-doar.module.css';
 
 
 export default function ComoDoar() {
@@ -10,14 +11,27 @@ export default function ComoDoar() {
     <section>
       <Titulo src="/img_titulo_amarelo.png" title="Como doar" label=" Está com duvída de como você pode nos ajudar?"/>
 
+    <div className={style.doar}>
       <div>
         {/* não utiliza esse formato de style no className, conforme conversamos utilizar o module, já estou deixando importado aqui */}
         <header>
-          <h1>Como Doar?</h1>
-          <p>Procure o ponto de coleta mais próximo de você!</p>
-          <p>Não conhece nenhum ponto de coleta?
-            Procure um na nossa aba Ponto de coleta.</p>
-          <h1>ATENÇÃO!</h1>
+          <div className={style.sectionBox}>
+            <div className={style.sectionHeader}>
+              <h1>Como faço para doar?</h1>
+            </div>
+          <div className={style.sectionContent}>
+            <p>
+              Junte suas tampinhas e procure o ponto de coleta mais próximo de você!
+            </p>
+
+            <p>
+              Não conhece nenhum ponto de coleta?
+              Procure um na nossa aba Ponto de coleta.
+            </p>
+          </div>
+          </div>
+        </header>
+          <h2>ATENÇÃO!</h2>
           <p>Para facilitar a triagem das tampinhas, não coloque junto delas:</p>
           <ul>
             <li>- Itens não recicláveis</li>
@@ -27,20 +41,45 @@ export default function ComoDoar() {
             <li>- Vidros</li>
             <li>- Cartela de remédio</li>
           </ul>
-        </header>
 
-        <div>
-          <h2>Que tipo de tampinhas aceitamos:</h2>
-          <h5>Alimentos</h5>
-          <p>Tampas de refrigerantes, sucos, margarina, maionese, molhos, 
-          requeijão, óleo de cozinha etc.</p>
+        <div className={style.sectionBox}>
+          <div className={style.sectionHeader}>
+            <h2>Que tipo de tampinhas aceitamos:</h2>
+          </div>
 
-          <h5>Produtos de limpeza</h5>
-          <p>Tampas de amaciante, cloro, cândida, desinfetante, desengordurante, etc.</p>
+          <div className={style.sectionContent}>
+            <h5>Alimentos</h5>
+            <Image
+                src={"/Tampinhasplasticas.jpg"} 
+                alt={'tampinhas plasticas'}
+                width={300}
+                height={100}
+                className={style["Image-banner"]}/>
 
-          <h5>Produtos de Higiene</h5>
-          <p>Tampas de shampoo, condicionador, cremes,
-          pasta de dentes, sabonete líquido, hidratantes, etc.</p>
+            <p>Tampas de refrigerantes, sucos, margarina, maionese, molhos, 
+            requeijão, óleo de cozinha etc.</p>
+          </div>
+          <div className={style.sectionContent}>
+            <h5>Produtos de limpeza</h5>
+            <Image
+                src={"/ProdLimpeza.jpeg"} 
+                alt={'Produtos de limpeza'}
+                width={300}
+                height={100}
+                className={style["Image-banner"]}/>
+            <p>Tampas de amaciante, cloro, cândida, desinfetante, desengordurante, etc.</p>
+          </div>
+          <div className={style.sectionContent}>
+            <h5>Produtos de Higiene</h5>
+            <Image
+                  src={"/ProdHigiene.jpg"} 
+                  alt={'Produtos de higiene'}
+                  width={300}
+                  height={100}
+                  className={style["Image-banner"]}/>
+            <p>Tampas de shampoo, condicionador, cremes,
+            pasta de dentes, sabonete líquido, hidratantes, etc.</p>
+          </div>
         </div>
 
         <div>
@@ -68,6 +107,7 @@ export default function ComoDoar() {
                 <li><i className="bi bi-x-circle">Não paga tratamentos veterinários</i></li>
                 <li><i className="bi bi-x-circle">Não divulga nas redes sociais animais para adoção</i></li>
               </ul> 
+        </div>
         </div>
       </div>
     </section>

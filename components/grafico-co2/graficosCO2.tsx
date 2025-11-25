@@ -5,7 +5,7 @@ import {
   LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
 } from "recharts";
 
-import styles from "../styles/GraficoCo2.module.css";
+import styles from "@/styles/grafico-co2.module.css";
 
 type Mes = {
   month: number;

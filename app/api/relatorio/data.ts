@@ -1,4 +1,7 @@
 // simulando um banco de dados com dados estáticos dos cachorros e gatos castrados 
+
+import { label } from "framer-motion/m";
+
 // e a quantidade de tampinhas arrecadadas, de 3 anos
 export const relatorioData = [
     { month: 1, year: 2025, dog: 15, cat: 7, caps: 3500 },
@@ -85,16 +88,16 @@ export const relatorioCo2 = [
 
 // pega o nome dos meses para exibir nos filtros de acordo com o número do mês
 export const mesesFiltro = [
-    { numero: 1, nome: "Janeiro" },
-    { numero: 2, nome: "Fevereiro" },
-    { numero: 3, nome: "Março" },
-    { numero: 4, nome: "Abril" },
-    { numero: 5, nome: "Maio" },
-    { numero: 6, nome: "Junho" },
-    { numero: 7, nome: "Julho" },
-    { numero: 8, nome: "Agosto" },
-    { numero: 9, nome: "Setembro" },
-    { numero: 10, nome: "Outubro" },
-    { numero: 11, nome: "Novembro" },
-    { numero: 12, nome: "Dezembro" }
+    { value: 1, label: "Janeiro" },
+    { value: 2, label: "Fevereiro" },
+    { value: 3, label: "Março" },
+    { value: 4, label: "Abril" },
+    { value: 5, label: "Maio" },
+    { value: 6, label: "Junho" },
+    { value: 7, label: "Julho" },
+    { value: 8, label: "Agosto" },
+    { value: 9, label: "Setembro" },
+    { value: 10, label: "Outubro" },
+    { value: 11, label: "Novembro" },
+    { value: 12, label: "Dezembro" }
 ];
