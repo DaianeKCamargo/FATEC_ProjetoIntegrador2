@@ -1,7 +1,11 @@
-.container {
-    padding: 40px;
-    max-width: 600px;
-    margin: 0 auto;
+.body {
+    background-image: linear-gradient(#faf9dd,
+            #e1f1ff,
+            #dcd7fc);   
+
+   height: 85rem;
+   margin: 0;
+    padding-bottom: 5rem;
 }
 
 .titulo {

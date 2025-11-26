@@ -33,7 +33,7 @@ export default function AdminitrativoResultados() {
     }
 
     return (
-        <section className={styles.container}>
+        <section className={styles.body}>
             <h1 className="styles.titulo">Relatório Administrativo</h1>
             <p className={styles.subtitulo}>Adicionar dados mensais</p>
 

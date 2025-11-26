@@ -176,7 +176,7 @@ export default function Cadastrar() {
                                 setCpf(e.target.value);
                             }} value={cpf} />
 
-                        <Input id="inputEmail" label="Email" placeholder='Insira o seu email completp' type='email' name='email'
+                        <Input id="inputEmail" label="Email" placeholder='Insira o seu email completo' type='email' name='email'
                             error={errors.email} onChange={(e) => {
                                 handleChange(e);
                                 setEmail(e.target.value);
