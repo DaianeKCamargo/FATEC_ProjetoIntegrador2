@@ -63,4 +63,14 @@ npm install lucide-react
 npm install recharts
 
 [carrossel Home](font-chatgpt)
+<<<<<<< Updated upstream
 npm install swiper
+=======
+npm install swiper
+
+[Mapillary js](https://mapillary.github.io/mapillary-js/)
+npm install mapillary-js
+
+[React leaflet](https://react-leaflet.js.org/docs/start-installation/)
+npm install react-leaflet@next
+>>>>>>> Stashed changes
