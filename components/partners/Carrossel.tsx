@@ -9,6 +9,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 interface Partner {
+  id: number;
+  nameP?: string;
   photoP?: string;
   linkP?: string;
   approved: boolean;
@@ -18,8 +20,17 @@ export default function PartnersCarousel() {
   const [partners, setPartners] = useState<Partner[]>([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem("partners");
-    if (stored) setPartners(JSON.parse(stored));
+    const load = async () => {
+      try {
+        const res = await fetch("/api/partners", { cache: "no-store" });
+        const data = await res.json();
+        setPartners(data);
+      } catch (err) {
+        console.error("Erro ao carregar parceiros:", err);
+      }
+    };
+
+    load();
   }, []);
 
   const approvedPartners = partners.filter((p) => p.approved);
@@ -30,13 +41,18 @@ export default function PartnersCarousel() {
       slidesPerView={3}
       loop
       autoplay={{ delay: 3000 }}
-      style={{ width: "100%", maxWidth: "600px", display: "flex", justifyContent: "space-between"}}
+      style={{
+        width: "100%",
+        maxWidth: "600px",
+        display: "flex",
+        justifyContent: "space-between",
+      }}
     >
-      {approvedPartners.map((partner, index) => (
-        <SwiperSlide key={index}>
-          <div className={styles.carrossel} >
-            <a href={partner.linkP} target="_blank">
-              <img src={partner.photoP} alt="foto do parceiro" />
+      {approvedPartners.map((partner) => (
+        <SwiperSlide key={partner.id}>
+          <div className={styles.carrossel}>
+            <a href={partner.linkP} target="_blank" rel="noopener noreferrer">
+              <img src={partner.photoP} alt={partner.nameP || "Parceiro"} />
             </a>
           </div>
         </SwiperSlide>
