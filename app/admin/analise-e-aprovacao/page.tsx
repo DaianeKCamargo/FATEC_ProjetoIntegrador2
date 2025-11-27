@@ -8,6 +8,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import PartnersList from "@/components/partners/PartnerList";
 import CollectionPointList from "@/components/collectionpoints/CollectionPointList";
 import { TbArrowBackUp } from "react-icons/tb";
+import BackButton from "@/components/back-button/BackButton";
 
 export default function AdministrativoAnaliseAprovacao() {
     //ponto de coleta
@@ -52,6 +53,7 @@ export default function AdministrativoAnaliseAprovacao() {
             </div>
 
             <div className={styles.titulo}>
+                <BackButton/>
                 <h1> Área do Administrador </h1>
                 <h2> Análise e Aprovação de cadastros </h2>
             </div>

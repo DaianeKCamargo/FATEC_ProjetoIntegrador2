@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from '@/styles/admin-resultados.module.css';
+import BackButton from "@/components/back-button/BackButton";
 
 export default function AdminitrativoResultados() {
 
@@ -34,6 +35,7 @@ export default function AdminitrativoResultados() {
 
     return (
         <section className={styles.body}>
+            <BackButton/>
             <h1 className="styles.titulo">Relatório Administrativo</h1>
             <p className={styles.subtitulo}>Adicionar dados mensais</p>
 

@@ -10,7 +10,6 @@
     height: 5vh;
 }
 
-
 @media (max-width: 768px) {
     .direitosautorais {
         display: grid;

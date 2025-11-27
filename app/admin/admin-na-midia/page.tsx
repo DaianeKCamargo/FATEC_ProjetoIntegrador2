@@ -2,12 +2,14 @@
 import styles from "@/styles/admin-na-midia.module.css";
 import style from "@/styles/adm-galeria.module.css";
 import FileInput from "@/components/input-image/FileInput";
+import BackButton from "@/components/back-button/BackButton";
 
 export default function AdministrativoNaMidia() {
 
     return (
         <section className={styles.body}>
             <div className={style['section-page']}>
+                <BackButton/>
                 <h1>Área do Administrador</h1>
                 <h2>TamPets na Mídia</h2>
 
