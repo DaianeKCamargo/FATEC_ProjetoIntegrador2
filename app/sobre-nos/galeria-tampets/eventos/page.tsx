@@ -1,7 +1,7 @@
 'use client';
 import Card from "@/components/card/Card";
 import Titulo from "@/components/titulo/Titulo";
-import styles from "@/styles/albuns.module.css"
+import styles from "@/styles/albumpage.module.css"
 
 
 
