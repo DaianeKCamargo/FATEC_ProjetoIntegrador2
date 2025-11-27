@@ -5,6 +5,7 @@ import Select from "@/components/select/Select";
 import style from "@/styles/adm-galeria.module.css";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
+import BackButton from "@/components/back-button/BackButton";
 
 export default function AdministrativoGaleria() {
   const [selectedAlbum, setSelectedAlbum] = useState<number | null>(null);
@@ -61,6 +62,7 @@ export default function AdministrativoGaleria() {
   return (
     <div className={style['section-page']}>
       <div>
+        <BackButton/>
         <h1>Área do Administrador</h1>
         <h2>Galeria TamPets</h2>
       </div>

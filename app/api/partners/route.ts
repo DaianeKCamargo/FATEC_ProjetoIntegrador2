@@ -26,9 +26,18 @@ export async function POST(req: Request) {
   const body = await req.json();
   const partners = readFile();
 
-  partners.push(body);
+  // ✔ CRIA ID AUTOMÁTICO
+  const newPartner = {
+    id: crypto.randomUUID(),
+    ...body,
+  };
+
+  partners.push(newPartner);
 
   writeFile(partners);
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json({
+    success: true,
+    partner: newPartner,
+  });
 }

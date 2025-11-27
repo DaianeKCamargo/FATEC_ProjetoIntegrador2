@@ -64,3 +64,10 @@ npm install recharts
 
 [carrossel Home](font-chatgpt)
 npm install swiper
+
+[Mapillary js](https://mapillary.github.io/mapillary-js/)
+npm install mapillary-js
+
+[React leaflet](https://react-leaflet.js.org/docs/start-installation/)
+npm install react-leaflet@next
+

@@ -3,7 +3,8 @@
     height: auto;
     display: flex;
     justify-content: center;
-    padding: 3rem;
+    align-items: center;
+    padding: 1rem;
 }
 
 .cardArea {
