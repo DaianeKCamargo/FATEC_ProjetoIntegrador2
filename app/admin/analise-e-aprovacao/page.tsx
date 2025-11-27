@@ -46,12 +46,6 @@ export default function AdministrativoAnaliseAprovacao() {
 
     return (
         <div className={styles.body}>
-            <div className={styles.voltar}>
-                <a href="/admin" style={{ textDecoration: "none", color: "inherit" }}>
-                    <TbArrowBackUp size={40} />
-                </a>
-            </div>
-
             <div className={styles.titulo}>
                 <BackButton/>
                 <h1> Área do Administrador </h1>

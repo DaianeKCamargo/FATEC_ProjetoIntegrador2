@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 
-const filePath = path.join(process.cwd(), "data", "partners.json");
+const filePath = path.join(process.cwd(), "partners.json");
 
 // DELETE /api/partners/:id
 export async function DELETE(
