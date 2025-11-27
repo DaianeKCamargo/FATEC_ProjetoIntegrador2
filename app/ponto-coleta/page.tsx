@@ -2,16 +2,22 @@
 
 import Titulo from '@/components/titulo/Titulo';
 import 'leaflet/dist/leaflet.css';
-import Mapa from '@/components/mapa-pc/mapa';
-import StreetView from '@/components/mapa-pc/streetview/streetview';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import Search from '@/components/mapa-pc/search/search';
 
+// IMPORTA LEAFLET-RELATED SOMENTE NO CLIENTE
+const Mapa = dynamic(() => import('@/components/mapa-pc/mapa'), {
+    ssr: false
+});
 
+const StreetView = dynamic(() => import('@/components/mapa-pc/streetview/streetview'), {
+    ssr: false
+});
 
 export default function PontoColeta() {
 
-    const [results, setResults] = useState();
+    const [results, setResults] = useState<any[]>([]);
 
     const handleSearch = async (query: unknown) => {
         const res = await fetch(`/api/search?q=${query}`);
@@ -22,8 +28,11 @@ export default function PontoColeta() {
     return (
         <>
             <section>
-                <Titulo src="/img_titulo_azul.png" title="Pontos de Coletas" label="Encontre aqui o local mais próximo de você!" />
-
+                <Titulo
+                    src="/img_titulo_azul.png"
+                    title="Pontos de Coletas"
+                    label="Encontre aqui o local mais próximo de você!"
+                />
             </section>
 
             <div style={{
@@ -38,6 +47,7 @@ export default function PontoColeta() {
             <div style={{ padding: "20px" }}>
                 <Mapa />
             </div>
+
             <div>
                 <StreetView />
             </div>
