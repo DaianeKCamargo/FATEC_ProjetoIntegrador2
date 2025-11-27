@@ -1,79 +1,168 @@
 "use client";
 import { useEffect, useState } from "react";
-import styles from "@/styles/lists.module.css"
-
+import styles from "@/styles/lists.module.css";
 
 interface CP {
-    id: string;
-    username?: string;
-    cpf: string;
-    email: string;
-    phone: string;
-    namePC: string;
-    endePC: string;
-    horaFuncPC: string;
-    photoPC: string;
-    approved: boolean;
+  id: string;
+  username?: string;
+  cpf: string;
+  email: string;
+  phone: string;
+  namePC: string;
+  endePC: string;
+  horaFuncPC: string;
+  photoPC: string;
+  approved: boolean;
 }
 
-
 export default function CollectionPointList() {
-    const [collectionPoints, setCollectionPoints] = useState<any[]>([]);
+  const [collectionPoints, setCollectionPoints] = useState<CP[]>([]);
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [editData, setEditData] = useState<Partial<CP>>({});
 
-    // Carrega da API (não mais do localStorage)
-    const loadCollectionsPoints = async () => {
-        const res = await fetch("/api/collectionpoints");
-        const data = await res.json();
-        setCollectionPoints(data);
-    };
+  // Carrega da API
+  const loadCollectionPoints = async () => {
+    const res = await fetch("/api/collectionpoints");
+    const data = await res.json();
+    setCollectionPoints(data);
+  };
 
-    useEffect(() => {
-        loadCollectionsPoints();
-    }, []);
+  useEffect(() => {
+    loadCollectionPoints();
+  }, []);
 
-    // Deletar do arquivo e do estado
-    const handleDelete = async (id: number) => {
-        await fetch(`/api/collectionspoints/${id}`, { method: "DELETE" });
+  // DELETE usando ID real
+  const handleDelete = async (index: number) => {
+    const cp = collectionPoints[index];
+    if (!cp?.id) {
+      alert("Erro: ponto de coleta sem ID!");
+      return;
+    }
 
-        // Remove do estado local sem precisar recarregar página
-        setCollectionPoints(prev => prev.filter((p, index) => index !== id));
-    };
+    await fetch(`/api/collectionpoints/${cp.id}`, { method: "DELETE" });
 
-    return (
-        <div className={styles.list}>
-            {collectionPoints.length === 0 && <p>Nenhum parceiro encontrado.</p>}
+    setCollectionPoints(prev => prev.filter((_, i) => i !== index));
+  };
 
-            {collectionPoints.map((pc, index) => (
+  // Entrar no modo edição
+  const handleEdit = (index: number) => {
+    setEditingIndex(index);
+    setEditData({ ...collectionPoints[index] });
+  };
 
-                <div key={index} className={styles.item}>
-                    <p><b>Foto do Local da Empresa:</b></p>
-                    <img
-                        src={pc.photoPC}
-                        alt="logo da empresa"
-                        className={styles.previewImg}
-                    />
+  // Salvar alterações (PUT)
+  const handleSave = async () => {
+    if (editingIndex === null) return;
 
-                    <p><b>Nome do Responsável:</b>
-                        {pc.username}</p>
+    const cp = collectionPoints[editingIndex];
 
-                    <p><b>Telefone:</b>
-                        {pc.phone}</p>
+    const res = await fetch(`/api/collectionpoints/${cp.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(editData),
+    });
 
-                    <p><b>Nome da Empresa:
-                    </b>{pc.namePC}</p>
+    if (!res.ok) {
+      alert("Erro ao salvar alterações");
+      return;
+    }
 
-                    <p><b>Endereço:
-                    </b>{pc.endePC}</p>
+    const updated = [...collectionPoints];
+    updated[editingIndex] = editData as CP;
+    setCollectionPoints(updated);
+    setEditingIndex(null);
+  };
 
-                    <p><b>horaFuncPC:
-                    </b>{pc.horaFuncPC}</p>
+  // Cancelar edição
+  const handleCancel = () => {
+    setEditingIndex(null);
+  };
 
-                    <button onClick={() => handleDelete(index)} >
-                        Excluir
-                    </button>
+  return (
+    <div className={styles.list}>
+      {collectionPoints.length === 0 && <p>Nenhum ponto de coleta encontrado.</p>}
 
-                </div>
-            ))}
-        </div>
-    );
+      {collectionPoints.map((cp, index) => {
+        const isEditing = index === editingIndex;
+
+        return (
+          <div key={cp.id} className={styles.item}>
+            <p><b>Foto do Local da Empresa:</b></p>
+            {isEditing ? (
+              <input
+                type="text"
+                value={editData.photoPC || ""}
+                onChange={e => setEditData({ ...editData, photoPC: e.target.value })}
+              />
+            ) : (
+              <img src={cp.photoPC} alt="logo da empresa" className={styles.previewImg} />
+            )}
+
+            <p><b>Nome do Responsável:</b></p>
+            {isEditing ? (
+              <input
+                value={editData.username || ""}
+                onChange={e => setEditData({ ...editData, username: e.target.value })}
+              />
+            ) : (
+              <p>{cp.username}</p>
+            )}
+
+            <p><b>Telefone:</b></p>
+            {isEditing ? (
+              <input
+                value={editData.phone || ""}
+                onChange={e => setEditData({ ...editData, phone: e.target.value })}
+              />
+            ) : (
+              <p>{cp.phone}</p>
+            )}
+
+            <p><b>Nome da Empresa:</b></p>
+            {isEditing ? (
+              <input
+                value={editData.namePC || ""}
+                onChange={e => setEditData({ ...editData, namePC: e.target.value })}
+              />
+            ) : (
+              <p>{cp.namePC}</p>
+            )}
+
+            <p><b>Endereço:</b></p>
+            {isEditing ? (
+              <input
+                value={editData.endePC || ""}
+                onChange={e => setEditData({ ...editData, endePC: e.target.value })}
+              />
+            ) : (
+              <p>{cp.endePC}</p>
+            )}
+
+            <p><b>Horário de Funcionamento:</b></p>
+            {isEditing ? (
+              <input
+                value={editData.horaFuncPC || ""}
+                onChange={e => setEditData({ ...editData, horaFuncPC: e.target.value })}
+              />
+            ) : (
+              <p>{cp.horaFuncPC}</p>
+            )}
+
+            {/* Botões */}
+            {!isEditing ? (
+              <>
+                <button onClick={() => handleEdit(index)}>Editar</button>
+                <button onClick={() => handleDelete(index)}>Excluir</button>
+              </>
+            ) : (
+              <>
+                <button onClick={handleSave}>Salvar</button>
+                <button onClick={handleCancel}>Cancelar</button>
+              </>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
 }
