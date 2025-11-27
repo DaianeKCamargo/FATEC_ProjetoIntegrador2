@@ -1,15 +1,22 @@
-"use client"
+"use client";
 
 import Titulo from "@/components/titulo/Titulo";
 import styles from "@/styles/parceiros.module.css";
 import PartnerCard from "@/components/partners/PartnerCard";
+import { useEffect, useState } from "react";
 
+export default function Parceiros() {
+    const [partners, setPartners] = useState([]);
 
-export default async function Parceiros() {
-    const res = await fetch("/api/partners", { cache: "no-store" });
+    useEffect(() => {
+        const load = async () => {
+            const res = await fetch("/api/partners", { cache: "no-store" });
+            const data = await res.json();
+            setPartners(data);
+        };
 
-
-    const partners = await res.json();
+        load();
+    }, []);
 
     return (
         <section className={styles.secao}>
@@ -30,7 +37,6 @@ export default async function Parceiros() {
                     />
                 ))}
             </div>
-
         </section>
     );
 }
