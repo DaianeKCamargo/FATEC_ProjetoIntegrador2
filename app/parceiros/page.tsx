@@ -6,9 +6,8 @@ import PartnerCard from "@/components/partners/PartnerCard";
 
 
 export default async function Parceiros() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/partners`, {
-        cache: "no-store",
-    });
+    const res = await fetch("/api/partners", { cache: "no-store" });
+
 
     const partners = await res.json();
 

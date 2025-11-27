@@ -47,7 +47,7 @@ export default function AdministrativoAnaliseAprovacao() {
     return (
         <div className={styles.body}>
             <div className={styles.titulo}>
-                <BackButton/>
+                <BackButton />
                 <h1> Área do Administrador </h1>
                 <h2> Análise e Aprovação de cadastros </h2>
             </div>
@@ -150,8 +150,9 @@ export default function AdministrativoAnaliseAprovacao() {
                                                 <p><b>Horario de Funcionamento:</b>
                                                     {p.horaFuncPC}</p>
 
-                                                <button className={styles.btnApproved} onClick={() => approvePartner(p.id)}>Aprovar</button>
-                                                <button className={styles.btnDelete} onClick={() => deletePartner(p.id)}>Excluir</button>
+                                                <button className={styles.btnApproved} onClick={() => approvePoint(p.id)}>Aprovar</button>
+
+                                                <button className={styles.btnDelete} onClick={() => deletePoint(p.id)}>Excluir</button>
                                             </ div>
                                         ))}
                                     </div>

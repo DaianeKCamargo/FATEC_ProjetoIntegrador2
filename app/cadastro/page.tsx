@@ -81,7 +81,6 @@ export default function Cadastrar() {
         // se for ponto de coleta
         if (isPontoColeta) {
             const newColeta = {
-                id: crypto.randomUUID(),
                 username,
                 cpf,
                 email,
@@ -106,7 +105,6 @@ export default function Cadastrar() {
         // se for parceiro
         if (isParceiro) {
             const newPartner = {
-                id: crypto.randomUUID(),
                 username,
                 cpf,
                 email,
@@ -164,7 +162,7 @@ export default function Cadastrar() {
                 <div className={styles.divprincipal}>
                     <h1 className={styles.title}> Cadastrar </h1>
                     <Form onSubmit={handleSubmit} className={styles.formWrapper}>
-                        <Input id="inputName" placeholder='Insira seu nome completo'label="Nome Completo" type="text" name="username"
+                        <Input id="inputName" placeholder='Insira seu nome completo' label="Nome Completo" type="text" name="username"
                             error={errors.username} onChange={(e) => {
                                 handleChange(e);
                                 setUsername(e.target.value);
