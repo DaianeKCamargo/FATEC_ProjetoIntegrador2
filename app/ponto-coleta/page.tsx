@@ -7,38 +7,40 @@ import StreetView from '@/components/mapa-pc/streetview/streetview';
 import { useState } from 'react';
 import Search from '@/components/mapa-pc/search/search';
 
+
+
 export default function PontoColeta() {
 
-    const [setResults] = useState([]);
+    const [results, setResults] = useState();
 
     const handleSearch = async (query: unknown) => {
-    const res = await fetch(`/api/search?q=${query}`);
-    const data = await res.json();
-    setResults(data.results);
-  };
+        const res = await fetch(`/api/search?q=${query}`);
+        const data = await res.json();
+        setResults(data.results);
+    };
 
     return (
         <>
-        <section>
-            <Titulo src="/img_titulo_azul.png" title="Pontos de Coletas" label="Encontre aqui o local mais próximo de você!" />
+            <section>
+                <Titulo src="/img_titulo_azul.png" title="Pontos de Coletas" label="Encontre aqui o local mais próximo de você!" />
 
-        </section>
+            </section>
 
-        <div style={{
-             height: "100px", 
-             display: "flex",
-             justifyContent: "center",
-             alignItems: "center",
-             }}>
-      <Search onSearch={handleSearch} />
-        </div>
+            <div style={{
+                height: "100px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+            }}>
+                <Search onSearch={handleSearch} />
+            </div>
 
-        <div style={{ padding: "20px"}}>
-            <Mapa />
-        </div>
-        <div>
-            <StreetView />
-        </div>
+            <div style={{ padding: "20px" }}>
+                <Mapa />
+            </div>
+            <div>
+                <StreetView />
+            </div>
         </>
     );
 }
