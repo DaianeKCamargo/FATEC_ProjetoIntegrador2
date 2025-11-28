@@ -20,6 +20,44 @@ export default function GraficoTampinhas({ year }: { year: number }) {
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState("");
 
+  // Detecta tamanho da tela
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkSize = () => setIsMobile(window.innerWidth < 600);
+
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
+  // Abreviações
+  const monthMap: Record<string, string> = {
+    janeiro: "Jan",
+    fevereiro: "Fev",
+    março: "Mar",
+    abril: "Abr",
+    maio: "Mai",
+    junho: "Jun",
+    julho: "Jul",
+    agosto: "Ago",
+    setembro: "Set",
+    outubro: "Out",
+    novembro: "Nov",
+    dezembro: "Dez"
+  };
+
+  const formatMonth = (name: string) => {
+    if (!name) return "";
+
+    if (isMobile) {
+      return monthMap[name.toLowerCase()] || name.substring(0, 3);
+    }
+
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  };
+
+  // Buscar dados
   useEffect(() => {
     async function fetchData() {
       try {
@@ -66,7 +104,16 @@ export default function GraficoTampinhas({ year }: { year: number }) {
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={dados}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="monthName" />
+
+          <XAxis
+            dataKey="monthName"
+            interval={0}
+            tickFormatter={formatMonth}
+            angle={isMobile ? -30 : 0}
+            textAnchor={isMobile ? "end" : "middle"}
+            height={isMobile ? 50 : 30}
+          />
+
           <YAxis />
           <Tooltip />
           <Bar dataKey="caps" fill="#0088ff" />

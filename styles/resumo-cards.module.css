@@ -1,4 +1,4 @@
-.container {
+.container { 
   display: flex;
   justify-content: space-between;
   gap: 25px;
@@ -39,4 +39,44 @@
   object-fit: contain;
   margin-top: auto;
   display: block;
+}
+
+/* === ADICIONADO: RESPONSIVIDADE === */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .container {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 18px);
+    min-width: 230px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .card {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .value {
+    font-size: 2rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .icon {
+    width: 100px;
+  }
 }

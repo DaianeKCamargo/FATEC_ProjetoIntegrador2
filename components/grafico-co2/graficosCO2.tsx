@@ -30,6 +30,45 @@ export default function GraficoCo2({ year }: { year: number }) {
   const [status, setStatus] = useState<"loading" | "error" | "success">("loading");
   const [msgErro, setMsgErro] = useState("");
 
+  // Detecta tamanho da tela e centraliza os meses de volta (mobile / desktop)
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkSize = () => setIsMobile(window.innerWidth < 600);
+
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
+  // Mapa de abreviações
+  const monthMap: Record<string, string> = {
+    janeiro: "Jan",
+    fevereiro: "Fev",
+    março: "Mar",
+    abril: "Abr",
+    maio: "Mai",
+    junho: "Jun",
+    julho: "Jul",
+    agosto: "Ago",
+    setembro: "Set",
+    outubro: "Out",
+    novembro: "Nov",
+    dezembro: "Dez"
+  };
+
+  // Formatação inteligente
+  const formatMonth = (name: string) => {
+    if (!name) return "";
+
+    if (isMobile) {
+      return monthMap[name.toLowerCase()] || name.substring(0, 3);
+    }
+
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  };
+
+  // Buscar dados
   useEffect(() => {
     async function fetchData() {
       try {
@@ -43,6 +82,7 @@ export default function GraficoCo2({ year }: { year: number }) {
           setMsgErro(json.error || "Erro ao buscar dados.");
           return;
         }
+
         const mesesFormatados: Mes[] = [];
 
         for (let i = 1; i <= 12; i++) {
@@ -92,7 +132,16 @@ export default function GraficoCo2({ year }: { year: number }) {
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={dados}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="monthName" />
+
+          <XAxis
+            dataKey="monthName"
+            interval={0}
+            tickFormatter={formatMonth}
+            angle={isMobile ? -30 : 0}
+            textAnchor={isMobile ? "end" : "middle"}
+            height={isMobile ? 50 : 30}
+          />
+
           <YAxis />
           <Tooltip />
           <Line type="monotone" dataKey="co2" stroke="#00cc66" strokeWidth={3} />

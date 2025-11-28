@@ -7,6 +7,7 @@
   margin-left: 5rem;
   margin-right: 5rem;
 }
+
 /* AJUSTE DO SELECT EM CAIXAS DOS GRÁFICOS */
 .graficoBox select {
   padding: 10px 16px;  
@@ -70,13 +71,52 @@
   box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.25);
 }
 
-
-
 /* FOCUS PARA SELECT DOS GRÁFICOS */
 .graficoBox select:focus {
   border-color: #8a2be2;
   box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.25);
 }
+
 .label {
   font-size: 5rem;
+}
+
+/* === ADICIONADO: RESPONSIVIDADE === */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .margin {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .filtros {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .filtroItem {
+    font-size: 1.2rem;
+  }
+
+  .filtroItem label {
+    font-size: 1.1rem;
+  }
+
+  .filtroItem select {
+    font-size: 1.1rem;
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .margin {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .filtros {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
