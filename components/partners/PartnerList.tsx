@@ -149,13 +149,13 @@ export default function PartnersList() {
             {/* Botões */}
             {!isEditing ? (
               <>
-                <button onClick={() => handleEdit(index)}>Editar</button>
-                <button onClick={() => handleDelete(index)}>Excluir</button>
+                <button onClick={() => handleEdit(index)} className={styles.btnEdite}>Editar</button>
+                <button onClick={() => handleDelete(index)} className={styles.btnDelete}>Excluir</button>
               </>
             ) : (
               <>
-                <button onClick={handleSave}>Salvar</button>
-                <button onClick={handleCancel}>Cancelar</button>
+                <button onClick={handleSave} className={styles.btnSalvar}>Salvar</button>
+                <button onClick={handleCancel} className={styles.btnDelete}>Cancelar</button>
               </>
             )}
           </div>

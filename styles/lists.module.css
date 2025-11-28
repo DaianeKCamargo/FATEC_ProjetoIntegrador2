@@ -33,7 +33,37 @@
   align-self: center;
 }
 
-.item button {
+.btnEdite {
+  background-color: white;
+  border: solid 0.1rem #5f81b7;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  color: #5f81b7;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #5f81b7;
+    color: black;
+    box-shadow: #333 0rem 0.1rem 0.1rem;
+  }
+}
+
+.btnSalvar {
+  background-color: white;
+  border: solid 0.1rem #17991b;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  color: #17991b;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #17991b;
+    color: black;
+    box-shadow: #333 0rem 0.1rem 0.1rem;
+  }
+}
+
+.btnDelete {
   background-color: white;
   border: solid 0.1rem #d65552;
   border-radius: 1rem;
@@ -46,6 +76,4 @@
     color: black;
     box-shadow: #333 0rem 0.1rem 0.1rem;
   }
-
-
 }
