@@ -4,7 +4,7 @@ O Projeto Tampets, é um projeto que faz arrecadação e reciclagem de tampinhas
 ---
 
 ## Descrição
-O nosso objetivo é modernizar o site pois com a evolução do projeto foi visto a necessidade de uma modernização e facilitação de uma melhor visualização para o publico e uma melhor interface para nossa cliente (Lia). O objetivo do site em si, é informar os parceiros, Pontos de coletas proximos de quem quer doar, expandir o tamanho do projeto, e apresentar o projeto para não só para facilitar a vida de nossa cliente, mas também transmitir a missão do Projeto
+O nosso objetivo é modernizar o site pois com a evolução do projeto foi visto a necessidade de uma modernização e facilitação de uma melhor visualização para o publico e uma melhor interface para nossa cliente. O objetivo do site em si, é informar os parceiros, Pontos de coletas proximos de quem quer doar, expandir o tamanho do projeto, e apresentar o projeto para não só para facilitar a vida de nossa cliente, mas também transmitir a missão do Projeto. O foco neste semestre foi ainda no Front-end só que diferente do semestre passado, utilizamos novas Tecnologias [citadas abaixo] e planejamos o Back-End que será implementado semestre que vem.
 
 ---
 
@@ -267,5 +267,10 @@ O nosso objetivo é modernizar o site pois com a evolução do projeto foi visto
 1. Clone o repositório  
 2. Entre na pasta  
 3. Instale dependências (se houver)  
-4. Execute o projeto  
+4. Execute o projeto
+
+---
+
+## 📄Visite o novo site 
+[Site](https://tampets-pi.vercel.app/)
 
